@@ -137,7 +137,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Pingpong\Modules\ModulesServiceProvider::class,
-
+        Joselfonseca\LaravelAdmin\Providers\LaravelAdminServiceProvider::class,
         /*
          * Application Service Providers...
          */
