@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace JarvisPlatform\Http\Controllers\Auth;
 
-use App\User;
+use JarvisPlatform\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use JarvisPlatform\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

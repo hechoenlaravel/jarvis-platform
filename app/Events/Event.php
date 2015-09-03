@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace JarvisPlatform\Events;
 
 abstract class Event
 {

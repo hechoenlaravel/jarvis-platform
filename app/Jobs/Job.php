@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace JarvisPlatform\Jobs;
 
 use Illuminate\Bus\Queueable;
 

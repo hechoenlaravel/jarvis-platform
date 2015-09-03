@@ -141,10 +141,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        JarvisPlatform\Providers\AppServiceProvider::class,
+        JarvisPlatform\Providers\AuthServiceProvider::class,
+        JarvisPlatform\Providers\EventServiceProvider::class,
+        JarvisPlatform\Providers\RouteServiceProvider::class,
 
     ],
 

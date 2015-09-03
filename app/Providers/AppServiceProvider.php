@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace JarvisPlatform\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
