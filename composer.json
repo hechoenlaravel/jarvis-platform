@@ -28,7 +28,11 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
-        ]
+        ],
+        "psr-4": {
+            "Joselfonseca\\LaravelAdmin\\" : "packages/joselfonseca/laravel-admin/src"
+        }
+
     },
     "scripts": {
         "post-install-cmd": [
