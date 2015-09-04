@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "97857d57efcba24272b64a256b573645",
+    "hash": "4657ca9afaa30c2f0faa2010718f8675",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -754,6 +754,47 @@
                 "parser"
             ],
             "time": "2015-01-25 14:52:34"
+        },
+        {
+            "name": "hechoenlaravel/jarvis-foundation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
+                "reference": "cc3566332d0956c74923002d5803043b40e4a51a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/cc3566332d0956c74923002d5803043b40e4a51a",
+                "reference": "cc3566332d0956c74923002d5803043b40e4a51a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpunit": "4.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hechoenlaravel\\JarvisFoundation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jose Luis Fonseca",
+                    "email": "jose@ditecnologia.com"
+                }
+            ],
+            "description": "Some foundation code for the Jarvis Platform",
+            "time": "2015-09-04 17:16:06"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -4222,9 +4263,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "hechoenlaravel/jarvis-foundation": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5.9"
