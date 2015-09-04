@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Pingpong\Modules\ModulesServiceProvider::class,
         Joselfonseca\LaravelAdmin\Providers\LaravelAdminServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
         /*
          * Application Service Providers...
          */

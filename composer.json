@@ -1,14 +1,18 @@
 {
-    "name": "JoseFonsecaDI/jarvis-platform",
+    "name": "hechoenlaravel/jarvis-platform",
     "description": "Platform for building modular applications",
     "keywords": ["JarvisApp", "Laravel Framework", "business platform"],
+    "license" : "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "pingpong/sky": "~2.1",
         "pingpong/modules": "~2.1",
-        "joselfonseca/laravel-admin" : "0.3.*"
+        "joselfonseca/laravel-admin" : "0.4.*",
+        "prettus/l5-repository": "2.1.*",
+        "prettus/laravel-validation" : "1.1.*",
+        "league/fractal" : "0.12.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
