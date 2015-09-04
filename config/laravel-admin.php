@@ -3,7 +3,7 @@ return [
     /**
      * The App name
      * */
-    'appName' => "Jarvis Platform",
+    'appName' => "Laravel Admin Panel",
     /**
      * Route to go after login
     **/ 
