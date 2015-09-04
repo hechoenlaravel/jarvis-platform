@@ -18,6 +18,7 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \JarvisPlatform\Http\Middleware\VerifyCsrfToken::class,
+        \Modules\Installer\Http\Middleware\VerifyIfInstalled::class
     ];
 
     /**

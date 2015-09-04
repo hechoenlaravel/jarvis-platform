@@ -1,12 +1,12 @@
-APP_INSTALLED=false
+APP_INSTALLED=true
 APP_ENV=local
 APP_DEBUG=true
 APP_KEY=kvcvMUdNzV6D3gjbQQngBIPlctLeTwXa
 
-DB_HOST=localhost
-DB_DATABASE=jarvisplatform
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_HOST={{$data['db_host']}}
+DB_DATABASE={{$data['db_name']}}
+DB_USERNAME={{$data['db_user']}}
+DB_PASSWORD={{$data['db_pass']}}
 
 CACHE_DRIVER=file
 SESSION_DRIVER=file

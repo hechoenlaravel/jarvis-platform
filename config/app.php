@@ -136,8 +136,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Pingpong\Modules\ModulesServiceProvider::class,
         Joselfonseca\LaravelAdmin\Providers\LaravelAdminServiceProvider::class,
+        Pingpong\Modules\ModulesServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         /*
          * Application Service Providers...
