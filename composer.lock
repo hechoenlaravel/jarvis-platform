@@ -943,16 +943,16 @@
         },
         {
             "name": "joselfonseca/laravel-admin",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joselfonseca/laravel-admin.git",
-                "reference": "4f3b2f176da7ddc770445e0b69588065ad8328f3"
+                "reference": "85b1515f3a17418fa5a6168a6c36177a89bf1fb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joselfonseca/laravel-admin/zipball/4f3b2f176da7ddc770445e0b69588065ad8328f3",
-                "reference": "4f3b2f176da7ddc770445e0b69588065ad8328f3",
+                "url": "https://api.github.com/repos/joselfonseca/laravel-admin/zipball/85b1515f3a17418fa5a6168a6c36177a89bf1fb9",
+                "reference": "85b1515f3a17418fa5a6168a6c36177a89bf1fb9",
                 "shasum": ""
             },
             "require": {
@@ -964,7 +964,7 @@
                 "zizaco/entrust": "1.4.*"
             },
             "require-dev": {
-                "orchestra/testbench": "3.0.*",
+                "orchestra/testbench": "3.1.*",
                 "phpunit/phpunit": "4.*",
                 "scrutinizer/ocular": "~1.1"
             },
@@ -999,7 +999,7 @@
                 "laravel Administrator",
                 "laravel-admin"
             ],
-            "time": "2015-09-04 15:11:02"
+            "time": "2015-09-04 19:36:02"
         },
         {
             "name": "laracasts/flash",
