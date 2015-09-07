@@ -6,20 +6,24 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class InstallationTest extends TestCase
 {
+
+    use DatabaseMigrations;
+    use DatabaseTransactions;
+
     /**
-     * A basic functional test example.
+     * It is able to install laravel admin
      *
      * @return void
      */
     public function test_checks_installation_status()
     {
-        if(env('APP_INSTALLED', false) === false)
-        {
+        if (env('APP_INSTALLED', false) === false) {
             $this->visit('/')
                 ->seePageIs('/installer');
-        }else{
+        } else {
             $this->visit('/')
                 ->seePageIs('/');
         }
     }
+
 }
