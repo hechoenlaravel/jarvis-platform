@@ -21,6 +21,7 @@ class EntitiesTable extends Migration
             $table->string('prefix');
             $table->string('table_name');
             $table->boolean('locked')->default(0);
+            $table->boolean('create_table')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
