@@ -14,6 +14,7 @@ class EntityFieldsTable extends Migration
     {
         Schema::create('app_entities_fields', function($table) {
             $table->increments('id');
+            $table->integer('entity_id')->unsigned()->index();
             $table->string('namespace');
             $table->string('name');
             $table->text('description');
