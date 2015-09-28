@@ -17,10 +17,7 @@
         "pingpong/sky": "~2.1",
         "pingpong/modules": "~2.1",
         "joselfonseca/laravel-admin" : "0.4.*",
-        "joselfonseca/laravel-tactician" : "0.2.*",
-        "prettus/l5-repository": "2.1.*",
-        "prettus/laravel-validation" : "1.1.*",
-        "league/fractal" : "0.12.*"
+        "joselfonseca/laravel-tactician" : "0.2.*"
     },
     "autoload": {
         "classmap": [
