@@ -138,17 +138,6 @@ class EntitiesGenerator
             ],
             [
                 'entity_id' => $entity->id,
-                'name' => 'users:roles_fields.module.name',
-                'description' => 'users:roles_fields.module.description',
-                'slug' => 'module_id',
-                'locked' => 1,
-                'create_field' => 1,
-                'type' => 'text',
-                'required' => 1,
-                'default' => $this->module->getStudlyName()
-            ],
-            [
-                'entity_id' => $entity->id,
                 'name' => 'users:roles_fields.slug.name',
                 'description' => 'users:roles_fields.slug.description',
                 'slug' => 'slug',
