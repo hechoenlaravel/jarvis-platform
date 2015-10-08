@@ -137,10 +137,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'pingpong-modules',
+        'vendor' => 'hechoenlaravel',
         'author' => [
-            'name' => 'Pingpong Labs',
-            'email' => 'pingpong.labs@gmail.com',
+            'name' => 'Jose Fonseca',
+            'email' => 'jose@ditecnologia.com',
         ],
     ],
     /*

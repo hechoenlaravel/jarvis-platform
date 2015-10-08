@@ -14,7 +14,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Modules\Users\Http\Controllers
         'uses' => 'AuthController@postLogin'
     ]);
     Route::get('/logout', [
-        'as' => 'login',
+        'as' => 'logout',
         'uses' => 'AuthController@getLogout'
     ]);
 });

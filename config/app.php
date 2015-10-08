@@ -191,11 +191,14 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Module' => Pingpong\Modules\Facades\Module::class,
-        'Menu' => Pingpong\Menus\MenuFacade::class,
+        'MenuPing' => Pingpong\Menus\MenuFacade::class,
         'Widget' => Pingpong\Widget\WidgetFacade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
+
+    'version' => '1.0.0',
+    'app_name' => 'Jarvis Platform'
 
 ];

@@ -45,9 +45,11 @@ class Install extends Command
         $this->call('users:generateEntities');
         $this->call('users:generateDefaultRoles');
         $this->call('users:generateAdmin');
-        $str = file_get_contents('.env');
-        $str = str_replace("APP_INSTALLED=false", "APP_INSTALLED=true",$str);
-        file_put_contents('.env', $str);
+        if(file_exists('.env')){
+            $str = file_get_contents('.env');
+            $str = str_replace("APP_INSTALLED=false", "APP_INSTALLED=true",$str);
+            file_put_contents('.env', $str);
+        }
         $this->info('This is all for now!');
     }
 

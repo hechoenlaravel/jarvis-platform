@@ -26,9 +26,9 @@
     </head>
     <body class="skin-blue sidebar-mini">
         <div class="wrapper">
-            @include('LaravelAdmin::partials.nav')
+            @include('partials.nav')
             <aside class="main-sidebar">
-                @include('LaravelAdmin::partials.sidebar')
+                @include('partials.sidebar')
             </aside>
             <div class="content-wrapper">
                 <section class="content-header">
@@ -36,6 +36,11 @@
                 </section>
             </div>
         </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                {{config('app.app_name')}} - <b>Version</b> {{config('app.version')}}
+            </div>
+        </footer>
         <!-- Scripts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
