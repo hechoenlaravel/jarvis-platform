@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/hechoenlaravel/jarvis-platform.svg)](https://travis-ci.org/hechoenlaravel/jarvis-platform)
 
 ## Que es esto?
-Started kit para sistema de información usando [Admin LET](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
+Started kit para sistema de información usando [Admin LTE](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
 
 ## Instalación
 
