@@ -1,0 +1,15 @@
+{
+	"name": "hechoenlaravel/jarvis-users",
+	"description": "Users and Permissions management",
+	"authors": [
+		{
+			"name": "Jose Fonseca",
+			"email": "jose@ditecnologia.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\Users\\": ""
+		}
+	}
+}

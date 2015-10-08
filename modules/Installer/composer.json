@@ -1,10 +1,10 @@
 {
-	"name": "pingpong-modules/installer",
-	"description": "",
+	"name": "hechoenñaravel/jarvis-installer",
+	"description": "Installer for Jarvis Platform",
 	"authors": [
 		{
-			"name": "Pingpong Labs",
-			"email": "pingpong.labs@gmail.com"
+			"name": "Jose Fonseca",
+			"email": "Jose@ditecnologia.com"
 		}
 	],
 	"autoload": {

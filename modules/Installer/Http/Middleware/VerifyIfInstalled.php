@@ -18,7 +18,7 @@ class VerifyIfInstalled {
         if(env('APP_INSTALLED', false) === false && !$request->is('installer*'))
         {
             if(!$request->is('_debugbar*')){
-                return redirect()->route('installerUrl');
+                return 'The Appication is not installed, please go to your console and run jplatform:install';
             }
         }elseif(env('APP_INSTALLED', false) === true && $request->is('installer*'))
         {

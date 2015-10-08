@@ -20,6 +20,7 @@ class EntityFieldsTable extends Migration
             $table->text('description');
             $table->string('slug');
             $table->string('type');
+            $table->text('options')->nullable();
             $table->string('default')->nullable();
             $table->boolean('required')->default(0);
             $table->boolean('locked')->default(0);

@@ -1,9 +1,8 @@
-<?php namespace Modules\Installer\Providers;
+<?php namespace Modules\Users\Providers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 
-class InstallerServiceProvider extends ServiceProvider {
+class UsersServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -30,9 +29,9 @@ class InstallerServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register()
-	{
-        $this->commands([
-            \Modules\Installer\Console\Install::class
+	{		
+		$this->commands([
+            \Modules\Users\Console\CreateEntities::class
         ]);
 	}
 
@@ -44,10 +43,10 @@ class InstallerServiceProvider extends ServiceProvider {
 	protected function registerConfig()
 	{
 		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('installer.php'),
+		    __DIR__.'/../Config/config.php' => config_path('users.php'),
 		]);
 		$this->mergeConfigFrom(
-		    __DIR__.'/../Config/config.php', 'installer'
+		    __DIR__.'/../Config/config.php', 'users'
 		);
 	}
 
@@ -58,7 +57,7 @@ class InstallerServiceProvider extends ServiceProvider {
 	 */
 	public function registerViews()
 	{
-		$viewPath = base_path('resources/views/modules/installer');
+		$viewPath = base_path('resources/views/modules/users');
 
 		$sourcePath = __DIR__.'/../Resources/views';
 
@@ -66,7 +65,7 @@ class InstallerServiceProvider extends ServiceProvider {
 			$sourcePath => $viewPath
 		]);
 
-		$this->loadViewsFrom([$viewPath, $sourcePath], 'installer');
+		$this->loadViewsFrom([$viewPath, $sourcePath], 'users');
 	}
 
 	/**
@@ -76,12 +75,12 @@ class InstallerServiceProvider extends ServiceProvider {
 	 */
 	public function registerTranslations()
 	{
-		$langPath = base_path('resources/lang/modules/installer');
+		$langPath = base_path('resources/lang/modules/users');
 
 		if (is_dir($langPath)) {
-			$this->loadTranslationsFrom($langPath, 'installer');
+			$this->loadTranslationsFrom($langPath, 'users');
 		} else {
-			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'installer');
+			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'users');
 		}
 	}
 

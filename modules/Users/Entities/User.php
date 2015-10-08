@@ -1,6 +1,6 @@
 <?php
 
-namespace JarvisPlatform;
+namespace Modules\Users\Entities;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

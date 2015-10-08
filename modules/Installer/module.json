@@ -1,7 +1,7 @@
 {
     "name": "Installer",
     "alias": "installer",
-    "description": "",
+    "description": "Jarvis Platform Installer",
     "keywords": [],
     "active": 1,
     "order": 0,
