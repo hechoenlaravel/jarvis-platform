@@ -31,7 +31,9 @@ class UsersServiceProvider extends ServiceProvider {
 	public function register()
 	{		
 		$this->commands([
-            \Modules\Users\Console\CreateEntities::class
+            \Modules\Users\Console\CreateEntities::class,
+            \Modules\Users\Console\GenerateAdmin::class,
+            \Modules\Users\Console\GenerateDefaultRoleAndPerms::class,
         ]);
 	}
 

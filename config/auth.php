@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => \JarvisPlatform\User::class,
+    'model' => Modules\Users\Entities\User::class,
 
     /*
     |--------------------------------------------------------------------------

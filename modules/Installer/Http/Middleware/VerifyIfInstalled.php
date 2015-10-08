@@ -18,7 +18,7 @@ class VerifyIfInstalled {
         if(env('APP_INSTALLED', false) === false && !$request->is('installer*'))
         {
             if(!$request->is('_debugbar*')){
-                return 'The Appication is not installed, please go to your console and run jplatform:install';
+                abort(500, 'The app is not installed, please run php artisan jplatform:install after runing the migrations.');
             }
         }elseif(env('APP_INSTALLED', false) === true && $request->is('installer*'))
         {

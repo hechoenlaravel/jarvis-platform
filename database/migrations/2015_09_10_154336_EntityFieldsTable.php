@@ -25,6 +25,7 @@ class EntityFieldsTable extends Migration
             $table->boolean('required')->default(0);
             $table->boolean('locked')->default(0);
             $table->boolean('create_field')->default(0);
+            $table->boolean('hidden')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

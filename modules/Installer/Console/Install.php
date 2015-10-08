@@ -41,10 +41,14 @@ class Install extends Command
         $this->info('Welcome to the Jarvis platform Installer. Please wait while we set up the application.');
         $this->info('Generating Application Key');
         $this->call('key:generate');
-        $this->info('Migrating Database');
-        $this->call('migrate');
         $this->info('Generating Entities for Modules');
         $this->call('users:generateEntities');
+        $this->call('users:generateDefaultRoles');
+        $this->call('users:generateAdmin');
+        $str = file_get_contents('.env');
+        $str = str_replace("APP_INSTALLED=false", "APP_INSTALLED=true",$str);
+        file_put_contents('.env', $str);
+        $this->info('This is all for now!');
     }
 
     /**

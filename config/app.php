@@ -131,7 +131,10 @@ return [
         Pingpong\Modules\ModulesServiceProvider::class,
         Pingpong\Menus\MenusServiceProvider::class,
         Pingpong\Widget\WidgetServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Styde\Html\HtmlServiceProvider::class,
         Hechoenlaravel\JarvisFoundation\Providers\JarvisFoundationServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -189,7 +192,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Module' => Pingpong\Modules\Facades\Module::class,
         'Menu' => Pingpong\Menus\MenuFacade::class,
-        'Widget' => Pingpong\Widget\WidgetFacade::class
+        'Widget' => Pingpong\Widget\WidgetFacade::class,
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
