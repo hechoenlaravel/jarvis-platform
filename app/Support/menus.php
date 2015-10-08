@@ -1,19 +1,17 @@
 <?php
 
-MenuPing::make('sidebar', function($menu)
-{
+MenuPing::create('sidebar', function ($menu) {
     $menu->route('dashboard', 'Dashboard', [], 0, ['icon' => 'fa fa-dashboard']);
+    $menu->route('users', 'Usuarios', [], 1, ['icon' => 'fa fa-users']);
     $menu->setPresenter('JarvisPlatform\Presenters\SidebarMenuPresenter');
 });
 
-MenuPing::make('navbar', function($menu)
-{
+MenuPing::create('navbar', function ($menu) {
     $menu->setPresenter('Pingpong\Menus\Presenters\Bootstrap\NavbarPresenter');
 });
 
-MenuPing::make('userMenu', function($menu)
-{
-    if(!Auth::guest()){
+MenuPing::create('userMenu', function ($menu) {
+    if(Auth::check()){
         $menu->dropdown(Auth::user()->name, function ($sub) {
             $sub->url('#', 'Editar Perfil', ['icon' => 'fa fa-user']);
             $sub->divider();
