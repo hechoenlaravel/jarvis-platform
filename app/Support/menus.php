@@ -1,9 +1,11 @@
 <?php
 
 MenuPing::create('sidebar', function ($menu) {
-    $menu->route('dashboard', 'Dashboard', [], 0, ['icon' => 'fa fa-dashboard']);
-    if(Auth::user()->ability('administrator', 'user-create,user-edit,user-delete,user-activate')){
-        $menu->route('users', 'Usuarios', [], 1, ['icon' => 'fa fa-users']);
+    if(Auth::check()) {
+        $menu->route('dashboard', 'Dashboard', [], 0, ['icon' => 'fa fa-dashboard']);
+        if (Auth::user()->ability('administrator', 'user-create,user-edit,user-delete,user-activate')) {
+            $menu->route('users', 'Usuarios', [], 1, ['icon' => 'fa fa-users']);
+        }
     }
     $menu->setPresenter('JarvisPlatform\Presenters\SidebarMenuPresenter');
 });

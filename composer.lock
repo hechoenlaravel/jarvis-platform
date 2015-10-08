@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "414582e761a8c184e17c332c39373f18",
-    "content-hash": "4b74b6f41a687a34a012ee745f037aed",
+    "hash": "3e8a9103cf147e1e506787049ba9d6ed",
+    "content-hash": "88e6727bedfb94b23d9aaaf88ee14ea8",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "85ce4a6196096a3a8ba3155e434c489b5dbff017"
+                "reference": "798199b6fc4654661719e19114a8a5cc57e5431b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/85ce4a6196096a3a8ba3155e434c489b5dbff017",
-                "reference": "85ce4a6196096a3a8ba3155e434c489b5dbff017",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/798199b6fc4654661719e19114a8a5cc57e5431b",
+                "reference": "798199b6fc4654661719e19114a8a5cc57e5431b",
                 "shasum": ""
             },
             "require": {
@@ -796,7 +796,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-08 03:04:54"
+            "time": "2015-10-08 18:13:08"
         },
         {
             "name": "jakub-onderka/php-console-color",
