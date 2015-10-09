@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Users\Entities\Role;
+use Modules\Users\Entities\User;
 
 class UsersDatabaseSeeder extends Seeder {
 
@@ -13,8 +15,10 @@ class UsersDatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
-		
-		// $this->call("OthersTableSeeder");
+        factory(User::class, 300)->create()->each(function($u) {
+            $role = Role::where('name', 'user')->first();
+            $u->attachRole($role);
+        });
 	}
 
 }

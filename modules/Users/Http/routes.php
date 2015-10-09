@@ -19,10 +19,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Modules\Users\Http\Controllers
     ]);
 });
 
-Route::group(['prefix' => 'users', 'namespace' => 'Modules\Users\Http\Controllers'], function()
+Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
 {
-	Route::get('/', [
-        'as' => 'users',
-        'uses' => 'UsersController@index'
-    ]);
+	Route::resource('users', 'UsersController');
 });
