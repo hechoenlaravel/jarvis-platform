@@ -17,6 +17,9 @@ elixir(function (mix) {
         '../plugins/sweetalert/dist/sweetalert.css'
     ]);
     mix.scripts([
+        "../plugins/jquery.js",
+        "../plugins/bootstrap.js",
+        "../plugins/angular/angular1.4.js",
         "../plugins/datatables/jquery.dataTables.min.js",
         "../plugins/datatables/dataTables.bootstrap.js",
         "../plugins/bootstrapSelect/dist/js/bootstrap-select.js",

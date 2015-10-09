@@ -15,7 +15,9 @@
         "hechoenlaravel/jarvis-foundation": "dev-master",
         "barryvdh/laravel-debugbar": "^2.1@dev",
         "zizaco/entrust": "1.4.*",
-        "styde/html": "~1.0"
+        "styde/html": "~1.0",
+        "joselfonseca/laravel-api-tools": "1.2.*",
+        "lucadegasperi/oauth2-server-laravel": "^5.1@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

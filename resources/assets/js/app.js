@@ -1,3 +1,4 @@
+var JarvisPlatform = angular.module('JarvisPlatform', []);
 ;
 $(function () {
     /** Datatables **/

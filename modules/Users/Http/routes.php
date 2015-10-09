@@ -18,8 +18,15 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Modules\Users\Http\Controllers
         'uses' => 'AuthController@getLogout'
     ]);
 });
-
+/** Module Routes **/
 Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
 {
 	Route::resource('users', 'UsersController');
+});
+/** Module API Routes **/
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', ['namespace' => 'Modules\Users\Http\Controllers'], function ($api) {
+    $api->group(['prefix' => 'users'], function($api) {
+        $api->post('find-users', 'UsersController@find');
+    });
 });

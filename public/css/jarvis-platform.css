@@ -7815,5 +7815,8 @@ select.mobile-device {
 .form-control {
   color: black;
 }
+.margin-20-top {
+  margin-top: 20px;
+}
 
 /*# sourceMappingURL=jarvis-platform.css.map */
