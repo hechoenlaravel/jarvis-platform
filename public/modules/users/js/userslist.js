@@ -29,6 +29,28 @@ JarvisPlatform.controller('UsersController', ['$scope', 'usersService', '$anchor
         $scope.searchUsers();
     }
 
+    $scope.deleteUser = function(id)
+    {
+        swal(
+        {
+            title: "Esta segúro de eliminar el usuario?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, Estoy segúro",
+            cancelButtonText: "Cancelar",
+            closeOnConfirm: false
+        }, function(){
+            usersService.deleteUser(id).success(function(data){
+                swal("Eliminado!", "Se ha eliminado el usuario!", "success");
+                $scope.searchUsers();
+            }).error(function(data, status){
+                swal("Error!", "Ha ocurrido un error eliminando el usuario, intenta de nuevo!", "error");
+            });
+        });
+    }
+
     function handleUsersSuccess(data, status)
     {
         $scope.loading = 0;
@@ -46,7 +68,6 @@ JarvisPlatform.controller('UsersController', ['$scope', 'usersService', '$anchor
             $scope.current_page = data.meta.pagination.current_page;
             $scope.total_pages = data.meta.pagination.total_pages;
             $scope.total = data.meta.pagination.total;
-            console.log($scope.nextPage);
         }
         $scope.results = data.data;
         $('#usersSearchButton').button('reset');
@@ -62,6 +83,20 @@ JarvisPlatform.factory('usersService', ['$http', function($http){
             return $http({
                 method: 'post',
                 url: GLOBALS.site_url+'/api/users/find-users/?page='+page,
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                data: form
+            });
+        },
+        deleteUser : function(id)
+        {
+            var form = {
+                _token: GLOBALS.token
+            };
+            return $http({
+                method: 'delete',
+                url: GLOBALS.site_url+'/api/users/'+id,
                 headers: {
                     'Content-Type' : 'application/json'
                 },

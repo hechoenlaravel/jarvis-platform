@@ -1,6 +1,8 @@
 <?php namespace Modules\Users\Http\Controllers;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Joselfonseca\LaravelApiTools\Exceptions\ApiModelNotFoundException;
 use Modules\Users\Entities\User;
 use Pingpong\Modules\Routing\Controller;
 use Modules\Users\Transformers\UserTransformer;
@@ -35,7 +37,14 @@ class UsersController extends Controller {
 
     public function destroy($id)
     {
-
+        try{
+            $user = $this->model->findOrFail($id);
+            $user->delete();
+            return $this->responseNoContent();
+        }catch (ModelNotFoundException $e)
+        {
+            throw new ApiModelNotFoundException;
+        }
     }
 
     public function find(Request $request)
