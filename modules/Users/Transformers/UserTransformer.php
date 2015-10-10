@@ -11,6 +11,8 @@ use League\Fractal\TransformerAbstract;
  */
 class UserTransformer extends TransformerAbstract{
 
+    protected $defaultIncludes = ['roles'];
+
     /**
      * @param User $user
      * @return array
@@ -25,6 +27,15 @@ class UserTransformer extends TransformerAbstract{
                 'edit' => route('users.edit', ['id' => $user->id])
             ]
         ];
+    }
+
+    public function includeRoles(User $user)
+    {
+        if($user->roles->count() === 0)
+        {
+            return null;
+        }
+        return $this->collection($user->roles, new RoleTransformer());
     }
 
 }

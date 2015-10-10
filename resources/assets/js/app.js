@@ -1,4 +1,7 @@
-var JarvisPlatform = angular.module('JarvisPlatform', []);
+var JarvisPlatform = angular.module('JarvisPlatform', ['angular-loading-bar', 'ngAnimate'])
+    .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = false;
+    }]);
 ;
 $(function () {
     /** Datatables **/

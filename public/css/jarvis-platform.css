@@ -7818,5 +7818,17 @@ select.mobile-device {
 .margin-20-top {
   margin-top: 20px;
 }
+.btn-margin-top {
+  margin-top: 25px;
+}
+.info-search .info-box-content {
+  padding: 0px 10px;
+}
+.info-search .info-box-content .row {
+  padding-top: 10px;
+}
+.info-search .info-box-content .row .form-group {
+  margin-bottom: 0px;
+}
 
 /*# sourceMappingURL=jarvis-platform.css.map */

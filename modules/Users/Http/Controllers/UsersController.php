@@ -40,7 +40,16 @@ class UsersController extends Controller {
 
     public function find(Request $request)
     {
-        return $this->responseWithPaginator(100, $this->model, new UserTransformer());
+        $model = $this->model->with('roles');
+        if($request->has('name'))
+        {
+            $model->where('name', 'LIKE', '%'.$request->get('name').'%');
+        }
+        if($request->has('email'))
+        {
+            $model->where('email', 'LIKE', '%'.$request->get('email').'%');
+        }
+        return $this->responseWithPaginator(100, $model, new UserTransformer());
     }
 
 }

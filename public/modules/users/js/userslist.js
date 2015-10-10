@@ -1,16 +1,38 @@
-JarvisPlatform.controller('UsersController', ['$scope', 'usersService', function($scope, usersService) {
+JarvisPlatform.controller('UsersController', ['$scope', 'usersService', '$anchorScroll', function($scope, usersService, $anchorScroll) {
     $scope.form = {};
     $scope.nextPage = 1;
-    $scope.NoResults = 1;
+    $scope.NoResults = 0;
+    $scope.hasMoreResults = false;
+    $scope.current_page = 1;
 
     $scope.searchUsers = function()
     {
+        $('#usersSearchButton').button('loading');
+        usersService.getUsers($scope.form, 1).success(handleUsersSuccess);
+    }
+
+    $scope.loadNext = function()
+    {
+        $('#usersSearchButton').button('loading');
         usersService.getUsers($scope.form, $scope.nextPage).success(handleUsersSuccess);
+    }
+
+    $scope.loadPrevious = function()
+    {
+        $('#usersSearchButton').button('loading');
+        usersService.getUsers($scope.form, $scope.current_page - 1).success(handleUsersSuccess);
+    }
+
+    $scope.reset = function()
+    {
+        $scope.form = {};
+        $scope.searchUsers();
     }
 
     function handleUsersSuccess(data, status)
     {
-        $scope.NoResults =1;
+        $scope.loading = 0;
+        $scope.NoResults = 1;
         if(data.meta.pagination.count > 0)
         {
             $scope.NoResults = 0;
@@ -24,9 +46,11 @@ JarvisPlatform.controller('UsersController', ['$scope', 'usersService', function
             $scope.current_page = data.meta.pagination.current_page;
             $scope.total_pages = data.meta.pagination.total_pages;
             $scope.total = data.meta.pagination.total;
+            console.log($scope.nextPage);
         }
         $scope.results = data.data;
-        console.log($scope.results);
+        $('#usersSearchButton').button('reset');
+        $anchorScroll('resultsBox');
     }
 }]);
 
@@ -43,6 +67,6 @@ JarvisPlatform.factory('usersService', ['$http', function($http){
                 },
                 data: form
             });
-        },
+        }
     };
 }]);

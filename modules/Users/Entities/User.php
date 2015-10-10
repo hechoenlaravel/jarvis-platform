@@ -34,13 +34,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function getRoles()
-    {
-        $str = "";
-        foreach($this->roles as $role)
-        {
-            $str = '<span class="label label-default">'.$role->display_name.'</span>';
-        }
-        return $str;
-    }
 }
