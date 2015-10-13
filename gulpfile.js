@@ -45,6 +45,7 @@ elixir(function (mix) {
         '../plugins/angular-loading-bar/angular-loading-bar.js',
         '../plugins/angular/angular-animate.js',
         "adminlte.js",
-        "app.js"
+        "app.js",
+        'app/services/fields.js'
     ]);
 });

@@ -17,7 +17,9 @@
         "zizaco/entrust": "1.4.*",
         "styde/html": "~1.0",
         "joselfonseca/laravel-api-tools": "1.2.*",
-        "lucadegasperi/oauth2-server-laravel": "^5.1@dev"
+        "lucadegasperi/oauth2-server-laravel": "^5.1@dev",
+        "webpatser/laravel-uuid": "2.*",
+        "laracasts/utilities": "~2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -21,10 +21,11 @@ class UserTransformer extends TransformerAbstract{
     {
         return [
             'id' => (int) $user->id,
+            'uuid' => $user->uuid,
             'name' => $user->name,
             'email' => $user->email,
             'links' => [
-                'edit' => route('users.edit', ['id' => $user->id])
+                'edit' => route('users.edit', ['id' => $user->uuid])
             ]
         ];
     }

@@ -14,15 +14,19 @@
             </aside>
             <div class="content-wrapper">
                 <section class="content-header">
+                    @yield('content-header')
+                </section>
+                <section class="content">
                     @yield('content')
                 </section>
             </div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    {{config('app.app_name')}} - <b>Version</b> {{config('app.version')}}
+                </div>
+                <strong>Copyright © {{date('Y')}}</strong>
+            </footer>
         </div>
-        <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                {{config('app.app_name')}} - <b>Version</b> {{config('app.version')}}
-            </div>
-        </footer>
         @include('partials.footer_meta')
     </body>
 </html>

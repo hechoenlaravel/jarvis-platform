@@ -41,6 +41,7 @@ class GenerateAdmin extends Command {
 	{
         $user = User::create([
             'name' => 'Administrador',
+            'uuid' => \Uuid::generate(4),
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin')
         ]);

@@ -18,6 +18,10 @@ $(function () {
         var $source = $('.slugable').find('.slug-source');
         $target.slugify($source);
     }
+    /** select2 **/
+    $('.select2').select2({
+        language : 'es'
+    });
     $(".wysihtml5").wysihtml5();
     $(".datepicker").datepicker();
 });

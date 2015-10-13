@@ -73,7 +73,13 @@ class GenerateDefaultRoleAndPerms extends Command {
             'description' => 'Puede activar o desactivar usuarios en el sistema',
             'module' => 'users'
         ]);
-        $admin->attachPermissions([$create, $edit, $delete, $activate]);
+        $config = Permission::create([
+            'name' => 'user-configuration',
+            'display_name' => 'Configuración de usuarios',
+            'description' => 'Puede modificar la configuración del modulo, como los campos de perfil y otros.',
+            'module' => 'users'
+        ]);
+        $admin->attachPermissions([$create, $edit, $delete, $activate, $config]);
 	}
 
 	/**

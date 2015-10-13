@@ -1,11 +1,18 @@
 <?php
 
 MenuPing::create('sidebar', function ($menu) {
+    $menu->enableOrdering();
     if(Auth::check()) {
-        $menu->route('dashboard', 'Dashboard', [], 0, ['icon' => 'fa fa-dashboard']);
+        $menu->route('dashboard', 'Dashboard', [], 1, ['icon' => 'fa fa-dashboard']);
         if (Auth::user()->ability('administrator', 'user-create,user-edit,user-delete,user-activate')) {
-            $menu->route('users.index', 'Usuarios', [], 1, ['icon' => 'fa fa-users']);
+            $menu->route('users.index', 'Usuarios', [], 2, ['icon' => 'fa fa-users']);
         }
+        $menu->dropdown('Configuraciones', function($sub){
+            $sub->route('users.config', 'Usuarios', [], 1, ['active' => function(){
+                $request = app('Illuminate\Http\Request');
+                return $request->is('config/users*');
+            }]);
+        }, 3, ['icon' => 'fa fa-cogs']);
     }
     $menu->setPresenter('JarvisPlatform\Presenters\SidebarMenuPresenter');
 });

@@ -11469,7 +11469,27 @@ $(function () {
         var $source = $('.slugable').find('.slug-source');
         $target.slugify($source);
     }
+    /** select2 **/
+    $('.select2').select2({
+        language : 'es'
+    });
     $(".wysihtml5").wysihtml5();
     $(".datepicker").datepicker();
 });
+JarvisPlatform.factory('fieldsService', ['$http', function($http) {
+    return {
+        getFields: function(entity)
+        {
+            return $http({
+                method: 'get',
+                url: GLOBALS.site_url+'/api/core/entity/'+entity+'/fields',
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            });
+        }
+    };
+}]);
+
+
 //# sourceMappingURL=all.js.map

@@ -132,12 +132,12 @@ return [
         Pingpong\Menus\MenusServiceProvider::class,
         Pingpong\Widget\WidgetServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-        Styde\Html\HtmlServiceProvider::class,
         Hechoenlaravel\JarvisFoundation\Providers\JarvisFoundationServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
         Joselfonseca\LaravelApiTools\LaravelApiToolsServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -199,6 +199,7 @@ return [
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+        'Uuid' => Webpatser\Uuid\Uuid::class,
 
     ],
 

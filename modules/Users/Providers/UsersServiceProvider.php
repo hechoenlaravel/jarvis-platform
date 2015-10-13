@@ -38,6 +38,8 @@ class UsersServiceProvider extends ServiceProvider
         ]);
         \Entrust::routeNeedsRoleOrPermission('users*', ['administrator'],
             ['user-create', 'user-edit', 'user-delete', 'user-activate'], null, false);
+        \Entrust::routeNeedsRoleOrPermission('config/users*', ['administrator'],
+            ['user-configuration'], null, false);
     }
 
     /**
