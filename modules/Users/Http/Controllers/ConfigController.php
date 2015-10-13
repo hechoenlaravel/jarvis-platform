@@ -20,7 +20,9 @@ class ConfigController extends Controller {
     {
         $entity = EntityModel::where('slug', 'users')->firstOrFail();
         $builder = new FormBuilder($entity);
-        return view('users::config.create')->with('form', $builder->render());
+        $builder->setReturnUrl(route('users.config'));
+        return view('users::config.create')
+            ->with('form', $builder->render());
     }
 	
 }
