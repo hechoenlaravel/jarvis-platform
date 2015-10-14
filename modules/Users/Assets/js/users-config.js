@@ -9,9 +9,4 @@ JarvisPlatform.controller('UsersSettingsController', ['$scope', 'fieldsService',
         });
     }
 
-    $scope.createField = function()
-    {
-
-    }
-
 }]);

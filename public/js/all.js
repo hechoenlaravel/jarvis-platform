@@ -11453,6 +11453,44 @@ var JarvisPlatform = angular.module('JarvisPlatform', ['angular-loading-bar', 'n
     .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
     }]);
+/** Compile directive to bring html from backend and have Angular evaluate it **/
+JarvisPlatform.directive('compile', function($compile) {
+    return function (scope, element, attrs) {
+        scope.$watch(
+            function (scope) {
+                return scope.$eval(attrs.compile);
+            },
+            function (value) {
+                element.html(value);
+                $compile(element.contents())(scope);
+            }
+        );
+    };
+});
+function HandleErrorResponse(data, code)
+{
+    if(code === 422)
+    {
+        swal({
+            title: "Hay un problema?",
+            text: "Problema de Validación<br />"+ parseValidationErrors(data.errors),
+            type: "error",
+            confirmButtonText: "Ok",
+            html: true
+        });
+    }
+}
+function parseValidationErrors(errors){
+    var str = '';
+    for(x in errors)
+    {
+        for(y in errors[x]){
+            str += errors[x][y]+'<br />';
+        }
+    }
+    return str;
+}
+
 ;
 $(function () {
     /** Datatables **/
@@ -11476,20 +11514,4 @@ $(function () {
     $(".wysihtml5").wysihtml5();
     $(".datepicker").datepicker();
 });
-JarvisPlatform.factory('fieldsService', ['$http', function($http) {
-    return {
-        getFields: function(entity)
-        {
-            return $http({
-                method: 'get',
-                url: GLOBALS.site_url+'/api/core/entity/'+entity+'/fields',
-                headers: {
-                    'Content-Type' : 'application/json'
-                }
-            });
-        }
-    };
-}]);
-
-
 //# sourceMappingURL=all.js.map
