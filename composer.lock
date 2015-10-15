@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95c06adac6a9d001a8f6ca334abb56b7",
-    "content-hash": "e3abd7b3ff650c2486cb008b916cbdb5",
+    "hash": "e130db844f3c8f736cc2bafbca217a42",
+    "content-hash": "ae384f7bcb45a7f3393499ecd7a9982c",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -613,21 +613,21 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c"
+                "reference": "532641f0a083b174cdfe837ee55d91eb3e249935"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/01dbcbc5cd0a913d751418e635434a18a2f2a75c",
-                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/532641f0a083b174cdfe837ee55d91eb3e249935",
+                "reference": "532641f0a083b174cdfe837ee55d91eb3e249935",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": ">=2.4,<2.6-dev",
-                "php": ">=5.3.2"
+                "doctrine/common": "~2.4",
+                "php": ">=5.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*",
@@ -642,7 +642,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -680,7 +680,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-09-16 16:29:33"
+            "time": "2015-10-12 14:54:45"
         },
         {
             "name": "doctrine/inflector",
@@ -896,7 +896,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/d933e0bdd79c149f51824dddb6e1d7f2edbc2ae9",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/000f4bc5afbc9e8194a7882dd1a5286e2e0e73eb",
                 "reference": "d933e0bdd79c149f51824dddb6e1d7f2edbc2ae9",
                 "shasum": ""
             },
@@ -4839,7 +4839,8 @@
     "stability-flags": {
         "hechoenlaravel/jarvis-foundation": 20,
         "barryvdh/laravel-debugbar": 20,
-        "lucadegasperi/oauth2-server-laravel": 20
+        "lucadegasperi/oauth2-server-laravel": 20,
+        "doctrine/dbal": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

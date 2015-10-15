@@ -19,7 +19,8 @@
         "joselfonseca/laravel-api-tools": "1.2.*",
         "lucadegasperi/oauth2-server-laravel": "^5.1@dev",
         "webpatser/laravel-uuid": "2.*",
-        "laracasts/utilities": "~2.0"
+        "laracasts/utilities": "~2.0",
+        "doctrine/dbal": "^2.6@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
