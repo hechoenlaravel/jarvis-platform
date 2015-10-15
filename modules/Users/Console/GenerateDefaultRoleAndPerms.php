@@ -79,7 +79,13 @@ class GenerateDefaultRoleAndPerms extends Command {
             'description' => 'Puede modificar la configuración del modulo, como los campos de perfil y otros.',
             'module' => 'users'
         ]);
-        $admin->attachPermissions([$create, $edit, $delete, $activate, $config]);
+        $profileFields = Permission::create([
+            'name' => 'user-profile-fields-edit',
+            'display_name' => 'Editar campos del perfil de usuario',
+            'description' => 'Administrat los campos del perfil de usuario',
+            'module' => 'users'
+        ]);
+        $admin->attachPermissions([$create, $edit, $delete, $activate, $config, $profileFields]);
 	}
 
 	/**

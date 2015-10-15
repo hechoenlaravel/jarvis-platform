@@ -15,6 +15,11 @@ JarvisPlatform.controller('createFieldController', ['$scope', 'fieldsService', f
             window.location.href = data.meta.return_url;
         }).error(HandleErrorResponse);
     }
+
+    if(window.isEdit == "1")
+    {
+        $scope.form = window.fieldForm.data;
+    }
 }]);
 /** Services **/
 JarvisPlatform.factory('fieldsService', ['$http', function($http) {

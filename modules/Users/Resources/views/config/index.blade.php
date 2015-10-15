@@ -44,8 +44,12 @@
                                     </td>
                                     <td>@{{ field.name }}</td>
                                     <td>@{{ field.description }}</td>
-                                    <td>@{{ field.type }}</td>
-                                    <td></td>
+                                    <td>@{{ field.fieldType.name }}</td>
+                                    <td>
+                                        @if(Auth::user()->can('user-profile-fields-edit'))
+                                            <a href="@{{ field.links.edit }}" data-toggle="tooltip" data-placement="top" title="Editar campo" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></a>
+                                        @endif
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
