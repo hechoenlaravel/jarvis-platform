@@ -15,12 +15,12 @@ elixir(function (mix) {
         '../plugins/select2/select2.css',
         '../plugins/timepicker/bootstrap-timepicker.min.css',
         '../plugins/sweetalert/dist/sweetalert.css',
-        '../plugins/angular-loading-bar/angular-loading-bar.css'
+        "../../components/angular-loading-bar/build/loading-bar.css",
     ]);
     mix.scripts([
         "../plugins/jquery.js",
         "../plugins/bootstrap.js",
-        "../plugins/angular/angular1.4.js",
+        "../../components/angular/angular.js",
         "../plugins/datatables/jquery.dataTables.min.js",
         "../plugins/datatables/dataTables.bootstrap.js",
         "../plugins/bootstrapSelect/dist/js/bootstrap-select.js",
@@ -42,8 +42,8 @@ elixir(function (mix) {
         '../plugins/pace/pace.js',
         '../plugins/timepicker/bootstrap-timepicker.js',
         '../plugins/sweetalert/dist/sweetalert.min.js',
-        '../plugins/angular-loading-bar/angular-loading-bar.js',
-        '../plugins/angular/angular-animate.js',
+        "../../components/angular-animate/angular-animate.js",
+        "../../components/angular-loading-bar/build/loading-bar.js",
         "adminlte.js",
         "app.js"
     ]);

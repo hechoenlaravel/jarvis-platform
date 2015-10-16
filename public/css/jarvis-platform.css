@@ -7830,5 +7830,19 @@ select.mobile-device {
 .info-search .info-box-content .row .form-group {
   margin-bottom: 0px;
 }
+#loading-bar .bar {
+  background: #FFF;
+}
+#loading-bar .peg {
+  position: absolute;
+  width: 70px;
+  right: 0;
+  top: 0;
+  height: 2px;
+  opacity: .45;
+  -ms-box-shadow: #FFF 1px 0 6px 1px;
+  box-shadow: #FFF 1px 0 6px 1px;
+  border-radius: 100%;
+}
 
 /*# sourceMappingURL=jarvis-platform.css.map */
