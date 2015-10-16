@@ -1,7 +1,7 @@
 {
     "name": "hechoenlaravel/jarvis-platform",
     "description": "Platform for building modular applications",
-    "keywords": ["JarvisApp", "Laravel Framework", "business platform"],
+    "keywords": ["JarvisApp", "Laravel Framework", "Business Application Platform", "BAP"],
     "license" : "MIT",
     "type": "project",
     "require": {
@@ -17,6 +17,7 @@
         "zizaco/entrust": "1.4.*",
         "styde/html": "~1.0",
         "joselfonseca/laravel-api-tools": "1.2.*",
+        "joselfonseca/laravel-tactician" : "0.2.*",
         "lucadegasperi/oauth2-server-laravel": "^5.1@dev",
         "webpatser/laravel-uuid": "2.*",
         "laracasts/utilities": "~2.0",
@@ -26,8 +27,7 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1",
-        "joselfonseca/laravel-tactician" : "0.2.*"
+        "phpspec/phpspec": "~2.1"
     },
     "autoload": {
         "classmap": [
@@ -46,9 +46,9 @@
             "tests/TestCase.php"
         ],
         "psr-4": {
-            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src"
+            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
+            "Joselfonseca\\LaravelApiTools\\" : "packages/joselfonseca/laravel-api-tools/src"
         }
-
     },
     "scripts": {
         "post-install-cmd": [

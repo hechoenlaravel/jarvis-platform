@@ -48,6 +48,7 @@
                                     <td>
                                         @if(Auth::user()->can('user-profile-fields-edit'))
                                             <a href="@{{ field.links.edit }}" data-toggle="tooltip" data-placement="top" title="Editar campo" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></a>
+                                            <button ng-click="deleteField(field.id)" data-toggle="tooltip" data-placement="top" title="Eliminar campo" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
                                         @endif
                                     </td>
                                 </tr>

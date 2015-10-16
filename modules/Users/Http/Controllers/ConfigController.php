@@ -37,7 +37,8 @@ class ConfigController extends Controller {
         $builder->setReturnUrl(route('users.config'));
         $builder->setModel($field);
         JavaScript::put([
-            'entity_id' => $entity->id
+            'entity_id' => $entity->id,
+            'field_id' => $field->id
         ]);
         return view('users::config.edit')
             ->with('form', $builder->render());
