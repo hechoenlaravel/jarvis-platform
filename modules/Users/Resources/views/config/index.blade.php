@@ -40,7 +40,7 @@
                             <tbody>
                                 <tr ng-repeat="field in fields">
                                     <td>
-                                        <i class="fa fa-order"></i>
+                                        <i class="fa fa-sort"></i>
                                     </td>
                                     <td>@{{ field.name }}</td>
                                     <td>@{{ field.description }}</td>

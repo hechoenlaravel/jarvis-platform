@@ -16,6 +16,8 @@ elixir(function (mix) {
         '../plugins/timepicker/bootstrap-timepicker.min.css',
         '../plugins/sweetalert/dist/sweetalert.css',
         "../../components/angular-loading-bar/build/loading-bar.css",
+        "../../components/ng-sortable/dist/ng-sortable.css",
+        "../../components/angular-tablesort/tablesort.css",
     ]);
     mix.scripts([
         "../plugins/jquery.js",
@@ -44,6 +46,8 @@ elixir(function (mix) {
         '../plugins/sweetalert/dist/sweetalert.min.js',
         "../../components/angular-animate/angular-animate.js",
         "../../components/angular-loading-bar/build/loading-bar.js",
+        "../../components/ng-sortable/dist/ng-sortable.js",
+        "../../components/angular-tablesort/js/angular-tablesort.js",
         "adminlte.js",
         "app.js"
     ]);

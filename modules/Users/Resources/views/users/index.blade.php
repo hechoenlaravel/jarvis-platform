@@ -60,18 +60,18 @@
                             </div>
                         </div>
                         <div class="table-responsive" ng-hide="NoResults">
-                            <table class="table no-margin">
+                            <table class="table no-margin" ts-wrapper>
                                 <thead>
                                 <tr>
-                                    <th>User ID</th>
-                                    <th>Nombre</th>
+                                    <th ts-criteria="id">User ID</th>
+                                    <th ts-criteria="name|lowercase" ts-default>Nombre</th>
                                     <th>Email</th>
                                     <th>Roles</th>
                                     <th width="100"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr ng-repeat="user in results">
+                                <tr ng-repeat="user in results" ts-repeat>
                                     <td>@{{user.id}}</td>
                                     <td>@{{user.name}}</td>
                                     <td>@{{user.email}}</td>

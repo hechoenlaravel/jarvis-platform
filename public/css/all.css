@@ -4018,4 +4018,101 @@ body.stop-scrolling {
   100% { transform: rotate(360deg); transform: rotate(360deg); }
 }
 
+/* ************************************** */
+/* Mandatory CSS required for ng-sortable */
+/* ************************************** */
+
+.as-sortable-item, .as-sortable-placeholder {
+    display: block;
+}
+
+.as-sortable-item {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.as-sortable-item-handle {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.as-sortable-placeholder {
+}
+
+.as-sortable-drag {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.as-sortable-hidden {
+    display: none !important;
+}
+
+.as-sortable-un-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+th.tablesort-sortable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+table .tablesort-sortable:after{
+    content:"";
+    float:right;
+    margin-top:7px;
+    visibility:hidden;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+
+    border-top:none;
+    border-bottom:4px solid #000;
+}
+
+table .tablesort-desc:after{
+    border-top:4px solid #000;
+    border-bottom:none;
+}
+
+table .tablesort-asc,table .tablesort-desc{
+    background-color:rgba(141, 192, 219, 0.25);
+}
+
+table .tablesort-sortable:hover:after, table .tablesort-asc:after, table .tablesort-desc:after {
+    visibility:visible;
+}
+
+/*
+ * Styling for the table row shown in empty tables
+ */
+
+/* The row is always added as the first row in a table
+   Hide it by default */
+.showIfLast {
+    display: none;
+}
+
+/* Only show it if it is also the last row of the table. */
+.showIfLast:last-child {
+    display: table-row;
+}
+
+.showIfLast td {
+    text-align: center;
+}
+
+.showIfLast td:after {
+    content: "No data";
+}
+
 /*# sourceMappingURL=all.css.map */

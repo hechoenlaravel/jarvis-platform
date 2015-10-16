@@ -1,10 +1,9 @@
-JarvisPlatform.controller('UsersSettingsController', ['$scope', 'fieldsService', function($scope, fieldsService) {
+JarvisPlatform.controller('UsersSettingsController', ['$scope', 'fieldsService', function ($scope, fieldsService) {
 
     $scope.fields = [];
 
-    $scope.getFields = function()
-    {
-        fieldsService.getFields(window.entity_id).success(function(data){
+    $scope.getFields = function () {
+        fieldsService.getFields(window.entity_id).success(function (data) {
             $scope.fields = data.data;
         });
     }
@@ -20,7 +19,7 @@ JarvisPlatform.controller('UsersSettingsController', ['$scope', 'fieldsService',
                 confirmButtonText: "Si, Estoy segúro",
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false
-            }, function(){
+            }, function () {
                 fieldsService.deleteField(id).success(function (data) {
                     fieldsService.getFields(window.entity_id);
                     swal("Eliminado!", "Se ha eliminado el campo!", "success");

@@ -1,4 +1,4 @@
-var JarvisPlatform = angular.module('JarvisPlatform', ['angular-loading-bar', 'ngAnimate'])
+var JarvisPlatform = angular.module('JarvisPlatform', ['angular-loading-bar', 'ngAnimate', 'as.sortable', 'tableSort'])
     .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
     }]);
