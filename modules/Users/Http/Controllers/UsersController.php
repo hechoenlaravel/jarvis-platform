@@ -1,14 +1,17 @@
 <?php namespace Modules\Users\Http\Controllers;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Joselfonseca\LaravelApiTools\Exceptions\ApiModelNotFoundException;
 use Modules\Users\Entities\User;
 use Pingpong\Modules\Routing\Controller;
 use Modules\Users\Transformers\UserTransformer;
 use Joselfonseca\LaravelApiTools\Traits\ResponderTrait;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Hechoenlaravel\JarvisFoundation\EntityGenerator\EntityModel;
+use Hechoenlaravel\JarvisFoundation\UI\Field\EntityFieldsFormBuilder;
+use Joselfonseca\LaravelApiTools\Exceptions\ApiModelNotFoundException;
 
-class UsersController extends Controller {
+class UsersController extends Controller
+{
 
     use ResponderTrait;
 
@@ -18,16 +21,17 @@ class UsersController extends Controller {
     {
         $this->model = $model;
     }
-	
-	public function index()
-	{
+
+    public function index()
+    {
         $users = $this->model->count();
-		return view('users::users.index')->with('users', $users);
-	}
+        return view('users::users.index')->with('users', $users);
+    }
 
     public function create()
     {
-
+        $builder = new EntityFieldsFormBuilder(EntityModel::where('slug', 'users')->where('namespace', 'app')->first());
+        return view('users::users.create')->with('profileFields', $builder->render());
     }
 
     public function edit($id)
@@ -37,12 +41,11 @@ class UsersController extends Controller {
 
     public function destroy($id)
     {
-        try{
+        try {
             $user = $this->model->findOrFail($id);
             $user->delete();
             return $this->responseNoContent();
-        }catch (ModelNotFoundException $e)
-        {
+        } catch (ModelNotFoundException $e) {
             throw new ApiModelNotFoundException;
         }
     }
@@ -50,13 +53,11 @@ class UsersController extends Controller {
     public function find(Request $request)
     {
         $model = $this->model->with('roles');
-        if($request->has('name'))
-        {
-            $model->where('name', 'LIKE', '%'.$request->get('name').'%');
+        if ($request->has('name')) {
+            $model->where('name', 'LIKE', '%' . $request->get('name') . '%');
         }
-        if($request->has('email'))
-        {
-            $model->where('email', 'LIKE', '%'.$request->get('email').'%');
+        if ($request->has('email')) {
+            $model->where('email', 'LIKE', '%' . $request->get('email') . '%');
         }
         return $this->responseWithPaginator(100, $model, new UserTransformer());
     }
