@@ -48,6 +48,8 @@ elixir(function (mix) {
         "../../components/angular-loading-bar/build/loading-bar.js",
         "../../components/ng-sortable/dist/ng-sortable.js",
         "../../components/angular-tablesort/js/angular-tablesort.js",
+        "../../components/Sortable/Sortable.js",
+        "../../components/Sortable/ng-sortable.js",
         "adminlte.js",
         "app.js"
     ]);

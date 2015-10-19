@@ -37,7 +37,7 @@
                                 <th></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody ng-sortable="fieldsConfig">
                                 <tr ng-repeat="field in fields">
                                     <td>
                                         <i class="fa fa-sort"></i>

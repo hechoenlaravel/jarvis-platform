@@ -25,10 +25,12 @@ JarvisPlatform.controller('createFieldController', ['$scope', 'fieldsService', f
     if (window.isEdit == "1") {
         $scope.form = window.fieldForm.data;
     }
+
 }]);
 /** Services **/
 JarvisPlatform.factory('fieldsService', ['$http', function ($http) {
-    return {
+
+    service = {
         getFields: function (entity) {
             return $http({
                 method: 'get',
@@ -76,6 +78,57 @@ JarvisPlatform.factory('fieldsService', ['$http', function ($http) {
                     'Content-Type': 'application/json'
                 }
             });
+        },
+        fieldsList: function (entity_id, $scope)
+        {
+            service.getFields(entity_id).success(function (data) {
+                $scope.fields = data.data;
+                $scope.fieldsConfig = {
+                    group: 'ProfileFields',
+                    animation: 150,
+                    onSort: function (evt){
+                        $models = [];
+                        for(x in evt.models)
+                        {
+                            $models.push(evt.models[x].id);
+                        }
+                        service.reOrderFields($models);
+                    }
+                };
+            });
+        },
+        deleteFieldAction: function(entity_id, id, callback)
+        {
+            swal(
+                {
+                    title: "Esta segúro de eliminar el campo?",
+                    text: "Tenga en cuenta que si elimina el campo, cualquier información que este alojada ahí se borará y no podrá recuperarse",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Si, Estoy segúro",
+                    cancelButtonText: "Cancelar",
+                    closeOnConfirm: false
+                }, function () {
+                    service.deleteField(id).success(function (data) {
+                        swal("Eliminado!", "Se ha eliminado el campo!", "success");
+                        callback();
+                    }).error(HandleErrorResponse);
+                });
+        },
+        reOrderFields: function(items)
+        {
+            $http({
+                method: 'PUT',
+                url: GLOBALS.site_url + '/api/core/entity/' + window.entity_id + '/order-fields',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    items : items
+                }
+            }).error(HandleErrorResponse);
         }
     };
+    return service;
 }]);
