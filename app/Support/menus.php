@@ -5,7 +5,10 @@ MenuPing::create('sidebar', function ($menu) {
     if(Auth::check()) {
         $menu->route('dashboard', 'Dashboard', [], 1, ['icon' => 'fa fa-dashboard']);
         if (Auth::user()->ability('administrator', 'user-create,user-edit,user-delete,user-activate')) {
-            $menu->route('users.index', 'Usuarios', [], 2, ['icon' => 'fa fa-users']);
+            $menu->route('users.index', 'Usuarios', [], 2, ['icon' => 'fa fa-users', 'active' => function(){
+                $request = app('Illuminate\Http\Request');
+                return $request->is('users*');
+            }]);
         }
         $menu->dropdown('Configuraciones', function($sub){
             $sub->route('users.config', 'Usuarios', [], 1, ['active' => function(){

@@ -1,6 +1,7 @@
 <?php namespace Modules\Users\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
 use Pingpong\Modules\Routing\Controller;
 use Modules\Users\Transformers\UserTransformer;
@@ -31,7 +32,9 @@ class UsersController extends Controller
     public function create()
     {
         $builder = new EntityFieldsFormBuilder(EntityModel::where('slug', 'users')->where('namespace', 'app')->first());
-        return view('users::users.create')->with('profileFields', $builder->render());
+        return view('users::users.create')
+            ->with('roles', Role::all()->pluck('name', 'id')->toArray())
+            ->with('profileFields', $builder->render());
     }
 
     public function edit($id)

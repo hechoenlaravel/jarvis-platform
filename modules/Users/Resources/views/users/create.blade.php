@@ -13,34 +13,18 @@
     <div class="box">
         <div class="box-body">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-lg-6">
                     <h3>Información básica</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
                     {!! Field::text('name', ['label' => 'Nombre completo']) !!}
-                </div>
-                <div class="col-lg-6">
                     {!! Field::text('email', ['label' => 'Email']) !!}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
+                    {!! Field::select('roles[]', $roles, null, ['label' => 'Roles', 'class' => 'select2', 'multiple' => 'multiple']) !!}
                     {!! Field::password('password', ['label' => 'Contraseña']) !!}
+                    {!! Field::password('password_confirmation', ['label' => 'Confirmar Contraseña']) !!}
+                    <h3>Campos del perfil</h3>
+                    {!! $profileFields !!}
                 </div>
                 <div class="col-lg-6">
-                    {!! Field::password('password_confirmation', ['label' => 'Confirmar Contraseña']) !!}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Campos del perfil</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    {!! $profileFields !!}
+
                 </div>
             </div>
         </div>
