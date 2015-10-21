@@ -1,6 +1,7 @@
 <?php namespace Modules\Users\Http\Controllers;
 
 use Validator;
+use SweetAlert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Pingpong\Modules\Routing\Controller;
@@ -67,7 +68,7 @@ class AuthController extends Controller {
             $this->incrementLoginAttempts($request);
         }
 
-        \Alert::message($this->getFailedLoginMessage(), 'danger');
+        SweetAlert::error($this->getFailedLoginMessage(), 'Ups!')->autoclose(3500);
 
         return redirect($this->loginPath());
     }

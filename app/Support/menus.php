@@ -27,7 +27,7 @@ MenuPing::create('navbar', function ($menu) {
 MenuPing::create('userMenu', function ($menu) {
     if(Auth::check()){
         $menu->dropdown(Auth::user()->name, function ($sub) {
-            $sub->url('#', 'Editar Perfil', ['icon' => 'fa fa-user']);
+            $sub->url('me/edit', 'Editar Perfil', ['icon' => 'fa fa-user']);
             $sub->divider();
             $sub->url('auth/logout', 'Cerrar Sesión', ['icon' => 'fa fa-sign-out']);
         });

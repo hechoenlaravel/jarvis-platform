@@ -25,6 +25,7 @@ Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
     Route::get('config/users', ['as' => 'users.config', 'uses' => 'ConfigController@index']);
     Route::get('config/users/create-field', ['as' => 'users.config.create', 'uses' => 'ConfigController@createField']);
     Route::get('config/users/edit-field/{id}', ['as' => 'users.config.edit', 'uses' => 'ConfigController@editField']);
+    Route::get('me/edit', ['as' => 'me.edit', 'uses' => 'MeController@edit']);
 });
 /** Module API Routes **/
 $api = app('Dingo\Api\Routing\Router');

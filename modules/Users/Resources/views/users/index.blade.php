@@ -67,7 +67,7 @@
                                     <th ts-criteria="name|lowercase" ts-default>Nombre</th>
                                     <th>Email</th>
                                     <th>Roles</th>
-                                    <th width="100"></th>
+                                    <th width="120"></th>
                                 </tr>
                                 </thead>
                                 <tbody>

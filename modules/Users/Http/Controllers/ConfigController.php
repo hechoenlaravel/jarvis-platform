@@ -6,9 +6,17 @@ use Pingpong\Modules\Routing\Controller;
 use Hechoenlaravel\JarvisFoundation\UI\Field\FormBuilder;
 use Hechoenlaravel\JarvisFoundation\EntityGenerator\EntityModel;
 
+/**
+ * Class ConfigController
+ * @package Modules\Users\Http\Controllers
+ */
 class ConfigController extends Controller {
-	
-	public function index()
+
+    /**
+     * List the users settings
+     * @return \Illuminate\View\View
+     */
+    public function index()
 	{
         $entity = EntityModel::where('slug', 'users')->firstOrFail();
         JavaScript::put([
@@ -17,6 +25,10 @@ class ConfigController extends Controller {
 		return view('users::config.index');
 	}
 
+    /**
+     * Create a field for the user
+     * @return $this
+     */
     public function createField()
     {
         $entity = EntityModel::where('slug', 'users')->firstOrFail();
@@ -29,6 +41,11 @@ class ConfigController extends Controller {
             ->with('form', $builder->render());
     }
 
+    /**
+     * Edit a field for the user
+     * @param $id
+     * @return $this
+     */
     public function editField($id)
     {
         $field = FieldModel::findOrFail($id);
