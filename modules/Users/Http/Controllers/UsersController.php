@@ -5,7 +5,9 @@ use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
 use Pingpong\Modules\Routing\Controller;
 use Modules\Users\Transformers\UserTransformer;
+use Modules\Users\Http\Requests\CreateUserRequest;
 use Joselfonseca\LaravelApiTools\Traits\ResponderTrait;
+use Hechoenlaravel\JarvisFoundation\Traits\EntryManager;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Hechoenlaravel\JarvisFoundation\EntityGenerator\EntityModel;
 use Hechoenlaravel\JarvisFoundation\UI\Field\EntityFieldsFormBuilder;
@@ -14,7 +16,7 @@ use Joselfonseca\LaravelApiTools\Exceptions\ApiModelNotFoundException;
 class UsersController extends Controller
 {
 
-    use ResponderTrait;
+    use ResponderTrait, EntryManager;
 
     protected $model;
 
@@ -35,6 +37,11 @@ class UsersController extends Controller
         return view('users::users.create')
             ->with('roles', Role::all()->pluck('name', 'id')->toArray())
             ->with('profileFields', $builder->render());
+    }
+
+    public function store(CreateUserRequest $request)
+    {
+
     }
 
     public function edit($id)

@@ -15,6 +15,7 @@ class InstallationTest extends TestCase
         $this->seeInDatabase('app_entities', ['slug' => 'users']);
         $this->seeInDatabase('app_roles', ['name' => 'administrator']);
         $this->seeInDatabase('app_users', ['email' => 'admin@admin.com']);
+        $this->visit('/')->seePageIs('auth/login');
     }
 
 }
