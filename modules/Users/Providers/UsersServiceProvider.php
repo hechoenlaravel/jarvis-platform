@@ -1,6 +1,8 @@
 <?php namespace Modules\Users\Providers;
 
+use Modules\Users\Entities\User;
 use Illuminate\Support\ServiceProvider;
+use Modules\Users\Observers\UserObserver;
 
 class UsersServiceProvider extends ServiceProvider
 {
@@ -22,6 +24,11 @@ class UsersServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerTranslations();
         $this->registerViews();
+        \Entrust::routeNeedsRoleOrPermission('users*', ['administrator'],
+            ['user-create', 'user-edit', 'user-delete', 'user-activate'], null, false);
+        \Entrust::routeNeedsRoleOrPermission('config/users*', ['administrator'],
+            ['user-configuration'], null, false);
+        User::observe(new UserObserver());
     }
 
     /**
@@ -36,10 +43,6 @@ class UsersServiceProvider extends ServiceProvider
             \Modules\Users\Console\GenerateAdmin::class,
             \Modules\Users\Console\GenerateDefaultRoleAndPerms::class,
         ]);
-        \Entrust::routeNeedsRoleOrPermission('users*', ['administrator'],
-            ['user-create', 'user-edit', 'user-delete', 'user-activate'], null, false);
-        \Entrust::routeNeedsRoleOrPermission('config/users*', ['administrator'],
-            ['user-configuration'], null, false);
     }
 
     /**

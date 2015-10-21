@@ -1,5 +1,7 @@
 <?php namespace Modules\Users\Http\Controllers;
 
+use DB;
+use SweetAlert;
 use Illuminate\Http\Request;
 use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
@@ -12,6 +14,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Hechoenlaravel\JarvisFoundation\EntityGenerator\EntityModel;
 use Hechoenlaravel\JarvisFoundation\UI\Field\EntityFieldsFormBuilder;
 use Joselfonseca\LaravelApiTools\Exceptions\ApiModelNotFoundException;
+use Hechoenlaravel\JarvisFoundation\Exceptions\EntryValidationException;
 
 class UsersController extends Controller
 {
@@ -41,9 +44,18 @@ class UsersController extends Controller
 
     public function store(CreateUserRequest $request)
     {
-        $user = User::create($request->all());
-        $user->roles()->sync($request->get('roles'));
-        $this->updateEntry($this->getEntity()->id, $user->id, ['input' => $request->all()]);
+        DB::beginTransaction();
+        try{
+            $user = User::create($request->all());
+            $user->roles()->sync($request->get('roles'));
+            $this->updateEntry($this->getEntity()->id, $user->id, ['input' => $request->all()]);
+            DB::commit();
+            SweetAlert::success('Se ha creado el Usuario', 'Excelente!')->autoclose(3500);
+        }catch (EntryValidationException $e)
+        {
+            DB::rollBack();
+            return back()->withInput($request->all())->withErrors($e->getErrors());
+        }
         return redirect()->route('users.index');
     }
 

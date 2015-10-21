@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5873799f8d8f9a33ca1140a9117d960b",
-    "content-hash": "541eec18ca979b2ec35f4b3326dfc211",
+    "hash": "7347898552f6c0ef7fb24dc0629ae149",
+    "content-hash": "ead4d4bfd1e89af2f8e42d7209651808",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -892,12 +892,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "f26aa79f4e78003c7de013be3446a04d9bc0ca2f"
+                "reference": "81ed292a22ff40a585bd5119ce71d9fdfd60732b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/f26aa79f4e78003c7de013be3446a04d9bc0ca2f",
-                "reference": "f26aa79f4e78003c7de013be3446a04d9bc0ca2f",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/81ed292a22ff40a585bd5119ce71d9fdfd60732b",
+                "reference": "81ed292a22ff40a585bd5119ce71d9fdfd60732b",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +929,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-19 18:30:43"
+            "time": "2015-10-21 17:30:55"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2097,16 +2097,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "7fe2420f8ad46aa08d5b317c92a148611d366d88"
+                "reference": "7647ac58c35ece044b939e01c85dbaa73ed26351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/7fe2420f8ad46aa08d5b317c92a148611d366d88",
-                "reference": "7fe2420f8ad46aa08d5b317c92a148611d366d88",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/7647ac58c35ece044b939e01c85dbaa73ed26351",
+                "reference": "7647ac58c35ece044b939e01c85dbaa73ed26351",
                 "shasum": ""
             },
             "require": {
@@ -2138,7 +2138,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-10-18 21:39:26"
+            "time": "2015-10-20 15:22:41"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -3548,6 +3548,52 @@
                 "tymon"
             ],
             "time": "2015-09-15 21:20:29"
+        },
+        {
+            "name": "uxweb/sweet-alert",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uxweb/sweet-alert.git",
+                "reference": "f2795eb414d26f74224fb9df40cba72be6b40a69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uxweb/sweet-alert/zipball/f2795eb414d26f74224fb9df40cba72be6b40a69",
+                "reference": "f2795eb414d26f74224fb9df40cba72be6b40a69",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "UxWeb\\SweetAlert\\": "src/SweetAlert/"
+                },
+                "files": [
+                    "src/SweetAlert/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Uziel Bueno",
+                    "email": "ux.webs@gmail.com"
+                }
+            ],
+            "description": "A simple PHP package to show Sweet Alerts with the Laravel Framework",
+            "keywords": [
+                "alert",
+                "laravel",
+                "sweet"
+            ],
+            "time": "2015-09-23 17:26:02"
         },
         {
             "name": "vlucas/phpdotenv",

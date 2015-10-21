@@ -3,3 +3,4 @@
 <script src="{{asset('vendor/jplatform/js/fields.js')}}"></script>
 @yield('scripts')
 @include('partials.foundation_modals')
+@include('sweet::alert')

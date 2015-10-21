@@ -138,6 +138,7 @@ return [
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
         Joselfonseca\LaravelApiTools\LaravelApiToolsServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -200,7 +201,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
         'Uuid' => Webpatser\Uuid\Uuid::class,
-
+        'SweetAlert' => UxWeb\SweetAlert\SweetAlert::class
     ],
 
     'version' => '1.0.0',
