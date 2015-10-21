@@ -10,6 +10,10 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+/**
+ * Class User
+ * @package Modules\Users\Entities
+ */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, EntrustUserTrait, SoftDeletes;
@@ -34,5 +38,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * filter by Uuid
+     * @param $query
+     * @param $uuid
+     * @return mixed
+     */
+    public function scopeByUuid($query, $uuid)
+    {
+        return $query->where('uuid', $uuid);
+    }
 
 }

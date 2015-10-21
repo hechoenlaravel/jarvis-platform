@@ -1,6 +1,7 @@
 <?php namespace Modules\Users\Http\Controllers;
 
 use DB;
+use Modules\Users\Http\Requests\UpdateUserRequest;
 use SweetAlert;
 use Illuminate\Http\Request;
 use Modules\Users\Entities\Role;
@@ -59,9 +60,40 @@ class UsersController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function edit($id)
+    public function edit($uuid)
     {
+        $user = User::byUuid($uuid)->firstOrFail();
+        $builder = new EntityFieldsFormBuilder($this->getEntity());
+        $builder->setRowId($user->id);
+        return view('users::users.edit')
+            ->with('user', $user)
+            ->with('roles', Role::all()->pluck('name', 'id')->toArray())
+            ->with('profileFields', $builder->render());
+    }
 
+    public function update(UpdateUserRequest $request, $uuid)
+    {
+        $user = User::byUuid($uuid)->firstOrFail();
+        if($user->email !== $request->get('email'))
+        {
+            $this->validate($request, [
+                'email' => 'unique:app_users,email'
+            ]);
+        }
+        DB::beginTransaction();
+        try{
+            $user->name = $request->get('email');
+            $user->email = $request->get('email');
+            $user->save();
+            $this->updateEntry($this->getEntity()->id, $user->id, ['input' => $request->all()]);
+            DB::commit();
+            SweetAlert::success('Se ha editado el Usuario', 'Excelente!')->autoclose(3500);
+        }catch(EntryValidationException $e)
+        {
+            DB::rollBack();
+            return back()->withInput($request->all())->withErrors($e->getErrors());
+        }
+        return redirect()->route('users.index');
     }
 
     public function destroy($id)
