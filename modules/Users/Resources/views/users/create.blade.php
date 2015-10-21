@@ -10,6 +10,7 @@
     <p>Agregue toda la información solicitada para crear el usuario</p>
 @endsection
 @section('content')
+    {!! Form::open(['route' => 'users.store']) !!}
     <div class="box">
         <div class="box-body">
             <div class="row">

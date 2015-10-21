@@ -33,7 +33,7 @@ class UsersController extends Controller
 
     public function create()
     {
-        $builder = new EntityFieldsFormBuilder(EntityModel::where('slug', 'users')->where('namespace', 'app')->first());
+        $builder = new EntityFieldsFormBuilder($this->getEntity());
         return view('users::users.create')
             ->with('roles', Role::all()->pluck('name', 'id')->toArray())
             ->with('profileFields', $builder->render());
@@ -41,7 +41,10 @@ class UsersController extends Controller
 
     public function store(CreateUserRequest $request)
     {
-
+        $user = User::create($request->all());
+        $user->roles()->sync($request->get('roles'));
+        $this->updateEntry($this->getEntity()->id, $user->id, ['input' => $request->all()]);
+        return redirect()->route('users.index');
     }
 
     public function edit($id)
@@ -70,6 +73,11 @@ class UsersController extends Controller
             $model->where('email', 'LIKE', '%' . $request->get('email') . '%');
         }
         return $this->responseWithPaginator(100, $model, new UserTransformer());
+    }
+
+    protected function getEntity()
+    {
+        return EntityModel::where('slug', 'users')->where('namespace', 'app')->first();
     }
 
 }

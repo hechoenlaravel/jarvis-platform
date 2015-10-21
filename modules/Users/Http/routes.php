@@ -21,7 +21,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Modules\Users\Http\Controllers
 /** Module Routes **/
 Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
 {
-	Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'create', 'edit']]);
+	Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'create', 'edit', 'store']]);
     Route::get('config/users', ['as' => 'users.config', 'uses' => 'ConfigController@index']);
     Route::get('config/users/create-field', ['as' => 'users.config.create', 'uses' => 'ConfigController@createField']);
     Route::get('config/users/edit-field/{id}', ['as' => 'users.config.edit', 'uses' => 'ConfigController@editField']);
