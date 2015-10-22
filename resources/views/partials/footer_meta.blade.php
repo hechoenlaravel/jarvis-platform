@@ -4,3 +4,6 @@
 @yield('scripts')
 @include('partials.foundation_modals')
 @include('sweet::alert')
+<!-- delete form for elements -->
+{!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE']) !!}
+{!! Form::close() !!}

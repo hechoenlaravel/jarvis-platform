@@ -43,7 +43,9 @@ class Install extends Command
         $this->call('key:generate');
         $this->info('Generating Entities for Modules');
         $this->call('users:generateEntities');
+        $this->info('Generating Default Roles');
         $this->call('users:generateDefaultRoles');
+        $this->info('Generating Default user');
         $this->call('users:generateAdmin');
         if(file_exists('.env')){
             $str = file_get_contents('.env');

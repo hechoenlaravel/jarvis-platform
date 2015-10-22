@@ -1,7 +1,9 @@
 <?php namespace Modules\Users\Providers;
 
+use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
 use Illuminate\Support\ServiceProvider;
+use Modules\Users\Observers\RoleObserver;
 use Modules\Users\Observers\UserObserver;
 
 class UsersServiceProvider extends ServiceProvider
@@ -28,7 +30,10 @@ class UsersServiceProvider extends ServiceProvider
             ['user-create', 'user-edit', 'user-delete', 'user-activate'], null, false);
         \Entrust::routeNeedsRoleOrPermission('config/users*', ['administrator'],
             ['user-configuration'], null, false);
+        \Entrust::routeNeedsRoleOrPermission('roles*', ['administrator'],
+            ['create-role', 'edit-role', 'delete-role', 'admin-permissions'], null, false);
         User::observe(new UserObserver());
+        Role::observe(new RoleObserver());
     }
 
     /**

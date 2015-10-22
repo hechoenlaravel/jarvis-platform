@@ -22,7 +22,8 @@
         "webpatser/laravel-uuid": "2.*",
         "laracasts/utilities": "~2.0",
         "doctrine/dbal": "^2.6@dev",
-        "uxweb/sweet-alert": "~1.1"
+        "uxweb/sweet-alert": "~1.1",
+        "yajra/laravel-datatables-oracle": "~5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

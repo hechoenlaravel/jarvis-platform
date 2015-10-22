@@ -85,7 +85,31 @@ class GenerateDefaultRoleAndPerms extends Command {
             'description' => 'Administrat los campos del perfil de usuario',
             'module' => 'users'
         ]);
-        $admin->attachPermissions([$create, $edit, $delete, $activate, $config, $profileFields]);
+        $createRoles = Permission::create([
+            'name' => 'create-role',
+            'display_name' => 'Crear Roles',
+            'description' => 'Puede crear roles en el sistema.',
+            'module' => 'users'
+        ]);
+        $editRoles = Permission::create([
+            'name' => 'edit-role',
+            'display_name' => 'Editar Roles',
+            'description' => 'Puede editar roles en el sistema.',
+            'module' => 'users'
+        ]);
+        $deleteRoles = Permission::create([
+            'name' => 'delete-role',
+            'display_name' => 'Eliminar Roles',
+            'description' => 'Puede eliminar roles en el sistema.',
+            'module' => 'users'
+        ]);
+        $adminPermissions = Permission::create([
+            'name' => 'admin-permissions',
+            'display_name' => 'Administrar permisos',
+            'description' => 'Puede adminisrar los permisos asignados a los roles.',
+            'module' => 'users'
+        ]);
+        $admin->attachPermissions([$create, $edit, $delete, $activate, $config, $profileFields, $createRoles, $editRoles, $deleteRoles, $adminPermissions]);
 	}
 
 	/**

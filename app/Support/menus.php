@@ -11,11 +11,19 @@ MenuPing::create('sidebar', function ($menu) {
             }]);
         }
         $menu->dropdown('Configuraciones', function($sub){
-            $sub->route('users.config', 'Usuarios', [], 1, ['active' => function(){
-                $request = app('Illuminate\Http\Request');
-                return $request->is('config/users*');
-            }]);
-        }, 3, ['icon' => 'fa fa-cogs']);
+            if (Auth::user()->ability('administrator', 'user-configuration')) {
+                $sub->route('users.config', 'Usuarios', [], 1, ['active' => function(){
+                    $request = app('Illuminate\Http\Request');
+                    return $request->is('config/users*');
+                }]);
+            }
+            if (Auth::user()->ability('administrator', 'create-role,edit-role,delete-role,admin-permissions')) {
+                $sub->route('roles.index', 'Roles y Permisos', [], 2, ['active' => function(){
+                    $request = app('Illuminate\Http\Request');
+                    return $request->is('roles*');
+                }]);
+            }
+        }, 3, ['icon' => 'fa fa-lock']);
     }
     $menu->setPresenter('JarvisPlatform\Presenters\SidebarMenuPresenter');
 });

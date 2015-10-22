@@ -1,16 +1,16 @@
 @extends('layouts.withsidebar')
 @section('pageTitle')
-    {{isset($pageTitle) ? $pageTitle : "Editar Usuario"}}
+    {{isset($pageTitle) ? $pageTitle : "Editar Perfil"}}
 @endsection
 @section('styles')
 
 @endsection
 @section('content-header')
-    <h2><i class="fa fa-user"></i> Editar usuario</h2>
-    <p>Agregue toda la información solicitada para crear el usuario</p>
+    <h2><i class="fa fa-user"></i> Editar Perfil</h2>
+    <p>Agregue toda la información solicitada para editar su perfil</p>
 @endsection
 @section('content')
-    {!! Form::open(['route' => ['users.update', $user->uuid], 'method' => 'PUT']) !!}
+    {!! Form::open(['route' => ['me.update'], 'method' => 'PUT']) !!}
     <div class="box">
         <div class="box-body">
             <div class="row">
@@ -18,7 +18,6 @@
                     <h3>Información básica</h3>
                     {!! Field::text('name', $user->name,['label' => 'Nombre completo']) !!}
                     {!! Field::text('email', $user->email, ['label' => 'Email']) !!}
-                    {!! Field::select('roles[]', $roles, $user->roles->pluck('id')->toArray(), ['label' => 'Roles', 'class' => 'select2', 'multiple' => 'multiple']) !!}
                     <h3>Campos del perfil</h3>
                     {!! $profileFields !!}
                 </div>

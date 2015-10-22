@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
 use Pingpong\Modules\Routing\Controller;
+use Modules\Users\Repositories\UserEntity;
 use Modules\Users\Transformers\UserTransformer;
 use Modules\Users\Http\Requests\UpdateUserRequest;
 use Modules\Users\Http\Requests\CreateUserRequest;
@@ -55,9 +56,9 @@ class UsersController extends Controller
      * Create form for User
      * @return $this
      */
-    public function create()
+    public function create(UserEntity $entity)
     {
-        $builder = new EntityFieldsFormBuilder($this->getEntity());
+        $builder = new EntityFieldsFormBuilder($entity->getEntity());
 
         return view('users::users.create')
             ->with('roles', Role::all()->pluck('name', 'id')->toArray())
@@ -69,13 +70,13 @@ class UsersController extends Controller
      * @param CreateUserRequest $request
      * @return $this|\Illuminate\Http\RedirectResponse
      */
-    public function store(CreateUserRequest $request)
+    public function store(CreateUserRequest $request, UserEntity $entity)
     {
         DB::beginTransaction();
         try {
             $user = User::create($request->all());
             $user->roles()->sync($request->get('roles'));
-            $this->updateEntry($this->getEntity()->id, $user->id, ['input' => $request->all()]);
+            $this->updateEntry($entity->getEntity()->id, $user->id, ['input' => $request->all()]);
             DB::commit();
             SweetAlert::success('Se ha creado el Usuario', 'Excelente!')->autoclose(3500);
         } catch (EntryValidationException $e) {
@@ -92,10 +93,10 @@ class UsersController extends Controller
      * @param $uuid
      * @return $this
      */
-    public function edit($uuid)
+    public function edit(UserEntity $entity, $uuid)
     {
         $user = User::byUuid($uuid)->firstOrFail();
-        $builder = new EntityFieldsFormBuilder($this->getEntity());
+        $builder = new EntityFieldsFormBuilder($entity->getEntity());
         $builder->setRowId($user->id);
 
         return view('users::users.edit')
@@ -110,7 +111,7 @@ class UsersController extends Controller
      * @param $uuid
      * @return $this|\Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateUserRequest $request, $uuid)
+    public function update(UpdateUserRequest $request, UserEntity $entity, $uuid)
     {
         $user = User::byUuid($uuid)->firstOrFail();
         if ($user->email !== $request->get('email')) {
@@ -120,15 +121,14 @@ class UsersController extends Controller
         }
         DB::beginTransaction();
         try {
-            $user->name = $request->get('email');
+            $user->name = $request->get('name');
             $user->email = $request->get('email');
             $user->save();
-            $this->updateEntry($this->getEntity()->id, $user->id, ['input' => $request->all()]);
+            $this->updateEntry($entity->getEntity()->id, $user->id, ['input' => $request->all()]);
             DB::commit();
             SweetAlert::success('Se ha editado el Usuario', 'Excelente!')->autoclose(3500);
         } catch (EntryValidationException $e) {
             DB::rollBack();
-
             return back()->withInput($request->all())->withErrors($e->getErrors());
         }
 
@@ -168,15 +168,6 @@ class UsersController extends Controller
         }
 
         return $this->responseWithPaginator(100, $model, new UserTransformer());
-    }
-
-    /**
-     * get the users entity for the form builder
-     * @return mixed
-     */
-    protected function getEntity()
-    {
-        return EntityModel::where('slug', 'users')->where('namespace', 'app')->first();
     }
 
 }
