@@ -80,7 +80,7 @@ class RolesController extends Controller
     public function getButtons($role)
     {
         $buttons = "";
-        if($role->name != 'administrator'){
+        if($role->name != 'administrador-del-sistema'){
             if(Auth::user()->can('edit-role'))
             {
                 $buttons .= '<a href="'.route('roles.edit', ['id' => $role->id]).'" data-toggle="tooltip" data-placement="top" title="Editar rol" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></a>&nbsp;';

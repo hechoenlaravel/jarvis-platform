@@ -26,11 +26,11 @@ class UsersServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerTranslations();
         $this->registerViews();
-        \Entrust::routeNeedsRoleOrPermission('users*', ['administrator'],
+        \Entrust::routeNeedsRoleOrPermission('users*', ['administrador-del-sistema'],
             ['user-create', 'user-edit', 'user-delete', 'user-activate'], null, false);
-        \Entrust::routeNeedsRoleOrPermission('config/users*', ['administrator'],
+        \Entrust::routeNeedsRoleOrPermission('config/users*', ['administrador-del-sistema'],
             ['user-configuration'], null, false);
-        \Entrust::routeNeedsRoleOrPermission('roles*', ['administrator'],
+        \Entrust::routeNeedsRoleOrPermission('roles*', ['administrador-del-sistema'],
             ['create-role', 'edit-role', 'delete-role', 'admin-permissions'], null, false);
         User::observe(new UserObserver());
         Role::observe(new RoleObserver());

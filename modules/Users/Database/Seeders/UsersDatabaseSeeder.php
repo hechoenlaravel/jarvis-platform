@@ -16,7 +16,7 @@ class UsersDatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
         factory(User::class, 300)->create()->each(function($u) {
-            $role = Role::where('name', 'user')->first();
+            $role = Role::where('name', 'usuario-nivel-1')->first();
             $u->attachRole($role);
         });
 	}

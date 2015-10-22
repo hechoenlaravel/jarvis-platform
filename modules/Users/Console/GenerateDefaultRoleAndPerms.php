@@ -40,12 +40,10 @@ class GenerateDefaultRoleAndPerms extends Command {
 	public function fire()
 	{
         $admin = Role::create([
-            'name' => 'administrator',
             'display_name' => 'Administrador del sistema',
             'description' => 'Administrador general del sistema'
         ]);
         $user = Role::create([
-            'name' => 'user',
             'display_name' => 'Usuario nivel 1',
             'description' => 'Usuario general del sistema'
         ]);

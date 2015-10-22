@@ -43,9 +43,9 @@ class GenerateAdmin extends Command {
             'name' => 'Administrador',
             'uuid' => \Uuid::generate(4),
             'email' => 'admin@admin.com',
-            'password' => bcrypt('admin')
+            'password' => 'admin'
         ]);
-        $adminRole = Role::where('name', 'administrator')->first();
+        $adminRole = Role::where('name', 'administrador-del-sistema')->first();
         $user->attachRole($adminRole);
 	}
 
