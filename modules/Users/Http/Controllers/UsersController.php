@@ -1,6 +1,7 @@
 <?php namespace Modules\Users\Http\Controllers;
 
 use DB;
+use Auth;
 use Module;
 use SweetAlert;
 use Illuminate\Http\Request;
@@ -8,6 +9,7 @@ use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
 use Pingpong\Modules\Routing\Controller;
 use Modules\Users\Repositories\UserEntity;
+use Joselfonseca\ImageManager\ImageManager;
 use Modules\Users\Transformers\UserTransformer;
 use Modules\Users\Http\Requests\UpdateUserRequest;
 use Modules\Users\Http\Requests\CreateUserRequest;
@@ -101,7 +103,7 @@ class UsersController extends Controller
 
         return view('users::users.edit')
             ->with('user', $user)
-            ->with('roles', Role::all()->pluck('name', 'id')->toArray())
+            ->with('roles', Role::all()->pluck('display_name', 'id')->toArray())
             ->with('profileFields', $builder->render());
     }
 
@@ -123,6 +125,10 @@ class UsersController extends Controller
         try {
             $user->name = $request->get('name');
             $user->email = $request->get('email');
+            if($request->has('active'))
+            {
+                $user->active = $request->get('active');
+            }
             $user->save();
             $this->updateEntry($entity->getEntity()->id, $user->id, ['input' => $request->all()]);
             DB::commit();
@@ -168,6 +174,21 @@ class UsersController extends Controller
         }
 
         return $this->responseWithPaginator(100, $model, new UserTransformer());
+    }
+
+    /**
+     * Update the user's avatar
+     * @param ImageManager $manager
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateAvatar(ImageManager $manager, $id)
+    {
+        $file = $manager->doUpload(0);
+        $user = User::find($id);
+        $user->avatar = $file->id;
+        $user->save();
+        return $this->simpleArray($file->toArray());
     }
 
 }

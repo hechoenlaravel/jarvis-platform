@@ -3,14 +3,20 @@
 namespace Modules\Users\Http\Controllers;
 
 use Auth;
+Use Module;
 use Datatables;
 use SweetAlert;
 use Illuminate\Http\Request;
 use Modules\Users\Entities\Role;
-use Modules\Users\Http\Requests\CreateRoleRequest;
 use yajra\Datatables\Html\Builder;
+use Modules\Users\Entities\Permission;
 use Pingpong\Modules\Routing\Controller;
+use Modules\Users\Http\Requests\CreateRoleRequest;
 
+/**
+ * Class RolesController
+ * @package Modules\Users\Http\Controllers
+ */
 class RolesController extends Controller
 {
 
@@ -20,11 +26,18 @@ class RolesController extends Controller
      */
     protected $htmlBuilder;
 
+    /**
+     * @param Builder $htmlBuilder
+     */
     public function __construct(Builder $htmlBuilder)
     {
         $this->htmlBuilder = $htmlBuilder;
     }
 
+    /**
+     * @param Request $request
+     * @return $this
+     */
     public function index(Request $request)
     {
         if ($request->ajax()) {
@@ -42,11 +55,18 @@ class RolesController extends Controller
         return view('users::roles.index')->with('html', $html);
     }
 
+    /**
+     * @return \BladeView|bool|\Illuminate\View\View
+     */
     public function create()
     {
         return view('users::roles.create');
     }
 
+    /**
+     * @param CreateRoleRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(CreateRoleRequest $request)
     {
         Role::create($request->all());
@@ -54,12 +74,21 @@ class RolesController extends Controller
         return redirect()->route('roles.index');
     }
 
+    /**
+     * @param $id
+     * @return $this
+     */
     public function edit($id)
     {
         $role = Role::findOrFail($id);
         return view('users::roles.edit')->with('role', $role);
     }
 
+    /**
+     * @param CreateRoleRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(CreateRoleRequest $request, $id)
     {
         $role = Role::findOrFail($id);
@@ -69,6 +98,10 @@ class RolesController extends Controller
         return redirect()->route('roles.index');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $role = Role::findOrFail($id);
@@ -77,6 +110,10 @@ class RolesController extends Controller
         return redirect()->route('roles.index');
     }
 
+    /**
+     * @param $role
+     * @return string
+     */
     public function getButtons($role)
     {
         $buttons = "";
@@ -89,9 +126,46 @@ class RolesController extends Controller
             {
                 $buttons .= '<a href="'.route('roles.destroy', ['id' => $role->id]).'" data-toggle="tooltip" data-placement="top" title="Eliminar rol" class="btn btn-sm btn-danger confirm-delete"><i class="fa fa-times"></i></a>&nbsp;';
             }
+            if(Auth::user()->can('admin-permissions'))
+            {
+                $buttons .= '<a href="'.route('roles.permissions', ['id' => $role->id]).'" data-toggle="tooltip" data-placement="top" title="Editar permisos" class="btn btn-sm btn-primary"><i class="fa fa-lock"></i></a>&nbsp;';
+            }
             return $buttons;
         }
         return $buttons;
+    }
+
+    /**
+     * @param $id
+     * @return $this
+     */
+    public function permissions($id)
+    {
+        $role = Role::findOrFail($id);
+        $permissions = Permission::all();
+        $modules = Module::all();
+        return view('users::roles.permissions')
+            ->with('modules', $modules)
+            ->with('permissions', $permissions)
+            ->with('role', $role);
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function permissionsUpdate(Request $request, $id)
+    {
+        $role = Role::findOrFail($id);
+        if($request->has('permissions'))
+        {
+            $role->perms()->sync($request->get('permissions'));
+        }else{
+            $role->perms()->sync([]);
+        }
+        SweetAlert::success('Se han actualizado los permisos del rol', 'Excelente!')->autoclose(3500);
+        return redirect()->back();
     }
 
 }

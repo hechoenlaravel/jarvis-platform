@@ -13,7 +13,7 @@ class InstallationTest extends TestCase
     {
         \Artisan::call('jplatform:install');
         $this->seeInDatabase('app_entities', ['slug' => 'users']);
-        $this->seeInDatabase('app_roles', ['name' => 'administrator']);
+        $this->seeInDatabase('app_roles', ['name' => 'administrador-del-sistema']);
         $this->seeInDatabase('app_users', ['email' => 'admin@admin.com']);
     }
 

@@ -1,5 +1,6 @@
 {
     "name": "Users",
+    "display_name": "Usuarios",
     "alias": "users",
     "description": "",
     "keywords": [],

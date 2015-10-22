@@ -30,7 +30,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'uuid'];
+    protected $fillable = ['name', 'email', 'password', 'uuid', 'active'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -48,6 +48,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function scopeByUuid($query, $uuid)
     {
         return $query->where('uuid', $uuid);
+    }
+
+    /**
+     * Get the Avatar URL
+     * @return string
+     */
+    public function getAvatarImageUrl()
+    {
+        return empty($this->avatar) ? asset('img/default-avatar.png') : route('media', ['id' => $this->avatar]);
     }
 
 }

@@ -22,7 +22,19 @@
                     {!! $profileFields !!}
                 </div>
                 <div class="col-lg-6">
-
+                    <h3>Foto de perfil</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img src="{{$user->getAvatarImageUrl()}}" id="profileAvatar" class="img-circle profile-image" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="container-upload">
+                                <button type="button" class="btn btn-primary" id="pickfiles" data-url="{{url('users/'.$user->id.'/avatar')}}" data-token="{{csrf_token()}}" data-loading-text="Subiendo imagen">Cambiar imagen de perfil</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,5 +44,5 @@
     </div>
 @endsection
 @section('scripts')
-
+    <script src="{{asset('modules/users/js/update-profile.js')}}"></script>
 @endsection

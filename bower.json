@@ -23,6 +23,7 @@
     "angular-animate": "~1.4.7",
     "angular-loading-bar": "~0.8.0",
     "angular-tablesort": "~1.1.0",
-    "Sortable": "~1.4.1"
+    "Sortable": "~1.4.1",
+    "ng-flow": "~2"
   }
 }

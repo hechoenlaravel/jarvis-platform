@@ -18,6 +18,7 @@
         "styde/html": "~1.0",
         "joselfonseca/laravel-api-tools": "1.2.*",
         "joselfonseca/laravel-tactician" : "0.2.*",
+        "joselfonseca/image-manager" : "2.1.*",
         "lucadegasperi/oauth2-server-laravel": "^5.1@dev",
         "webpatser/laravel-uuid": "2.*",
         "laracasts/utilities": "~2.0",

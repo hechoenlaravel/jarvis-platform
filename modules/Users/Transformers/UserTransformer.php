@@ -24,6 +24,10 @@ class UserTransformer extends TransformerAbstract{
             'uuid' => $user->uuid,
             'name' => $user->name,
             'email' => $user->email,
+            'active' => [
+                'bool' => (bool)$user->active,
+                'formatted' => ((bool)$user->active) ? "Activo" : "Inactivo"
+            ],
             'links' => [
                 'edit' => route('users.edit', ['id' => $user->uuid])
             ]

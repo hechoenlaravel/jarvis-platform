@@ -13,6 +13,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Modules\Users\Http\Controllers
 Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
 {
 	Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'create', 'edit', 'store', 'update']]);
+    Route::post('users/{id}/avatar', 'UsersController@updateAvatar');
     Route::group(['prefix' => 'config'], function(){
         Route::get('users', ['as' => 'users.config', 'uses' => 'ConfigController@index']);
         Route::get('users/create-field', ['as' => 'users.config.create', 'uses' => 'ConfigController@createField']);
@@ -21,6 +22,8 @@ Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
     Route::resource('roles', 'RolesController');
     Route::get('me/edit', ['as' => 'me.edit', 'uses' => 'ProfileController@edit']);
     Route::put('me/edit', ['as' => 'me.update', 'uses' => 'ProfileController@update']);
+    Route::get('roles/{id}/permissions', ['as' => 'roles.permissions', 'uses' => 'RolesController@permissions']);
+    Route::put('roles/{id}/update-permissions', ['as' => 'roles.permissions.update', 'uses' => 'RolesController@permissionsUpdate']);
 });
 /** Module API Routes **/
 $api = app('Dingo\Api\Routing\Router');

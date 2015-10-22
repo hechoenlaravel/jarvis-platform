@@ -7844,5 +7844,9 @@ select.mobile-device {
   box-shadow: #FFF 1px 0 6px 1px;
   border-radius: 100%;
 }
+.profile-image {
+  width: 150px;
+  height: 150px;
+}
 
 /*# sourceMappingURL=jarvis-platform.css.map */

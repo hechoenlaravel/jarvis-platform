@@ -6,6 +6,6 @@ $factory->define(\Modules\Users\Entities\User::class, function (Faker\Generator 
         'uuid' => Uuid::generate(4),
         'email' => $faker->email,
         'password' => '11235813**',
-        'remember_token' => str_random(10),
+        'remember_token' => bcrypt(str_random(10)),
     ];
 });

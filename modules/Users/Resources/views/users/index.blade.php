@@ -63,10 +63,11 @@
                             <table class="table no-margin" ts-wrapper>
                                 <thead>
                                 <tr>
-                                    <th ts-criteria="id">User ID</th>
+                                    <th ts-criteria="id">ID de usuario</th>
                                     <th ts-criteria="name|lowercase" ts-default>Nombre</th>
                                     <th>Email</th>
                                     <th>Roles</th>
+                                    <th>Estado</th>
                                     <th width="120"></th>
                                 </tr>
                                 </thead>
@@ -78,6 +79,7 @@
                                     <td>
                                         <span class="label label-primary" ng-repeat="role in user.roles.data">@{{role.display_name}}</span>
                                     </td>
+                                    <td>@{{user.active.formatted}}</td>
                                     <td>
                                         @if(Auth::user()->can('user-edit'))
                                             <a href="@{{user.links.edit}}" data-toggle="tooltip" data-placement="top" title="Editar usuario" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></a>

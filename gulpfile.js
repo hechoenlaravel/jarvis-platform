@@ -50,6 +50,7 @@ elixir(function (mix) {
         "../../components/angular-tablesort/js/angular-tablesort.js",
         "../../components/Sortable/Sortable.js",
         "../../components/Sortable/ng-sortable.js",
+        "../../components/ng-flow/dist/ng-flow-standalone.min.js",
         "adminlte.js",
         "app.js"
     ]);

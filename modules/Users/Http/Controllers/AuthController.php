@@ -8,10 +8,17 @@ use Pingpong\Modules\Routing\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+/**
+ * Class AuthController
+ * @package Modules\Users\Http\Controllers
+ */
 class AuthController extends Controller {
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    /**
+     * @var string
+     */
     protected $redirectPath = '/dashboard';
 
     /**
@@ -71,6 +78,22 @@ class AuthController extends Controller {
         SweetAlert::error($this->getFailedLoginMessage(), 'Ups!')->autoclose(3500);
 
         return redirect($this->loginPath());
+    }
+
+    /**
+     * @param $request
+     * @param $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function authenticated($request, $user)
+    {
+        if(!$user->active)
+        {
+            Auth::logout();
+            SweetAlert::error('El usuario esta inactivo, por favor contacta al administrador del sistema', 'Ups!')->autoclose(3500);
+            return redirect($this->loginPath());
+        }
+        return redirect()->intended($this->redirectPath());
     }
 	
 }

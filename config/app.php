@@ -140,6 +140,7 @@ return [
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         yajra\Datatables\DatatablesServiceProvider::class,
+        Joselfonseca\ImageManager\ImageManagerServiceProvider::class,
         /*
          * Application Service Providers...
          */
