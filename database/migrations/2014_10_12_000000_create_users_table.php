@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->boolean('active')->index()->default(1);
-            $table->integer('avatar')->unsigned()->index();
+            $table->integer('avatar')->unsigned()->index()->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

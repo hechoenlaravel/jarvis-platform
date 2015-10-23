@@ -11,10 +11,16 @@ class InstallationTest extends TestCase
 
     public function test_it_installs_the_platform()
     {
-        \Artisan::call('jplatform:install');
+        $this->installApp();
         $this->seeInDatabase('app_entities', ['slug' => 'users']);
         $this->seeInDatabase('app_roles', ['name' => 'administrador-del-sistema']);
         $this->seeInDatabase('app_users', ['email' => 'admin@admin.com']);
+    }
+
+    public function test_it_opens_auth_screen()
+    {
+        $this->installApp();
+        $this->visit('/')->seePageIs('auth/login');
     }
 
 }

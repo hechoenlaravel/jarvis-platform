@@ -22,4 +22,24 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         return $app;
     }
+
+    /**
+     * Set Up the Application, it will install it.
+     */
+    public function setUp()
+    {
+        parent::setUp();
+        if(!file_exists(storage_path('database.sqlite'))){
+            $database = fopen(storage_path('database.sqlite'), "w");
+            fclose($database);
+        }
+        $this->beforeApplicationDestroyed(function(){
+            unlink(storage_path('database.sqlite'));
+        });
+    }
+
+    public function installApp()
+    {
+        \Artisan::call('jplatform:install');
+    }
 }
