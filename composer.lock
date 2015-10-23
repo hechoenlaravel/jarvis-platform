@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d467ba92396faca1ca359975e4978412",
-    "content-hash": "272b5b3d07d4bd76572ae373282e5cea",
+    "hash": "4a8d52d831ac8503c0903537b15f9f61",
+    "content-hash": "6d36cea5fca98144221cfdca6b94c2af",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -946,16 +946,16 @@
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "dev-master",
+            "version": "0.1.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "0ddc7d1dd947c071840b8bd11f4282763aaf4d46"
+                "reference": "7a50a971d7ee7d65bdeabe39e9c14132702cdde2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/0ddc7d1dd947c071840b8bd11f4282763aaf4d46",
-                "reference": "0ddc7d1dd947c071840b8bd11f4282763aaf4d46",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/7a50a971d7ee7d65bdeabe39e9c14132702cdde2",
+                "reference": "7a50a971d7ee7d65bdeabe39e9c14132702cdde2",
                 "shasum": ""
             },
             "require": {
@@ -987,7 +987,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-21 19:41:55"
+            "time": "2015-10-23 21:09:18"
         },
         {
             "name": "intervention/image",
@@ -5352,7 +5352,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "hechoenlaravel/jarvis-foundation": 20,
         "barryvdh/laravel-debugbar": 20,
         "lucadegasperi/oauth2-server-laravel": 20,
         "doctrine/dbal": 20

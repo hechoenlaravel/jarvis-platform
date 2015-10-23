@@ -3,6 +3,12 @@
     "description": "Platform for building modular applications",
     "keywords": ["JarvisApp", "Laravel Framework", "Business Application Platform", "BAP"],
     "license" : "MIT",
+    "authors": [
+        {
+          "name": "Jose Luis Fonseca",
+          "email": "jose@ditecnologia.com"
+        }
+    ],
     "type": "project",
     "require": {
         "php": ">=5.5.9",
@@ -12,7 +18,7 @@
         "pingpong/menus": "~2.1",
         "pingpong/widget" : "~2.1",
         "pingpong/generators": "~2.1",
-        "hechoenlaravel/jarvis-foundation": "dev-master",
+        "hechoenlaravel/jarvis-foundation": "0.1.*",
         "barryvdh/laravel-debugbar": "^2.1@dev",
         "zizaco/entrust": "1.4.*",
         "styde/html": "~1.0",
