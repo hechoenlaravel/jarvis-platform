@@ -5,18 +5,9 @@
 ## Que es esto?
 Starter kit para sistema de información usando [Admin LTE](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
 
-## Instalación
-
-Clone el repositorio, corra `composer install` para instalar todas las dependencias y luego migre la base de datos usando `php artisan migrate`. por último corra `php artisan jplatform:install` para completar la instalación.
-
-## Uso
-
-Una vez el sistema esta instalado puede usar los siguientes datos para ingresar 
-
-```
-    Usuario: admin@admin.com
-    Contraseña: admin
-```
+## Documentación
+ 
+Puede visitar el [WIKI](https://github.com/hechoenlaravel/jarvis-platform/wiki) para mejor y mas detallada documentación.
 
 ## Que trae?
 
@@ -37,7 +28,4 @@ El Starter kit trae los siguientes componentes.
  - Sweet Alert -> [https://github.com/uxweb/sweet-alert](https://github.com/uxweb/sweet-alert)
  - Laravel DataTables -> [https://github.com/yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)
  
-## Documentación
- 
-Puede visitar el WIKI para mejor y mas detallada documentación. 
 
