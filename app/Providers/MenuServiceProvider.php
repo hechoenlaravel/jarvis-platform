@@ -36,7 +36,9 @@ class MenuServiceProvider extends ServiceProvider
         if(!MenuPing::instance('config'))
         {
             MenuPing::create('config', function ($menu) {
-                $menu->enableOrdering();
+                $menu->dropdown('Configuración', function($sub){
+
+                }, ['icon' => 'fa fa-cogs']);
                 $menu->setPresenter('JarvisPlatform\Presenters\SidebarMenuPresenter');
             });
         }

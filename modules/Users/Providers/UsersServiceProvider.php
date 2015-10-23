@@ -126,26 +126,28 @@ class UsersServiceProvider extends ServiceProvider
             return true;
         });
         $menuConfig = MenuPing::instance('config');
-        $menuConfig->route('users.config', 'Usuarios', [], 1, ['active' => function(){
-            $request = app('Illuminate\Http\Request');
-            return $request->is('config/users*');
-        }])->hideWhen(function(){
-            if(Auth::user()->ability('administrator', 'user-configuration')){
-                return false;
-            }
-            return true;
-        });
-        $menuConfig->route('roles.index', 'Roles y Permisos', [], 2, ['active' => function(){
-            $request = app('Illuminate\Http\Request');
-            return $request->is('roles*');
-        }])->hideWhen(function(){
-            if(Auth::user()->ability('administrator', 'create-role,edit-role,delete-role,admin-permissions')){
-                return false;
-            }
-            return true;
+        $menuConfig->whereTitle('Configuración', function($sub){
+            $sub->route('users.config', 'Usuarios', [], 1, ['active' => function(){
+                $request = app('Illuminate\Http\Request');
+                return $request->is('config/users*');
+            }])->hideWhen(function(){
+                if(Auth::user()->ability('administrator', 'user-configuration')){
+                    return false;
+                }
+                return true;
+            });
+            $sub->route('roles.index', 'Roles y Permisos', [], 2, ['active' => function(){
+                $request = app('Illuminate\Http\Request');
+                return $request->is('roles*');
+            }])->hideWhen(function(){
+                if(Auth::user()->ability('administrator', 'create-role,edit-role,delete-role,admin-permissions')){
+                    return false;
+                }
+                return true;
+            });
         });
         $menuUser = MenuPing::instance('userMenu');
-        $menuUser->dropdown('Mi Menu', function ($sub) {
+        $menuUser->dropdown('Menu de Usuario', function ($sub) {
             $sub->url('me/edit', 'Editar Perfil', ['icon' => 'fa fa-user']);
             $sub->divider();
             $sub->url('auth/logout', 'Cerrar Sesión', ['icon' => 'fa fa-sign-out']);
