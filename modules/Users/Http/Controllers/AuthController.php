@@ -17,11 +17,6 @@ class AuthController extends Controller {
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * @var string
-     */
-    protected $redirectPath = '/dashboard';
-
-    /**
      * Create a new authentication controller instance.
      *
      * @return void
@@ -29,6 +24,7 @@ class AuthController extends Controller {
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+        $this->redirectPath = env('URI_AFTER_LOGIN', '/dashboard');
     }
 
     /**
