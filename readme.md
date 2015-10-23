@@ -28,5 +28,12 @@ El Starter kit trae los siguientes componentes.
  - Pingpong Generators -> [http://sky.pingpong-labs.com/docs/2.1/generators](http://sky.pingpong-labs.com/docs/2.1/generators)
  - Styde HTML -> [https://github.com/StydeNet/html](https://github.com/StydeNet/html)
  - Jarvis Foundation -> [https://github.com/hechoenlaravel/jarvis-foundation](https://github.com/hechoenlaravel/jarvis-foundation)
- - Entrust -> [https://github.com/Zizaco/entrust](https://github.com/Zizaco/entrust)
  - Laravel Tactician -> [https://github.com/joselfonseca/laravel-tactician](https://github.com/joselfonseca/laravel-tactician)
+ - Laravel API Tools -> [https://github.com/joselfonseca/laravel-api-tools](https://github.com/joselfonseca/laravel-api-tools)
+ - Image Manager -> [https://github.com/joselfonseca/image-manager](https://github.com/joselfonseca/image-manager)
+ - Entrust -> [https://github.com/Zizaco/entrust](https://github.com/Zizaco/entrust)
+ - oAuth2 Server -> [https://github.com/lucadegasperi/oauth2-server-laravel](https://github.com/lucadegasperi/oauth2-server-laravel)
+ - Laravel UUID -> [https://github.com/webpatser/laravel-uuid](https://github.com/webpatser/laravel-uuid)
+ - Sweet Alert -> [https://github.com/uxweb/sweet-alert](https://github.com/uxweb/sweet-alert)
+ - Laravel DataTables -> [https://github.com/yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)
+

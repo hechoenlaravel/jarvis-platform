@@ -10,7 +10,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Modules\Users\Http\Controllers
     Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@getLogout']);
 });
 /** Module Routes **/
-Route::group(['namespace' => 'Modules\Users\Http\Controllers'], function()
+Route::group(['namespace' => 'Modules\Users\Http\Controllers', 'middleware' => ['auth']], function()
 {
 	Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'create', 'edit', 'store', 'update']]);
     Route::post('users/{id}/avatar', 'UsersController@updateAvatar');

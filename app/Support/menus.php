@@ -1,9 +1,11 @@
 <?php
 
-MenuPing::create('sidebar', function ($menu) {
+/**MenuPing::create('sidebar', function ($menu) {
     $menu->enableOrdering();
     if(Auth::check()) {
-        $menu->route('dashboard', 'Dashboard', [], 1, ['icon' => 'fa fa-dashboard']);
+        $menu->route('dashboard', 'Dashboard', [], 1, ['icon' => 'fa fa-dashboard'])->hideWhen(function(){
+            return true;
+        });
         if (Auth::user()->ability('administrator', 'user-create,user-edit,user-delete,user-activate')) {
             $menu->route('users.index', 'Usuarios', [], 2, ['icon' => 'fa fa-users', 'active' => function(){
                 $request = app('Illuminate\Http\Request');
@@ -41,4 +43,4 @@ MenuPing::create('userMenu', function ($menu) {
         });
     }
     $menu->setPresenter('Pingpong\Menus\Presenters\Bootstrap\NavbarPresenter');
-});
+});**/

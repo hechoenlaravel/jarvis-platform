@@ -6,7 +6,7 @@
 
 @endsection
 @section('content')
-    <div>Hello world</div>
+
 @endsection
 @section('scripts')
 

@@ -1,5 +1,7 @@
 <?php namespace Modules\Users\Providers;
 
+use Auth;
+use MenuPing;
 use Modules\Users\Entities\Role;
 use Modules\Users\Entities\User;
 use Illuminate\Support\ServiceProvider;
@@ -34,6 +36,7 @@ class UsersServiceProvider extends ServiceProvider
             ['create-role', 'edit-role', 'delete-role', 'admin-permissions'], null, false);
         User::observe(new UserObserver());
         Role::observe(new RoleObserver());
+        $this->setMenu();
     }
 
     /**
@@ -107,6 +110,48 @@ class UsersServiceProvider extends ServiceProvider
     public function provides()
     {
         return array();
+    }
+
+    protected function setMenu()
+    {
+        $menu = MenuPing::instance('sidebar');
+        $menu->route('users.index', 'Usuarios', [], 2, ['icon' => 'fa fa-users', 'active' => function(){
+            $request = app('Illuminate\Http\Request');
+            return $request->is('users*');
+        }])->hideWhen(function(){
+            if(Auth::user()->ability('administrator', 'user-create,user-edit,user-delete,user-activate'))
+            {
+                return false;
+            }
+            return true;
+        });
+        $menuConfig = MenuPing::instance('config');
+        $menuConfig->route('users.config', 'Usuarios', [], 1, ['active' => function(){
+            $request = app('Illuminate\Http\Request');
+            return $request->is('config/users*');
+        }])->hideWhen(function(){
+            if(Auth::user()->ability('administrator', 'user-configuration')){
+                return false;
+            }
+            return true;
+        });
+        $menuConfig->route('roles.index', 'Roles y Permisos', [], 2, ['active' => function(){
+            $request = app('Illuminate\Http\Request');
+            return $request->is('roles*');
+        }])->hideWhen(function(){
+            if(Auth::user()->ability('administrator', 'create-role,edit-role,delete-role,admin-permissions')){
+                return false;
+            }
+            return true;
+        });
+        $menuUser = MenuPing::instance('userMenu');
+        $menuUser->dropdown('Mi Menu', function ($sub) {
+            $sub->url('me/edit', 'Editar Perfil', ['icon' => 'fa fa-user']);
+            $sub->divider();
+            $sub->url('auth/logout', 'Cerrar Sesión', ['icon' => 'fa fa-sign-out']);
+        })->hideWhen(function(){
+            return Auth::guest();
+        });
     }
 
 }

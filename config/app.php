@@ -128,9 +128,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Pingpong\Modules\ModulesServiceProvider::class,
         Pingpong\Menus\MenusServiceProvider::class,
+        JarvisPlatform\Providers\MenuServiceProvider::class,
         Pingpong\Widget\WidgetServiceProvider::class,
+        Pingpong\Modules\ModulesServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Hechoenlaravel\JarvisFoundation\Providers\JarvisFoundationServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -141,9 +142,6 @@ return [
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         yajra\Datatables\DatatablesServiceProvider::class,
         Joselfonseca\ImageManager\ImageManagerServiceProvider::class,
-        /*
-         * Application Service Providers...
-         */
         JarvisPlatform\Providers\AppServiceProvider::class,
         JarvisPlatform\Providers\AuthServiceProvider::class,
         JarvisPlatform\Providers\EventServiceProvider::class,
@@ -196,8 +194,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Module' => Pingpong\Modules\Facades\Module::class,
         'MenuPing' => Pingpong\Menus\MenuFacade::class,
+        'Module' => Pingpong\Modules\Facades\Module::class,
         'Widget' => Pingpong\Widget\WidgetFacade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
