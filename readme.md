@@ -37,7 +37,7 @@ El Starter kit trae los siguientes componentes.
  - Sweet Alert -> [https://github.com/uxweb/sweet-alert](https://github.com/uxweb/sweet-alert)
  - Laravel DataTables -> [https://github.com/yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)
  
- ## Documentación
+## Documentación
  
- Puede visitar el WIKI para mejor y mas detallada documentación. 
+Puede visitar el WIKI para mejor y mas detallada documentación. 
 
