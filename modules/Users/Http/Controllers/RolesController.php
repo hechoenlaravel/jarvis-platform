@@ -32,6 +32,7 @@ class RolesController extends Controller
     public function __construct(Builder $htmlBuilder)
     {
         $this->htmlBuilder = $htmlBuilder;
+        $this->middleware('auth');
     }
 
     /**

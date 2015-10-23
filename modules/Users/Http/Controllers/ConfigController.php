@@ -13,6 +13,14 @@ use Hechoenlaravel\JarvisFoundation\EntityGenerator\EntityModel;
 class ConfigController extends Controller {
 
     /**
+     * Add middleware
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * List the users settings
      * @return \Illuminate\View\View
      */

@@ -40,6 +40,7 @@ class UsersController extends Controller
      */
     public function __construct(User $model)
     {
+        $this->middleware('auth');
         $this->model = $model;
     }
 
