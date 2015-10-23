@@ -3,11 +3,11 @@
 [![Build Status](https://travis-ci.org/hechoenlaravel/jarvis-platform.svg)](https://travis-ci.org/hechoenlaravel/jarvis-platform)
 
 ## Que es esto?
-Started kit para sistema de información usando [Admin LTE](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
+Starter kit para sistema de información usando [Admin LTE](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
 
 ## Instalación
 
-Clone el repositorio, corra `composer install` para intalar todas las dependencias y luego migre la base de datos usando `php artisan migrate`. por último corra `php artisan jplatform:install` para completar la instalación.
+Clone el repositorio, corra `composer install` para instalar todas las dependencias y luego migre la base de datos usando `php artisan migrate`. por último corra `php artisan jplatform:install` para completar la instalación.
 
 ## Uso
 
@@ -36,4 +36,8 @@ El Starter kit trae los siguientes componentes.
  - Laravel UUID -> [https://github.com/webpatser/laravel-uuid](https://github.com/webpatser/laravel-uuid)
  - Sweet Alert -> [https://github.com/uxweb/sweet-alert](https://github.com/uxweb/sweet-alert)
  - Laravel DataTables -> [https://github.com/yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)
+ 
+ ## Documentación
+ 
+ Puede visitar el WIKI para mejor y mas detallada documentación. 
 
