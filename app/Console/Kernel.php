@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \JarvisPlatform\Console\Commands\Inspire::class,
+        \JarvisPlatform\Console\Commands\Install::class
     ];
 
     /**

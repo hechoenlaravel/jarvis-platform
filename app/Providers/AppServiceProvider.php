@@ -2,6 +2,8 @@
 
 namespace JarvisPlatform\Providers;
 
+use Auth;
+use MenuPing;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $menu = MenuPing::instance('sidebar');
+        $menu->route('dashboard', 'Dashboard', [], 1, ['icon' => 'fa fa-dashboard'])->hideWhen(function(){
+            return Auth::guest();
+        });
     }
 
     /**

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4a8d52d831ac8503c0903537b15f9f61",
-    "content-hash": "6d36cea5fca98144221cfdca6b94c2af",
+    "hash": "6f2cc6c73a1fa0e9665959ab5709f4ab",
+    "content-hash": "965ee9a2139c50c995fe3732cfb5f409",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -617,12 +617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2c789aa829ea4e5c2d3df5beba8592869ef21395"
+                "reference": "c83a43c34878ce5427202bf1d4d92edfae11ac33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2c789aa829ea4e5c2d3df5beba8592869ef21395",
-                "reference": "2c789aa829ea4e5c2d3df5beba8592869ef21395",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c83a43c34878ce5427202bf1d4d92edfae11ac33",
+                "reference": "c83a43c34878ce5427202bf1d4d92edfae11ac33",
                 "shasum": ""
             },
             "require": {
@@ -680,7 +680,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-10-16 09:23:25"
+            "time": "2015-10-24 11:06:39"
         },
         {
             "name": "doctrine/inflector",
@@ -988,6 +988,49 @@
             ],
             "description": "Some foundation code for the Jarvis Platform",
             "time": "2015-10-23 21:09:18"
+        },
+        {
+            "name": "hechoenlaravel/jarvis-users",
+            "version": "1.0.0-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hechoenlaravel/jarvis-users.git",
+                "reference": "2e9eb4c46fef4942e3fd5be3fbb38496f57ee40e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/2e9eb4c46fef4942e3fd5be3fbb38496f57ee40e",
+                "reference": "2e9eb4c46fef4942e3fd5be3fbb38496f57ee40e",
+                "shasum": ""
+            },
+            "require": {
+                "lucadegasperi/oauth2-server-laravel": "^5.1@dev",
+                "styde/html": "~1.0",
+                "webpatser/laravel-uuid": "2.*",
+                "yajra/laravel-datatables-oracle": "~5.0",
+                "zizaco/entrust": "1.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Modules\\Users\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Jose Fonseca",
+                    "email": "jose@ditecnologia.com"
+                }
+            ],
+            "description": "Users and Permissions management for Jarvis Platform",
+            "keywords": [
+                "BAP",
+                "Business Application Platform",
+                "JarvisApp",
+                "Laravel Framework"
+            ],
+            "time": "2015-10-24 15:48:42"
         },
         {
             "name": "intervention/image",
@@ -5352,6 +5395,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "hechoenlaravel/jarvis-users": 20,
         "barryvdh/laravel-debugbar": 20,
         "lucadegasperi/oauth2-server-laravel": 20,
         "doctrine/dbal": 20

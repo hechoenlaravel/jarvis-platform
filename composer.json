@@ -19,6 +19,7 @@
         "pingpong/widget" : "~2.1",
         "pingpong/generators": "~2.1",
         "hechoenlaravel/jarvis-foundation": "0.1.*",
+        "hechoenlaravel/jarvis-users": "^1.0@dev",
         "barryvdh/laravel-debugbar": "^2.1@dev",
         "zizaco/entrust": "1.4.*",
         "styde/html": "~1.0",
@@ -56,7 +57,8 @@
         ],
         "psr-4": {
             "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
-            "Joselfonseca\\LaravelApiTools\\" : "packages/joselfonseca/laravel-api-tools/src"
+            "Joselfonseca\\LaravelApiTools\\" : "packages/joselfonseca/laravel-api-tools/src",
+            "Modules\\Users\\" : "modules/Users"
         }
     },
     "scripts": {
