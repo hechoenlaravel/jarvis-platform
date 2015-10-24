@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6f2cc6c73a1fa0e9665959ab5709f4ab",
-    "content-hash": "965ee9a2139c50c995fe3732cfb5f409",
+    "hash": "b17b38a6751c428802ed3159c062c034",
+    "content-hash": "ab22fd4fb06f522ef3daeac745cdc677",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -995,20 +995,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "2e9eb4c46fef4942e3fd5be3fbb38496f57ee40e"
+                "reference": "68df67243dee0bc650cc358074f128ea5e1d2667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/2e9eb4c46fef4942e3fd5be3fbb38496f57ee40e",
-                "reference": "2e9eb4c46fef4942e3fd5be3fbb38496f57ee40e",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/68df67243dee0bc650cc358074f128ea5e1d2667",
+                "reference": "68df67243dee0bc650cc358074f128ea5e1d2667",
                 "shasum": ""
-            },
-            "require": {
-                "lucadegasperi/oauth2-server-laravel": "^5.1@dev",
-                "styde/html": "~1.0",
-                "webpatser/laravel-uuid": "2.*",
-                "yajra/laravel-datatables-oracle": "~5.0",
-                "zizaco/entrust": "1.4.*"
             },
             "type": "library",
             "autoload": {
@@ -1030,7 +1023,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-24 15:48:42"
+            "time": "2015-10-24 15:56:23"
         },
         {
             "name": "intervention/image",
@@ -2023,16 +2016,16 @@
         },
         {
             "name": "lucadegasperi/oauth2-server-laravel",
-            "version": "dev-master",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucadegasperi/oauth2-server-laravel.git",
-                "reference": "f8bfaa975bb3819418c7fa636afb71b1dd07617b"
+                "reference": "3f85ba7e7131513243e32d1889e54221f744eb53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucadegasperi/oauth2-server-laravel/zipball/f8bfaa975bb3819418c7fa636afb71b1dd07617b",
-                "reference": "f8bfaa975bb3819418c7fa636afb71b1dd07617b",
+                "url": "https://api.github.com/repos/lucadegasperi/oauth2-server-laravel/zipball/3f85ba7e7131513243e32d1889e54221f744eb53",
+                "reference": "3f85ba7e7131513243e32d1889e54221f744eb53",
                 "shasum": ""
             },
             "require": {
@@ -2055,7 +2048,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -2086,7 +2079,7 @@
                 "oauth2",
                 "server"
             ],
-            "time": "2015-10-08 07:04:36"
+            "time": "2015-10-12 06:20:37"
         },
         {
             "name": "maximebf/debugbar",
@@ -5397,7 +5390,6 @@
     "stability-flags": {
         "hechoenlaravel/jarvis-users": 20,
         "barryvdh/laravel-debugbar": 20,
-        "lucadegasperi/oauth2-server-laravel": 20,
         "doctrine/dbal": 20
     },
     "prefer-stable": true,
