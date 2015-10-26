@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ea646c1c33aaa0649d3b212851fd8d49",
-    "content-hash": "31ea759298979d294bcc7e9048866bfe",
+    "hash": "2aef030cb069eb429647105976d0d012",
+    "content-hash": "8f3fbd5b80f9b704a573a99d2035f91a",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -613,21 +613,21 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "dev-master",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "c83a43c34878ce5427202bf1d4d92edfae11ac33"
+                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c83a43c34878ce5427202bf1d4d92edfae11ac33",
-                "reference": "c83a43c34878ce5427202bf1d4d92edfae11ac33",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/01dbcbc5cd0a913d751418e635434a18a2f2a75c",
+                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.4",
-                "php": ">=5.4"
+                "doctrine/common": ">=2.4,<2.6-dev",
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*",
@@ -642,7 +642,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -680,7 +680,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-10-24 11:06:39"
+            "time": "2015-09-16 16:29:33"
         },
         {
             "name": "doctrine/inflector",
@@ -946,30 +946,33 @@
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "0.1.0-alpha3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "695e30439a54f8ffdc9e38c9db04f73724c79089"
+                "reference": "e7f8f7f081646b4a01e5a9f279f87b04edf2eb01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/695e30439a54f8ffdc9e38c9db04f73724c79089",
-                "reference": "695e30439a54f8ffdc9e38c9db04f73724c79089",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/e7f8f7f081646b4a01e5a9f279f87b04edf2eb01",
+                "reference": "e7f8f7f081646b4a01e5a9f279f87b04edf2eb01",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/laravel-debugbar": "^2.1@dev",
-                "doctrine/dbal": "^2.6@dev",
+                "joselfonseca/image-manager": "2.1.*",
                 "joselfonseca/laravel-api-tools": "1.3.*",
                 "joselfonseca/laravel-tactician": "0.2.*",
+                "laracasts/utilities": "~2.0",
                 "php": ">=5.5.9",
                 "pingpong/generators": "~2.1",
                 "pingpong/menus": "~2.1",
                 "pingpong/modules": "~2.1",
                 "pingpong/sky": "~2.1",
                 "pingpong/widget": "~2.1",
-                "styde/html": "~1.0"
+                "styde/html": "~1.0",
+                "uxweb/sweet-alert": "~1.1",
+                "yajra/laravel-datatables-oracle": "~5.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
@@ -993,21 +996,30 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-26 17:00:42"
+            "time": "2015-10-26 17:45:03"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
-            "version": "1.0.0-alpha2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "5b42a390703ffd1c669db630f5457da0ba906959"
+                "reference": "e7675fbee29b13f2f93c3790fa4287d9a59d8c57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/5b42a390703ffd1c669db630f5457da0ba906959",
-                "reference": "5b42a390703ffd1c669db630f5457da0ba906959",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/e7675fbee29b13f2f93c3790fa4287d9a59d8c57",
+                "reference": "e7675fbee29b13f2f93c3790fa4287d9a59d8c57",
                 "shasum": ""
+            },
+            "require": {
+                "joselfonseca/image-manager": "2.1.*",
+                "joselfonseca/laravel-api-tools": "1.3.*",
+                "lucadegasperi/oauth2-server-laravel": "5.0.*",
+                "styde/html": "~1.0",
+                "webpatser/laravel-uuid": "2.*",
+                "yajra/laravel-datatables-oracle": "~5.0",
+                "zizaco/entrust": "1.4.*"
             },
             "type": "library",
             "autoload": {
@@ -1032,7 +1044,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-26 16:43:24"
+            "time": "2015-10-26 19:20:03"
         },
         {
             "name": "intervention/image",
@@ -5397,9 +5409,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "hechoenlaravel/jarvis-users": 20,
-        "barryvdh/laravel-debugbar": 20,
-        "doctrine/dbal": 20
+        "hechoenlaravel/jarvis-foundation": 20,
+        "hechoenlaravel/jarvis-users": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

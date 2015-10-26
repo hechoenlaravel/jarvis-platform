@@ -13,25 +13,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "pingpong/sky": "~2.1",
-        "pingpong/modules": "~2.1",
-        "pingpong/menus": "~2.1",
-        "pingpong/widget" : "~2.1",
-        "pingpong/generators": "~2.1",
-        "hechoenlaravel/jarvis-foundation": "0.1.*",
-        "hechoenlaravel/jarvis-users": "^1.0@dev",
-        "barryvdh/laravel-debugbar": "^2.1@dev",
-        "zizaco/entrust": "1.4.*",
-        "styde/html": "~1.0",
-        "joselfonseca/laravel-api-tools": "1.3.*",
-        "joselfonseca/laravel-tactician" : "0.2.*",
-        "joselfonseca/image-manager" : "2.1.*",
-        "lucadegasperi/oauth2-server-laravel": "5.0.*",
-        "webpatser/laravel-uuid": "2.*",
-        "laracasts/utilities": "~2.0",
-        "doctrine/dbal": "^2.6@dev",
-        "uxweb/sweet-alert": "~1.1",
-        "yajra/laravel-datatables-oracle": "~5.0"
+        "hechoenlaravel/jarvis-foundation": "dev-master",
+        "hechoenlaravel/jarvis-users": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
