@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b17b38a6751c428802ed3159c062c034",
-    "content-hash": "ab22fd4fb06f522ef3daeac745cdc677",
+    "hash": "ea646c1c33aaa0649d3b212851fd8d49",
+    "content-hash": "31ea759298979d294bcc7e9048866bfe",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "23672cbbe78278ff1fdb258caa0b1de7b5d0bc0c"
+                "reference": "3cc1de3b6c1b0d8a8972e9a2c2a26d74bb1706fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/23672cbbe78278ff1fdb258caa0b1de7b5d0bc0c",
-                "reference": "23672cbbe78278ff1fdb258caa0b1de7b5d0bc0c",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/3cc1de3b6c1b0d8a8972e9a2c2a26d74bb1706fb",
+                "reference": "3cc1de3b6c1b0d8a8972e9a2c2a26d74bb1706fb",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-09-09 11:39:27"
+            "time": "2015-10-26 09:10:50"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -946,23 +946,29 @@
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "0.1.0-alpha",
+            "version": "0.1.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "7a50a971d7ee7d65bdeabe39e9c14132702cdde2"
+                "reference": "695e30439a54f8ffdc9e38c9db04f73724c79089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/7a50a971d7ee7d65bdeabe39e9c14132702cdde2",
-                "reference": "7a50a971d7ee7d65bdeabe39e9c14132702cdde2",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/695e30439a54f8ffdc9e38c9db04f73724c79089",
+                "reference": "695e30439a54f8ffdc9e38c9db04f73724c79089",
                 "shasum": ""
             },
             "require": {
+                "barryvdh/laravel-debugbar": "^2.1@dev",
                 "doctrine/dbal": "^2.6@dev",
-                "joselfonseca/laravel-api-tools": "1.2.*",
+                "joselfonseca/laravel-api-tools": "1.3.*",
                 "joselfonseca/laravel-tactician": "0.2.*",
                 "php": ">=5.5.9",
+                "pingpong/generators": "~2.1",
+                "pingpong/menus": "~2.1",
+                "pingpong/modules": "~2.1",
+                "pingpong/sky": "~2.1",
+                "pingpong/widget": "~2.1",
                 "styde/html": "~1.0"
             },
             "require-dev": {
@@ -987,20 +993,20 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-23 21:09:18"
+            "time": "2015-10-26 17:00:42"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
-            "version": "1.0.0-alpha",
+            "version": "1.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "68df67243dee0bc650cc358074f128ea5e1d2667"
+                "reference": "5b42a390703ffd1c669db630f5457da0ba906959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/68df67243dee0bc650cc358074f128ea5e1d2667",
-                "reference": "68df67243dee0bc650cc358074f128ea5e1d2667",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/5b42a390703ffd1c669db630f5457da0ba906959",
+                "reference": "5b42a390703ffd1c669db630f5457da0ba906959",
                 "shasum": ""
             },
             "type": "library",
@@ -1010,6 +1016,9 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "Jose Fonseca",
@@ -1023,7 +1032,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-24 15:56:23"
+            "time": "2015-10-26 16:43:24"
         },
         {
             "name": "intervention/image",
@@ -1340,16 +1349,16 @@
         },
         {
             "name": "joselfonseca/laravel-api-tools",
-            "version": "1.2.11",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joselfonseca/laravel-api-tools.git",
-                "reference": "5c3bfcc6de8383a93776d55fa92da98415f951cb"
+                "reference": "f6b41ef18c5335028db1413351c5074062d38022"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joselfonseca/laravel-api-tools/zipball/5c3bfcc6de8383a93776d55fa92da98415f951cb",
-                "reference": "5c3bfcc6de8383a93776d55fa92da98415f951cb",
+                "url": "https://api.github.com/repos/joselfonseca/laravel-api-tools/zipball/f6b41ef18c5335028db1413351c5074062d38022",
+                "reference": "f6b41ef18c5335028db1413351c5074062d38022",
                 "shasum": ""
             },
             "require": {
@@ -1379,7 +1388,7 @@
                 }
             ],
             "description": "Some tools for Laravel API development, nothing really new, just wrapers and helper stuff",
-            "time": "2015-10-15 23:22:17"
+            "time": "2015-10-26 16:32:12"
         },
         {
             "name": "joselfonseca/laravel-tactician",

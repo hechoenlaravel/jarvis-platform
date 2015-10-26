@@ -23,7 +23,7 @@
         "barryvdh/laravel-debugbar": "^2.1@dev",
         "zizaco/entrust": "1.4.*",
         "styde/html": "~1.0",
-        "joselfonseca/laravel-api-tools": "1.2.*",
+        "joselfonseca/laravel-api-tools": "1.3.*",
         "joselfonseca/laravel-tactician" : "0.2.*",
         "joselfonseca/image-manager" : "2.1.*",
         "lucadegasperi/oauth2-server-laravel": "5.0.*",
@@ -54,6 +54,12 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
+        ],
+        "psr-4": {
+
+        },
+        "files": [
+            "app/helpers.php"
         ]
     },
     "scripts": {
