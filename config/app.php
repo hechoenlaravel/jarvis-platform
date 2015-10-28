@@ -146,6 +146,7 @@ return [
         JarvisPlatform\Providers\AuthServiceProvider::class,
         JarvisPlatform\Providers\EventServiceProvider::class,
         JarvisPlatform\Providers\RouteServiceProvider::class,
+        JarvisPlatform\Providers\ViewComposersServiceProvider::class,
 
     ],
     /*
