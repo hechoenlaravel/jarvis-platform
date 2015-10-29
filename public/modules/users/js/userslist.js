@@ -32,21 +32,21 @@ JarvisPlatform.controller('UsersController', ['$scope', 'usersService', '$anchor
     $scope.deleteUser = function(id)
     {
         swal(
-        {
-            title: "Esta segúro de eliminar el usuario?",
-            text: "",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Si, Estoy segúro",
-            cancelButtonText: "Cancelar",
-            closeOnConfirm: false
-        }, function(){
-            usersService.deleteUser(id).success(function(data){
-                swal("Eliminado!", "Se ha eliminado el usuario!", "success");
-                $scope.searchUsers();
-            }).error(HandleErrorResponse);
-        });
+            {
+                title: "Esta segúro de eliminar el usuario?",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Si, Estoy segúro",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false
+            }, function(){
+                usersService.deleteUser(id).success(function(data){
+                    swal("Eliminado!", "Se ha eliminado el usuario!", "success");
+                    $scope.searchUsers();
+                }).error(HandleErrorResponse);
+            });
     }
 
     function handleUsersSuccess(data, status)
@@ -66,6 +66,8 @@ JarvisPlatform.controller('UsersController', ['$scope', 'usersService', '$anchor
             $scope.current_page = data.meta.pagination.current_page;
             $scope.total_pages = data.meta.pagination.total_pages;
             $scope.total = data.meta.pagination.total;
+        }else{
+            $scope.total = 0;
         }
         $scope.results = data.data;
         $scope.totalUsers = data.meta.total;
