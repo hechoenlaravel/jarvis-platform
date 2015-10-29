@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "937196fbecbd2e515bae007b7a3f3e9f",
+    "hash": "b9df8710bb9e4b137c119a187517faa6",
     "content-hash": "a883876b36c1ff7deb8ea1bcdbc5fc51",
     "packages": [
         {
@@ -950,12 +950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
-                "reference": "dec7f8077ba2f91b610e7281ef85c60bfe47ff33"
+                "reference": "a65bcaa4a53555ca8dee6bba9257258f5ca18e53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/dec7f8077ba2f91b610e7281ef85c60bfe47ff33",
-                "reference": "dec7f8077ba2f91b610e7281ef85c60bfe47ff33",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/a65bcaa4a53555ca8dee6bba9257258f5ca18e53",
+                "reference": "a65bcaa4a53555ca8dee6bba9257258f5ca18e53",
                 "shasum": ""
             },
             "type": "library",
@@ -981,7 +981,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-29 20:12:05"
+            "time": "2015-10-29 20:34:19"
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
