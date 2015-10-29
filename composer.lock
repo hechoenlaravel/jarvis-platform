@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f20f98fe3eb166ebdb8b06382cb853f9",
+    "hash": "e8235a9e7de4d1f174369b1f528a9aef",
     "content-hash": "8f3fbd5b80f9b704a573a99d2035f91a",
     "packages": [
         {
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "3cc1de3b6c1b0d8a8972e9a2c2a26d74bb1706fb"
+                "reference": "8a1a99c37e9d5995f4ba14c5289f2e547ad7ba49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/3cc1de3b6c1b0d8a8972e9a2c2a26d74bb1706fb",
-                "reference": "3cc1de3b6c1b0d8a8972e9a2c2a26d74bb1706fb",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/8a1a99c37e9d5995f4ba14c5289f2e547ad7ba49",
+                "reference": "8a1a99c37e9d5995f4ba14c5289f2e547ad7ba49",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-10-26 09:10:50"
+            "time": "2015-10-29 12:07:22"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -950,12 +950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "02107da31f5bbe1b2222b544f5b5c25227dcbb3a"
+                "reference": "a243aad75f7595309b1c9e1664f03e8323351f61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/02107da31f5bbe1b2222b544f5b5c25227dcbb3a",
-                "reference": "02107da31f5bbe1b2222b544f5b5c25227dcbb3a",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/a243aad75f7595309b1c9e1664f03e8323351f61",
+                "reference": "a243aad75f7595309b1c9e1664f03e8323351f61",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-29 02:14:24"
+            "time": "2015-10-29 15:07:11"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
@@ -1004,12 +1004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "e4a3702547c020f3ea7ac9dcb85aebd373a845ea"
+                "reference": "d81b25276daa9e27a5bb1378ca6502df14c020e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/e4a3702547c020f3ea7ac9dcb85aebd373a845ea",
-                "reference": "e4a3702547c020f3ea7ac9dcb85aebd373a845ea",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/d81b25276daa9e27a5bb1378ca6502df14c020e0",
+                "reference": "d81b25276daa9e27a5bb1378ca6502df14c020e0",
                 "shasum": ""
             },
             "require": {
@@ -1044,7 +1044,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-29 05:06:09"
+            "time": "2015-10-29 15:04:31"
         },
         {
             "name": "intervention/image",
@@ -4088,16 +4088,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v5.11.11",
+            "version": "v5.11.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "a06835695cc88ab8bc945098156b4b3f7b6cd6bb"
+                "reference": "f27ed79325302ef9ce5ff252f00e44bb135e0b70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/a06835695cc88ab8bc945098156b4b3f7b6cd6bb",
-                "reference": "a06835695cc88ab8bc945098156b4b3f7b6cd6bb",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/f27ed79325302ef9ce5ff252f00e44bb135e0b70",
+                "reference": "f27ed79325302ef9ce5ff252f00e44bb135e0b70",
                 "shasum": ""
             },
             "require": {
@@ -4139,7 +4139,7 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2015-10-27 04:26:10"
+            "time": "2015-10-29 05:33:15"
         },
         {
             "name": "zizaco/entrust",

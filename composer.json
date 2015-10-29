@@ -39,7 +39,8 @@
             "tests/TestCase.php"
         ],
         "psr-4": {
-            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src"
+            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
+            "Modules\\Users\\": "modules/Users"
         },
         "files": [
             "app/helpers.php"
