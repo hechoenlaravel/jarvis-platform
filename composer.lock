@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "309c21253dd53dcc7bd808e61c77c61b",
-    "content-hash": "8f3fbd5b80f9b704a573a99d2035f91a",
+    "hash": "937196fbecbd2e515bae007b7a3f3e9f",
+    "content-hash": "a883876b36c1ff7deb8ea1bcdbc5fc51",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -945,6 +945,45 @@
             "time": "2015-08-15 19:32:36"
         },
         {
+            "name": "hechoenlaravel/jarvis-dashboard",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
+                "reference": "dec7f8077ba2f91b610e7281ef85c60bfe47ff33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/dec7f8077ba2f91b610e7281ef85c60bfe47ff33",
+                "reference": "dec7f8077ba2f91b610e7281ef85c60bfe47ff33",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Modules\\Dashboard\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jose Fonseca",
+                    "email": "jose@ditecnologia.com"
+                }
+            ],
+            "description": "Deashboard module for Jarvis Platform",
+            "keywords": [
+                "BAP",
+                "Business Application Platform",
+                "JarvisApp",
+                "Laravel Framework"
+            ],
+            "time": "2015-10-29 20:12:05"
+        },
+        {
             "name": "hechoenlaravel/jarvis-foundation",
             "version": "dev-master",
             "source": {
@@ -1004,12 +1043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "6dc86f27bbeac7759504f9ed918a3bf9263b9ed0"
+                "reference": "7d8abf65cb2f7b1c0053ae46a5cd58c79e461bad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/6dc86f27bbeac7759504f9ed918a3bf9263b9ed0",
-                "reference": "6dc86f27bbeac7759504f9ed918a3bf9263b9ed0",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/7d8abf65cb2f7b1c0053ae46a5cd58c79e461bad",
+                "reference": "7d8abf65cb2f7b1c0053ae46a5cd58c79e461bad",
                 "shasum": ""
             },
             "require": {
@@ -1044,7 +1083,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-29 17:02:25"
+            "time": "2015-10-29 20:12:28"
         },
         {
             "name": "intervention/image",
@@ -5387,7 +5426,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "hechoenlaravel/jarvis-foundation": 20,
-        "hechoenlaravel/jarvis-users": 20
+        "hechoenlaravel/jarvis-users": 20,
+        "hechoenlaravel/jarvis-dashboard": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

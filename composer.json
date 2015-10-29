@@ -14,7 +14,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "hechoenlaravel/jarvis-foundation": "dev-master",
-        "hechoenlaravel/jarvis-users": "dev-master"
+        "hechoenlaravel/jarvis-users": "dev-master",
+        "hechoenlaravel/jarvis-dashboard" : "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -37,7 +38,8 @@
         ],
         "psr-4": {
             "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
-            "Modules\\Users\\": "modules/Users"
+            "Modules\\Users\\": "modules/Users",
+            "Modules\\Dashboard\\": "modules/Dashboard"
         }
     },
     "scripts": {

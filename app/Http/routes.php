@@ -1,6 +1,5 @@
 <?php
 Route::get('/', function () {
-    return redirect()->to('home');
+    return redirect()->to(env('URI_AFTER_LOGIN', '/dashboard'));
 });
-Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 

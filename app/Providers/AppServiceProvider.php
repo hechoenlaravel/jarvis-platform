@@ -15,10 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $menu = MenuPing::instance('sidebar');
-        $menu->route('home', 'Home', [], 1, ['icon' => 'fa fa-home'])->hideWhen(function(){
-            return Auth::guest();
-        });
+
     }
 
     /**
