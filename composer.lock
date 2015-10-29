@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e8235a9e7de4d1f174369b1f528a9aef",
+    "hash": "309c21253dd53dcc7bd808e61c77c61b",
     "content-hash": "8f3fbd5b80f9b704a573a99d2035f91a",
     "packages": [
         {
@@ -950,12 +950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "43ec4989c5916a6b5588786c1bde8952ac7c5884"
+                "reference": "0d2532f099ce2d71e8bda94c966a40217ff6024b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/43ec4989c5916a6b5588786c1bde8952ac7c5884",
-                "reference": "43ec4989c5916a6b5588786c1bde8952ac7c5884",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/0d2532f099ce2d71e8bda94c966a40217ff6024b",
+                "reference": "0d2532f099ce2d71e8bda94c966a40217ff6024b",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-29 15:18:22"
+            "time": "2015-10-29 16:28:03"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
@@ -1004,12 +1004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "d81b25276daa9e27a5bb1378ca6502df14c020e0"
+                "reference": "0b04a7baa479de1b76571fe74d2905632d80aa62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/d81b25276daa9e27a5bb1378ca6502df14c020e0",
-                "reference": "d81b25276daa9e27a5bb1378ca6502df14c020e0",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/0b04a7baa479de1b76571fe74d2905632d80aa62",
+                "reference": "0b04a7baa479de1b76571fe74d2905632d80aa62",
                 "shasum": ""
             },
             "require": {
@@ -1044,7 +1044,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-29 15:04:31"
+            "time": "2015-10-29 16:27:51"
         },
         {
             "name": "intervention/image",

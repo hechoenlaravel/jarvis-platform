@@ -3,7 +3,6 @@
 <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 <link href="{{ asset('css/jarvis-platform.css') }}" rel="stylesheet">
 @yield('styles')
-
 <link href="{{asset('vendor/image-manager/css/imagemanager.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/image-manager/vendors/colorbox/colorbox.css')}}" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
