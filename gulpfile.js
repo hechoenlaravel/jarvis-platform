@@ -2,6 +2,7 @@ var elixir = require('laravel-elixir');
 
 /** Compile the less and JS! **/
 elixir(function (mix) {
+    mix.less("bootstrap/bootstrap.less");
     mix.less("jarvis-platform.less");
     mix.styles([
         '../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
