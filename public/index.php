@@ -21,6 +21,9 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
+Carbon\Carbon::setLocale('es');
+setlocale(LC_ALL, 'es_ES');
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
