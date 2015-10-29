@@ -128,25 +128,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Pingpong\Menus\MenusServiceProvider::class,
-        JarvisPlatform\Providers\MenuServiceProvider::class,
-        Pingpong\Widget\WidgetServiceProvider::class,
-        Pingpong\Modules\ModulesServiceProvider::class,
-        Zizaco\Entrust\EntrustServiceProvider::class,
         Hechoenlaravel\JarvisFoundation\Providers\JarvisFoundationServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
-        LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
-        LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
-        Joselfonseca\LaravelApiTools\LaravelApiToolsServiceProvider::class,
-        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
-        yajra\Datatables\DatatablesServiceProvider::class,
-        Joselfonseca\ImageManager\ImageManagerServiceProvider::class,
         JarvisPlatform\Providers\AppServiceProvider::class,
         JarvisPlatform\Providers\AuthServiceProvider::class,
         JarvisPlatform\Providers\EventServiceProvider::class,
         JarvisPlatform\Providers\RouteServiceProvider::class,
-        JarvisPlatform\Providers\ViewComposersServiceProvider::class,
 
     ],
     /*
@@ -195,18 +181,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'MenuPing' => Pingpong\Menus\MenuFacade::class,
-        'Module' => Pingpong\Modules\Facades\Module::class,
-        'Widget' => Pingpong\Widget\WidgetFacade::class,
-        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
-        'Uuid' => Webpatser\Uuid\Uuid::class,
-        'SweetAlert' => UxWeb\SweetAlert\SweetAlert::class,
-        'Datatables' => yajra\Datatables\Datatables::class,
     ],
 
-    'version' => '1.0.0',
-    'app_name' => 'Jarvis Platform'
+    'version' => env('APP_VERSION', '1.0.0'),
+    'app_name' => env('APP_NAME', 'Jarvis Platform')
 
 ];

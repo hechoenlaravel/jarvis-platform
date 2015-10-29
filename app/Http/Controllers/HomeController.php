@@ -3,7 +3,7 @@
 namespace JarvisPlatform\Http\Controllers;
 
 
-class DashboardController extends Controller
+class HomeController extends Controller
 {
 
     public function __construct()

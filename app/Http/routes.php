@@ -1,6 +1,6 @@
 <?php
 Route::get('/', function () {
-    return redirect()->to('dashboard');
+    return redirect()->to('home');
 });
-Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 

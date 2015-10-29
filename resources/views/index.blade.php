@@ -1,6 +1,6 @@
 @extends('layouts.withsidebar')
 @section('pageTitle')
-    {{isset($pageTitle) ? $pageTitle : "Dashboard"}}
+    {{isset($pageTitle) ? $pageTitle : "Home"}}
 @endsection
 @section('styles')
 

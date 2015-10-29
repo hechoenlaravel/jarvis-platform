@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'JarvisPlatform\Model' => 'JarvisPlatform\Policies\ModelPolicy',
+
     ];
 
     /**
@@ -25,7 +25,5 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(GateContract $gate)
     {
         parent::registerPolicies($gate);
-
-        //
     }
 }

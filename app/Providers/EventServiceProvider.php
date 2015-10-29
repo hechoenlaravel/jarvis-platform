@@ -13,9 +13,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'JarvisPlatform\Events\SomeEvent' => [
-            'JarvisPlatform\Listeners\EventListener',
-        ],
+
     ];
 
     /**

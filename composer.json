@@ -29,10 +29,7 @@
         "psr-4": {
             "JarvisPlatform\\": "app/",
             "Modules\\": "modules/"
-        },
-        "files": [
-          "app/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "classmap": [
@@ -41,10 +38,7 @@
         "psr-4": {
             "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
             "Modules\\Users\\": "modules/Users"
-        },
-        "files": [
-            "app/helpers.php"
-        ]
+        }
     },
     "scripts": {
         "post-install-cmd": [
