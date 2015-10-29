@@ -25,7 +25,16 @@ function HandleErrorResponse(data, code) {
             confirmButtonText: "Ok",
             html: true
         });
+        return false;
     }
+    swal({
+        title: "Hay un problema?",
+        text: "Al parecer ocurrio un problema al procesar la solicitud. Intente de nuevo",
+        type: "error",
+        confirmButtonText: "Ok",
+        html: true
+    });
+    return false;
 }
 function parseValidationErrors(errors) {
     var str = '';
