@@ -950,12 +950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "a243aad75f7595309b1c9e1664f03e8323351f61"
+                "reference": "43ec4989c5916a6b5588786c1bde8952ac7c5884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/a243aad75f7595309b1c9e1664f03e8323351f61",
-                "reference": "a243aad75f7595309b1c9e1664f03e8323351f61",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/43ec4989c5916a6b5588786c1bde8952ac7c5884",
+                "reference": "43ec4989c5916a6b5588786c1bde8952ac7c5884",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-10-29 15:07:11"
+            "time": "2015-10-29 15:18:22"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
