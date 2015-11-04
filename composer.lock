@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9df8710bb9e4b137c119a187517faa6",
-    "content-hash": "a883876b36c1ff7deb8ea1bcdbc5fc51",
+    "hash": "02e8c03acaefa8c9ea6870900ace7faa",
+    "content-hash": "36ef1b767e9a2475e65bdafb5ed6ab01",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -946,7 +946,7 @@
         },
         {
             "name": "hechoenlaravel/jarvis-dashboard",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
@@ -985,7 +985,7 @@
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
@@ -1039,7 +1039,7 @@
         },
         {
             "name": "hechoenlaravel/jarvis-users",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
@@ -5424,11 +5424,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "hechoenlaravel/jarvis-foundation": 20,
-        "hechoenlaravel/jarvis-users": 20,
-        "hechoenlaravel/jarvis-dashboard": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
