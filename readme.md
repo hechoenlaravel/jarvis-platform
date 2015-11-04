@@ -1,6 +1,9 @@
 # Jarvis Platform
 
 [![Build Status](https://travis-ci.org/hechoenlaravel/jarvis-platform.svg)](https://travis-ci.org/hechoenlaravel/jarvis-platform)
+[![Latest Stable Version](https://poser.pugx.org/hechoenlaravel/jarvis-platform/v/stable.svg)](https://packagist.org/packages/hechoenlaravel/jarvis-platform) 
+[![Total Downloads](https://poser.pugx.org/hechoenlaravel/jarvis-platform/downloads.svg)](https://packagist.org/packages/hechoenlaravel/jarvis-platform) 
+[![License](https://poser.pugx.org/hechoenlaravel/jarvis-platform/license.svg)](https://packagist.org/packages/hechoenlaravel/jarvis-platform)
 
 ## Que es esto?
 Starter kit para sistema de información usando [Admin LTE](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
