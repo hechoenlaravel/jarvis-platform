@@ -1043,12 +1043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "7d8abf65cb2f7b1c0053ae46a5cd58c79e461bad"
+                "reference": "193264c637cc656524b39f4726ce38d6bab174d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/7d8abf65cb2f7b1c0053ae46a5cd58c79e461bad",
-                "reference": "7d8abf65cb2f7b1c0053ae46a5cd58c79e461bad",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/193264c637cc656524b39f4726ce38d6bab174d1",
+                "reference": "193264c637cc656524b39f4726ce38d6bab174d1",
                 "shasum": ""
             },
             "require": {
@@ -1083,7 +1083,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-29 20:12:28"
+            "time": "2015-11-04 14:31:36"
         },
         {
             "name": "intervention/image",
