@@ -17,6 +17,7 @@ class CreateFlowsTable extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->string('module')->nullable()->index();
             $table->boolean('active')->default(0)->index();
             $table->timestamps();
             $table->softDeletes();
