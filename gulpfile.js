@@ -45,6 +45,7 @@ elixir(function (mix) {
         '../plugins/pace/pace.js',
         '../plugins/timepicker/bootstrap-timepicker.js',
         '../plugins/sweetalert/dist/sweetalert.min.js',
+        '../plugins/jsplumb/jsPlumb-2.0.4.js',
         "../../components/angular-animate/angular-animate.js",
         "../../components/angular-loading-bar/build/loading-bar.js",
         "../../components/ng-sortable/dist/ng-sortable.js",
