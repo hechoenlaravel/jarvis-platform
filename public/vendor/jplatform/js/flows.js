@@ -69,6 +69,37 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
         }).error(HandleErrorResponse);
     }
 
+    $scope.transitionModal = function(from, id)
+    {
+        $scope.transitionForm = {};
+        $scope.operationWithTransition = "Agregar ";
+        $scope.transitionForm.flow_id = $scope.flow.id;
+        $scope.transitionForm.from = from;
+        if(id !== undefined)
+        {
+            $scope.transitionForm.isEdit = true;
+            $scope.transitionForm.id = id;
+            $scope.operationWithTransition = "Editar ";
+        }
+        $('#transitionModal').modal('show');
+    }
+
+    $scope.saveTransition = function() {
+        $('#saveTransition').button('loading');
+        if($scope.transitionForm.isEdit === true) {
+            $m = flowService.updateTransition($scope.transitionForm, $scope.transitionForm.id);
+        }else{
+            $m = flowService.storeTransition($scope.transitionForm);
+        }
+        $m.success($scope.handleTransitionSuccess).error(HandleErrorResponse);
+    }
+
+    $scope.handleTransitionSuccess = function(data) {
+        $('#saveTransition').button('loading');
+        $('#transitionModal').modal('hide');
+        $scope.getSteps();
+    }
+
 }]);
 /** Services **/
 JarvisPlatform.factory('flowService', ['$http', function ($http) {
@@ -78,7 +109,7 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
         {
             return $http({
                 method: 'post',
-                url: GLOBALS.site_url + '/api/core/flow',
+                url: GLOBALS.site_url + '/api/core/flows',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -89,7 +120,7 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
         {
             return $http({
                 method: 'put',
-                url: GLOBALS.site_url + '/api/core/flow/'+id,
+                url: GLOBALS.site_url + '/api/core/flows/'+id,
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -100,7 +131,7 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
         {
             return $http({
                 method: 'post',
-                url: GLOBALS.site_url + '/api/core/step/',
+                url: GLOBALS.site_url + '/api/core/steps/',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -111,7 +142,7 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
         {
             return $http({
                 method: 'put',
-                url: GLOBALS.site_url + '/api/core/step/'+id,
+                url: GLOBALS.site_url + '/api/core/steps/'+id,
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -122,12 +153,34 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
         {
             return $http({
                 method: 'get',
-                url: GLOBALS.site_url + '/api/core/step?fow_id='+flow_id,
+                url: GLOBALS.site_url + '/api/core/steps?fow_id='+flow_id,
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
-        }
+        },
+        updateTransition : function (form, id)
+        {
+            return $http({
+                method: 'get',
+                url: GLOBALS.site_url + '/api/core/transitions/'+id,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: form
+            });
+        },
+        storeTransition : function (form)
+        {
+            return $http({
+                method: 'post',
+                url: GLOBALS.site_url + '/api/core/transitions',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data : form
+            });
+        },
     };
     return service;
 }]);

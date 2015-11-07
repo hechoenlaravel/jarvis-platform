@@ -17,6 +17,8 @@ JarvisPlatform.directive('compile', function ($compile) {
     };
 });
 function HandleErrorResponse(data, code) {
+
+    $('button').loading('reset');
     if (code === 422) {
         swal({
             title: "Hay un problema?",
