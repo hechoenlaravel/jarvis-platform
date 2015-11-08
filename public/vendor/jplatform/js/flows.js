@@ -96,7 +96,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
     }
 
     $scope.handleTransitionSuccess = function(data) {
-        $('#saveTransition').button('loading');
+        $('#saveTransition').button('reset');
         $('#transitionModal').modal('hide');
         $scope.getSteps();
     }
