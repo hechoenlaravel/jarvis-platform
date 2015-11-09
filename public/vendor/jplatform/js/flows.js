@@ -14,6 +14,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
     }
 
     $scope.saveFlow = function(){
+        $('#saveFlowButton').button('loading');
         if($scope.flow === null){
             $m = flowService.storeFlow($scope.flowForm);
             $m.success(function(data){
@@ -27,18 +28,21 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
 
     $scope.handleFlowSuccess = function(data)
     {
+        $('#saveFlowButton').button('reset');
         $scope.flow = data;
     }
 
-    $scope.stepModal = function(id)
+    $scope.stepModal = function(step)
     {
         $scope.stepForm = {};
         $scope.operationWithStep = "Agregar ";
         $scope.stepForm.flow_id = window.flow.id;
-        if(id !== undefined)
+        if(step !== undefined)
         {
             $scope.stepForm.isEdit = true;
-            $scope.stepForm.id = id;
+            $scope.stepForm.id = step.id;
+            $scope.stepForm.name = step.name;
+            $scope.stepForm.description = step.description;
             $scope.operationWithStep = "Editar ";
         }
         $('#stepModal').modal('show');
@@ -64,10 +68,33 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
 
     $scope.getSteps = function()
     {
-        $m = flowService.getSteps($scope.flow.id).success(function(data) {
-            $scope.steps = data.data;
-            $scope.initGraph(data.data);
-        }).error(HandleErrorResponse);
+        if($scope.flow != null)
+        {
+            $m = flowService.getSteps($scope.flow.id).success(function(data) {
+                $scope.steps = data.data;
+                $scope.initGraph(data.data);
+            }).error(HandleErrorResponse);
+        }
+    }
+
+    $scope.deleteStep = function(id)
+    {
+        swal(
+            {
+                title: "Esta segúro de eliminar el Paso?",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Si, Estoy segúro",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false
+            }, function(){
+                flowService.deleteStep(id).success(function(data){
+                    swal("Eliminado!", "Se ha eliminado el paso!", "success");
+                    $scope.getSteps();
+                }).error(HandleErrorResponse);
+            });
     }
 
     $scope.transitionModal = function(from, id)
@@ -101,6 +128,25 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
         $scope.getSteps();
     }
 
+    $scope.deleteTransition = function(id)
+    {
+        swal({
+                title: "Esta segúro de eliminar la transición?",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Si, Estoy segúro",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false
+            }, function(){
+                flowService.deleteTransition(id).success(function(data){
+                    swal("Eliminado!", "Se ha eliminado la transición!", "success");
+                    $scope.getSteps();
+                }).error(HandleErrorResponse);
+            });
+    }
+
     $scope.initGraph = function(data) {
         jsPlumb.ready(function() {
             // create elements
@@ -109,97 +155,8 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
                 html += '<div class="thumbnail node" id="'+data[d].id+'" style="position:absolute"><div class="ep" action="'+data[d].id+'"></div><div class="caption">'+data[d].name+'</div></div>';
             });
             $('#jsplump').html(html);
-            $scope.doGraph(data);
+            createJsPlumbWithData(data);
         });
-    }
-
-    $scope.doGraph = function(data)
-    {
-        var instance = jsPlumb.getInstance({
-            Endpoint: ["Dot", {radius: 2}],
-            Connector:"Flowchart",
-            HoverPaintStyle: {
-                strokeStyle: "#1e8151",
-                lineWidth: 1
-            },
-            ConnectionOverlays: [
-                [ "Arrow", {
-                    location: 1,
-                    id: "arrow",
-                    length: 14,
-                    foldback: 0.8
-                } ],
-                [ "Label", {id: "label", cssClass: "aLabel" }]
-            ],
-            Container: "jsplump"
-        });
-        instance.registerConnectionType("basic", {
-            anchor:"Continuous",
-            connector:"Flowchart"
-        });
-        var windows = jsPlumb.getSelector(".node");
-        var initNode = function(el) {
-            // initialise draggable elements.
-            instance.draggable(el);
-            instance.makeSource(el, {
-                filter: ".ep",
-                anchor: "Continuous",
-                connectorStyle: {
-                    strokeStyle: "#5c96bc",
-                    lineWidth: 2,
-                    outlineColor: "transparent",
-                    outlineWidth: 4
-                },
-                connectionType: "basic"
-            });
-
-            instance.makeTarget(el, {
-                dropOptions: {
-                    hoverClass: "dragHover"
-                },
-                anchor: "Continuous",
-                allowLoopback: true
-            });
-        }
-        // suspend drawing and initialise.
-        instance.batch(function () {
-            for (var i = 0; i < windows.length; i++) {
-                initNode(windows[i], true);
-            }
-            $(data).each(function(d) {
-                $(data[d].transitions.data).each(function(t){
-                    instance.connect({
-                        source: data[d].transitions.data[t].from.data.id.toString(),
-                        target: data[d].transitions.data[t].to.data.id.toString(),
-                        type : 'basic'
-                    });
-                });
-            });
-        });
-        // construct dagre graph from JsPlumb graph
-        var g = new dagre.graphlib.Graph();
-        g.setGraph({});
-        g.setDefaultEdgeLabel(function() { return {}; });
-        $(".node").each(function(i, el) {
-            var n = $(el);
-            g.setNode(n.attr('id'), {width: n.width(), height: n.height()});
-        });
-        var edges = instance.getAllConnections();
-        $(edges).each(function(e) {
-            var c = edges[e];
-            g.setEdge(c.source.id, c.target.id);
-        });
-        // calculate the layout (i.e. node positions)
-        dagre.layout(g);
-        // Applying the calculated layout
-        var totalHeigth = 0;
-        g.nodes().forEach(function(v) {
-            $("#" + v).css("left", g.node(v).x + "px");
-            $("#" + v).css("top", g.node(v).y + "px");
-            totalHeigth = totalHeigth + g.node(v).y;
-        });
-        $('#jsplump').css("height", totalHeigth + 'px');
-        instance.repaintEverything();
     }
 
 }]);
@@ -251,6 +208,16 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
                 data: form
             });
         },
+        deleteStep : function(id)
+        {
+            return $http({
+                method: 'delete',
+                url: GLOBALS.site_url + '/api/core/steps/'+id,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        },
         getSteps : function(flow_id)
         {
             return $http({
@@ -283,6 +250,106 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
                 data : form
             });
         },
+        deleteTransition : function(id)
+        {
+            return $http({
+                method: 'delete',
+                url: GLOBALS.site_url + '/api/core/transitions/'+id,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
     };
     return service;
 }]);
+
+function createJsPlumbWithData(data)
+{
+    var instance = jsPlumb.getInstance({
+        Endpoint: ["Dot", {radius: 2}],
+        Connector:"Flowchart",
+        HoverPaintStyle: {
+            strokeStyle: "#1e8151",
+            lineWidth: 1
+        },
+        ConnectionOverlays: [
+            [ "Arrow", {
+                location: 1,
+                id: "arrow",
+                length: 14,
+                foldback: 0.8
+            } ],
+            [ "Label", {id: "label", cssClass: "aLabel" }]
+        ],
+        Container: "jsplump"
+    });
+    instance.registerConnectionType("basic", {
+        anchor:"Continuous",
+        connector:"Flowchart"
+    });
+    var windows = jsPlumb.getSelector(".node");
+    var initNode = function(el) {
+        // initialise draggable elements.
+        instance.draggable(el);
+        instance.makeSource(el, {
+            filter: ".ep",
+            anchor: "Continuous",
+            connectorStyle: {
+                strokeStyle: "#5c96bc",
+                lineWidth: 1,
+                outlineColor: "transparent",
+                outlineWidth: 2
+            },
+            connectionType: "basic"
+        });
+
+        instance.makeTarget(el, {
+            dropOptions: {
+                hoverClass: "dragHover"
+            },
+            anchor: "Continuous",
+            allowLoopback: true
+        });
+    }
+    // suspend drawing and initialise.
+    instance.batch(function () {
+        for (var i = 0; i < windows.length; i++) {
+            initNode(windows[i], true);
+        }
+        $(data).each(function(d) {
+            $(data[d].transitions.data).each(function(t){
+                instance.connect({
+                    source: data[d].transitions.data[t].from.data.id.toString(),
+                    target: data[d].transitions.data[t].to.data.id.toString(),
+                    type : 'basic'
+                });
+            });
+        });
+    });
+    // construct dagre graph from JsPlumb graph
+    var g = new dagre.graphlib.Graph();
+    g.setGraph({});
+    g.setDefaultEdgeLabel(function() { return {}; });
+    $(".node").each(function(i, el) {
+        var n = $(el);
+        g.setNode(n.attr('id'), {width: n.width(), height: n.height()});
+    });
+    var edges = instance.getAllConnections();
+    $(edges).each(function(e) {
+        var c = edges[e];
+        g.setEdge(c.source.id, c.target.id);
+    });
+    // calculate the layout (i.e. node positions)
+    dagre.layout(g);
+    // Applying the calculated layout
+    var totalHeigth = 0;
+    g.nodes().forEach(function(v) {
+        $("#" + v).css("left", g.node(v).x + "px");
+        $("#" + v).css("top", g.node(v).y + "px");
+        totalHeigth = g.node(v).y;
+    });
+    $('#jsplump').css("height", (totalHeigth + 80) + 'px');
+    instance.repaintEverything();
+    instance.repaintEverything();
+}

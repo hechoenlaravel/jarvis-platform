@@ -55730,8 +55730,9 @@ JarvisPlatform.directive('compile', function ($compile) {
         );
     };
 });
+
 function HandleErrorResponse(data, code) {
-    $('button').loading('reset');
+    $('button').button('reset');
     if (code === 422) {
         swal({
             title: "Hay un problema?",
@@ -55753,14 +55754,13 @@ function HandleErrorResponse(data, code) {
 }
 function parseValidationErrors(errors) {
     var str = '';
-    for (x in errors) {
-        for (y in errors[x]) {
+    $.each(errors, function(x, t){
+        $.each(errors[x], function(y){
             str += errors[x][y] + '<br />';
-        }
-    }
+        });
+    });
     return str;
-}
-;
+};
 /** Datatables **/
 $.extend(true, $.fn.dataTable.defaults, {
     language: {
