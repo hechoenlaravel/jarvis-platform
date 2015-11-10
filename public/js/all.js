@@ -55735,8 +55735,28 @@ function HandleErrorResponse(data, code) {
     $('button').button('reset');
     if (code === 422) {
         swal({
-            title: "Hay un problema?",
+            title: "Hay un problema.",
             text: "Problema de Validación<br />" + parseValidationErrors(data.errors),
+            type: "error",
+            confirmButtonText: "Ok",
+            html: true
+        });
+        return false;
+    }
+    if (code === 401) {
+        swal({
+            title: "Hay un problema.",
+            text: "Problema de Autorización. Posiblemente no tienes permisos para esta acción o tu session expiro.",
+            type: "error",
+            confirmButtonText: "Ok",
+            html: true
+        });
+        return false;
+    }
+    if (code === 404) {
+        swal({
+            title: "Elemento no encontrado",
+            text: "No hemos encontrado lo que buscas, por favor intenta de nuevo.",
             type: "error",
             confirmButtonText: "Ok",
             html: true

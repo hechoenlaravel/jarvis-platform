@@ -30,6 +30,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
     {
         $('#saveFlowButton').button('reset');
         $scope.flow = data;
+        swal("Actualizado!", "Se ha actualizado el flujo!", "success");
     }
 
     $scope.stepModal = function(step)
@@ -222,7 +223,7 @@ JarvisPlatform.factory('flowService', ['$http', function ($http) {
         {
             return $http({
                 method: 'get',
-                url: GLOBALS.site_url + '/api/core/steps?fow_id='+flow_id+'&include=transitions',
+                url: GLOBALS.site_url + '/api/core/steps?flow_id='+flow_id+'&include=transitions',
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -347,7 +348,10 @@ function createJsPlumbWithData(data)
     g.nodes().forEach(function(v) {
         $("#" + v).css("left", g.node(v).x + "px");
         $("#" + v).css("top", g.node(v).y + "px");
-        totalHeigth = g.node(v).y;
+        if(g.node(v).y > totalHeigth)
+        {
+            totalHeigth = g.node(v).y;
+        }
     });
     $('#jsplump').css("height", (totalHeigth + 80) + 'px');
     instance.repaintEverything();
