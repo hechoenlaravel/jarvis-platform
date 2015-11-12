@@ -87,7 +87,65 @@ $(function () {
         language: 'es'
     });
     $(".wysihtml5").wysihtml5();
-    $(".datepicker").datepicker();
+    $(".datepicker").daterangepicker({
+        singleDatePicker: true,
+        format: 'MM/DD/YYYY'
+    });
+    var dateRangeLocale = {
+        "format": "MM/DD/YYYY",
+        "separator": " - ",
+        "applyLabel": "Aplicar",
+        "cancelLabel": "Cancelar",
+        "fromLabel": "Desde",
+        "toLabel": "Hasta",
+        "customRangeLabel": "Rango Personalizado",
+        "daysOfWeek": [
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mie",
+            "Jue",
+            "Vie",
+            "Sab"
+        ],
+        "monthNames": [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Deciembre"
+        ],
+        "firstDay": 1
+    };
+    $('.daterange-left').daterangepicker({
+        ranges: {
+            'Hoy': [moment(), moment()],
+            'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Este mes': [moment().startOf('month'), moment().endOf('month')],
+            'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        opens : "left",
+        format: 'MM/DD/YYYY',
+        locale : dateRangeLocale
+    });
+    $('.daterange-right').daterangepicker({
+        ranges: {
+            'Hoy': [moment(), moment()],
+            'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Este mes': [moment().startOf('month'), moment().endOf('month')],
+            'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        opens : "right",
+        format: 'MM/DD/YYYY',
+        locale : dateRangeLocale
+    });
     /** delete dialog **/
     $(document).on('click', '.confirm-delete', function (e) {
         e.preventDefault();

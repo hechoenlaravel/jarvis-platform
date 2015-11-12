@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @include('partials.meta')
     </head>
-    <body class="skin-blue sidebar-mini">
+    <body class="skin-purple sidebar-mini">
         <div class="wrapper">
             @include('partials.nav')
             <aside class="main-sidebar">
