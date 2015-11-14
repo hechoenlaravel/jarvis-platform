@@ -14,17 +14,18 @@ JarvisPlatform.controller('BoardController', ['$scope', 'BoardService', function
 
     $scope.searchTasks = function()
     {
-        console.log($scope.tasksParameters);
         $scope.getTasks();
     }
 
     $scope.getTasks = function()
     {
+        $('#tasksSearchButton').button('loading');
         BoardService.getTasks($scope.board.data, $scope.tasksParameters).success($scope.handleTasksQuerySuccess).error(HandleErrorResponse);
     }
 
     $scope.handleTasksQuerySuccess = function(data)
     {
+        $('#tasksSearchButton').button('reset');
         $scope.loading = 0;
         $scope.NoResults = 1;
         if(data.meta.pagination.count > 0)
