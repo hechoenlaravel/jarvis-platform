@@ -15,6 +15,7 @@ JarvisPlatform.controller('BoardController', ['$scope', 'BoardService', function
     $scope.searchTasks = function()
     {
         console.log($scope.tasksParameters);
+        $scope.getTasks();
     }
 
     $scope.getTasks = function()
