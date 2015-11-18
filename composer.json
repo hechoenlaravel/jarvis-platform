@@ -13,9 +13,9 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "hechoenlaravel/jarvis-foundation": "~1.0",
+        "hechoenlaravel/jarvis-foundation": "dev-master",
         "hechoenlaravel/jarvis-users": "dev-master",
-        "hechoenlaravel/jarvis-dashboard" : "~1.0"
+        "hechoenlaravel/jarvis-dashboard" : "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
