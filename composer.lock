@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bbddd5c93e32cd1fcc07ba81300add25",
+    "hash": "127d573c5ac525937a04121f89c2a598",
     "content-hash": "1fd15a8b43404df150167722b17abae9",
     "packages": [
         {
@@ -340,36 +340,37 @@
         },
         {
             "name": "dingo/api",
-            "version": "v1.0.0-beta2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dingo/api.git",
-                "reference": "6e33fecfd0a08aa9ce1c5bbc1d09999f85c1a185"
+                "reference": "05f7c3107cb85f767a8940946276c3bcd7b3cb30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dingo/api/zipball/6e33fecfd0a08aa9ce1c5bbc1d09999f85c1a185",
-                "reference": "6e33fecfd0a08aa9ce1c5bbc1d09999f85c1a185",
+                "url": "https://api.github.com/repos/dingo/api/zipball/05f7c3107cb85f767a8940946276c3bcd7b3cb30",
+                "reference": "05f7c3107cb85f767a8940946276c3bcd7b3cb30",
                 "shasum": ""
             },
             "require": {
                 "dingo/blueprint": "0.1.*",
                 "doctrine/annotations": "1.2.*",
-                "illuminate/routing": "5.1.*",
-                "illuminate/support": "5.1.*",
-                "league/fractal": "0.12.*",
+                "illuminate/routing": "~5.1",
+                "illuminate/support": "~5.1",
+                "league/fractal": ">=0.12.0",
                 "php": ">=5.5.9",
                 "phpdocumentor/reflection-docblock": "2.0.*"
             },
             "require-dev": {
-                "illuminate/auth": "5.1.*",
-                "illuminate/cache": "5.1.*",
-                "illuminate/console": "5.1.*",
-                "illuminate/database": "5.1.*",
-                "illuminate/events": "5.1.*",
-                "illuminate/filesystem": "5.1.*",
-                "illuminate/pagination": "5.1.*",
-                "laravel/lumen-framework": "5.1.*",
+                "illuminate/auth": "~5.1",
+                "illuminate/cache": "~5.1",
+                "illuminate/console": "~5.1",
+                "illuminate/database": "~5.1",
+                "illuminate/events": "~5.1",
+                "illuminate/filesystem": "~5.1",
+                "illuminate/log": "~5.1",
+                "illuminate/pagination": "~5.1",
+                "laravel/lumen-framework": "~5.1",
                 "lucadegasperi/oauth2-server-laravel": "5.0.*",
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0",
@@ -411,7 +412,7 @@
                 "laravel",
                 "restful"
             ],
-            "time": "2015-08-26 03:37:52"
+            "time": "2015-11-30 06:04:15"
         },
         {
             "name": "dingo/blueprint",
@@ -1149,12 +1150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
-                "reference": "0fe25bff3f699a83edab3477f0e4420176347064"
+                "reference": "3d4b7ef07455c2b061a3966bbf0a10cba0ff7a7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/0fe25bff3f699a83edab3477f0e4420176347064",
-                "reference": "0fe25bff3f699a83edab3477f0e4420176347064",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/3d4b7ef07455c2b061a3966bbf0a10cba0ff7a7f",
+                "reference": "3d4b7ef07455c2b061a3966bbf0a10cba0ff7a7f",
                 "shasum": ""
             },
             "type": "jarvis-platform-module",
@@ -1180,7 +1181,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-12-01 04:24:31"
+            "time": "2015-12-01 20:20:42"
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
@@ -1188,18 +1189,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "ed16825e11ebece8b9ae949ebdbeb28dfac8458d"
+                "reference": "db5b6181ea90c90ce7026026ae7e998370d5599d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/ed16825e11ebece8b9ae949ebdbeb28dfac8458d",
-                "reference": "ed16825e11ebece8b9ae949ebdbeb28dfac8458d",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/db5b6181ea90c90ce7026026ae7e998370d5599d",
+                "reference": "db5b6181ea90c90ce7026026ae7e998370d5599d",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/laravel-debugbar": "^2.1@dev",
                 "baum/baum": "~1.1",
                 "cviebrock/eloquent-sluggable": "3.1.*",
+                "hechoenlaravel/jarvis-ui": "dev-master",
                 "joselfonseca/image-manager": "2.1.*",
                 "joselfonseca/laravel-api-tools": "1.3.*",
                 "joselfonseca/laravel-tactician": "0.2.*",
@@ -1236,7 +1238,49 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-12-01 03:45:21"
+            "time": "2015-12-01 20:20:23"
+        },
+        {
+            "name": "hechoenlaravel/jarvis-ui",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hechoenlaravel/jarvis-ui.git",
+                "reference": "715684404a0e37b4fe7831b446fac50da3772e48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-ui/zipball/715684404a0e37b4fe7831b446fac50da3772e48",
+                "reference": "715684404a0e37b4fe7831b446fac50da3772e48",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hechoenlaravel\\JarvisPlatformUi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jose Fonseca",
+                    "email": "jose@ditecnologia.com"
+                }
+            ],
+            "description": "User Interface and assets for Jarvis Platform",
+            "keywords": [
+                "BAP",
+                "Business Application Platform",
+                "JarvisApp",
+                "Laravel Framework"
+            ],
+            "time": "2015-12-01 20:19:41"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
@@ -1244,12 +1288,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "af75adced021536a4da668c55d2185ae18621c42"
+                "reference": "f5d704b4478b8e409ca97e70580d0976007c07ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/af75adced021536a4da668c55d2185ae18621c42",
-                "reference": "af75adced021536a4da668c55d2185ae18621c42",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/f5d704b4478b8e409ca97e70580d0976007c07ae",
+                "reference": "f5d704b4478b8e409ca97e70580d0976007c07ae",
                 "shasum": ""
             },
             "require": {
@@ -1284,7 +1328,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-12-01 03:20:15"
+            "time": "2015-12-01 20:20:03"
         },
         {
             "name": "intervention/image",
@@ -2094,16 +2138,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.12.0",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322"
+                "reference": "3caeefbad51bce7a06947321938128512f42346c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/0a51dcb6398dc2377d086210d0624996a1df8322",
-                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/3caeefbad51bce7a06947321938128512f42346c",
+                "reference": "3caeefbad51bce7a06947321938128512f42346c",
                 "shasum": ""
             },
             "require": {
@@ -2153,7 +2197,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2015-03-19 15:16:43"
+            "time": "2015-10-07 14:48:58"
         },
         {
             "name": "league/oauth2-server",
@@ -2704,16 +2748,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "19f765b66c6fbb56ee3b11bc16d52e38eebdc295"
+                "reference": "a208865a5aeffc2dbbef2a5b3409887272d93f32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/19f765b66c6fbb56ee3b11bc16d52e38eebdc295",
-                "reference": "19f765b66c6fbb56ee3b11bc16d52e38eebdc295",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a208865a5aeffc2dbbef2a5b3409887272d93f32",
+                "reference": "a208865a5aeffc2dbbef2a5b3409887272d93f32",
                 "shasum": ""
             },
             "require": {
@@ -2748,7 +2792,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-11-10 00:45:41"
+            "time": "2015-12-01 02:52:15"
         },
         {
             "name": "phpdocumentor/reflection-docblock",

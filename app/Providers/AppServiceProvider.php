@@ -2,8 +2,6 @@
 
 namespace JarvisPlatform\Providers;
 
-use Auth;
-use MenuPing;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

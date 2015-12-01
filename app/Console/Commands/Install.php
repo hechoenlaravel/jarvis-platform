@@ -49,6 +49,9 @@ class Install extends Command
         $this->call('users:generateDefaultRoles');
         $this->info('Generating Default user');
         $this->call('users:generateAdmin');
+        $this->info('Installing Dashboard Module');
+        $this->call('dashboard:install');
+        $this->info('Updating .env file');
         if(file_exists('.env')){
             $str = file_get_contents('.env');
             $str = str_replace("APP_INSTALLED=false", "APP_INSTALLED=true",$str);
