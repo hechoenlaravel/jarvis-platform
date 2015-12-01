@@ -13,6 +13,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
+        "hechoenlaravel/composer-plugin": "dev-master",
         "hechoenlaravel/jarvis-foundation": "dev-master",
         "hechoenlaravel/jarvis-users": "dev-master",
         "hechoenlaravel/jarvis-dashboard" : "dev-master"
@@ -21,26 +22,20 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1",
-        "baum/baum": "~1.1",
-        "cviebrock/eloquent-sluggable" : "3.1.*"
+        "phpspec/phpspec": "~2.1"
     },
     "autoload": {
         "classmap": [
             "database"
         ],
         "psr-4": {
-            "JarvisPlatform\\": "app/",
-            "Modules\\": "modules/"
+            "JarvisPlatform\\": "app/"
         }
     },
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
-        ],
-        "psr-4": {
-          "Hechoenlaravel\\JarvisFoundation\\": "packages/hechoenlaravel/jarvis-foundation/src/"
-        }
+        ]
     },
     "scripts": {
         "post-install-cmd": [

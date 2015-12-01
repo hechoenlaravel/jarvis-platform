@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "21a76265a01d2862518bd027af855b18",
-    "content-hash": "9010a558ba36a55cc62616741020f885",
+    "hash": "bbddd5c93e32cd1fcc07ba81300add25",
+    "content-hash": "1fd15a8b43404df150167722b17abae9",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -62,6 +62,61 @@
             "time": "2015-11-09 21:25:09"
         },
         {
+            "name": "baum/baum",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/etrepat/baum.git",
+                "reference": "9290bed862d329aaaef666a71e0a2734afc28286"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/etrepat/baum/zipball/9290bed862d329aaaef666a71e0a2734afc28286",
+                "reference": "9290bed862d329aaaef666a71e0a2734afc28286",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.*",
+                "illuminate/database": "5.*",
+                "illuminate/events": "5.*",
+                "illuminate/filesystem": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "d11wtq/boris": "~1.0.10",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Baum": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Estanislau Trepat",
+                    "email": "estanis@etrepat.com",
+                    "homepage": "http://etrepat.com"
+                }
+            ],
+            "description": "Baum is an implementation of the Nested Set pattern for Eloquent models.",
+            "keywords": [
+                "Laravel 4",
+                "database",
+                "eloquent",
+                "laravel",
+                "laravel 5",
+                "nested set"
+            ],
+            "time": "2015-03-04 12:07:54"
+        },
+        {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
             "source": {
@@ -114,6 +169,118 @@
                 "preload"
             ],
             "time": "2015-11-09 22:51:51"
+        },
+        {
+            "name": "cocur/slugify",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cocur/slugify.git",
+                "reference": "2b67d4e2b75dbaed2ebefa9eb5683e8940513847"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cocur/slugify/zipball/2b67d4e2b75dbaed2ebefa9eb5683e8940513847",
+                "reference": "2b67d4e2b75dbaed2ebefa9eb5683e8940513847",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "laravel/framework": "~4.1",
+                "latte/latte": "~2.2",
+                "mockery/mockery": "~0.9",
+                "nette/di": "~2.2",
+                "phpunit/phpunit": "~3.7",
+                "sami/sami": "~1.3",
+                "satooshi/php-coveralls": "0.6.*",
+                "silex/silex": "~1.2",
+                "symfony/dependency-injection": "~2.4",
+                "symfony/http-kernel": "~2.4",
+                "twig/twig": "~1",
+                "zendframework/zend-modulemanager": "~2.2",
+                "zendframework/zend-servicemanager": "~2.2",
+                "zendframework/zend-view": "~2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cocur\\Slugify\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivo Bathke",
+                    "email": "ivo.bathke@gmail.com"
+                },
+                {
+                    "name": "Florian Eckerstorfer",
+                    "email": "florian@eckerstorfer.co",
+                    "homepage": "https://florian.ec"
+                }
+            ],
+            "description": "Converts a string into a slug.",
+            "keywords": [
+                "slug",
+                "slugify"
+            ],
+            "time": "2015-03-18 08:21:30"
+        },
+        {
+            "name": "cviebrock/eloquent-sluggable",
+            "version": "3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cviebrock/eloquent-sluggable.git",
+                "reference": "ae6bc5271ca148e35a5c3ed799a9df2bf092728b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/ae6bc5271ca148e35a5c3ed799a9df2bf092728b",
+                "reference": "ae6bc5271ca148e35a5c3ed799a9df2bf092728b",
+                "shasum": ""
+            },
+            "require": {
+                "cocur/slugify": "1.1.*",
+                "illuminate/config": "5.*",
+                "illuminate/database": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.0.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cviebrock\\EloquentSluggable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Viebrock",
+                    "email": "colin@viebrock.ca"
+                }
+            ],
+            "description": "Easy creation of slugs for your Eloquent models in Laravel",
+            "homepage": "https://github.com/cviebrock/eloquent-sluggable",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "slug"
+            ],
+            "time": "2015-11-07 17:14:22"
         },
         {
             "name": "danielstjules/stringy",
@@ -945,20 +1112,52 @@
             "time": "2015-11-03 01:34:55"
         },
         {
+            "name": "hechoenlaravel/composer-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hechoenlaravel/composer-plugin.git",
+                "reference": "4f8fb0c28bcc190d5529caa9bd863d5937fe674e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hechoenlaravel/composer-plugin/zipball/4f8fb0c28bcc190d5529caa9bd863d5937fe674e",
+                "reference": "4f8fb0c28bcc190d5529caa9bd863d5937fe674e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Hechoenlaravel\\JarvisPlatformComposerPlugin\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hechoenlaravel\\JarvisPlatformComposerPlugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2015-12-01 04:16:26"
+        },
+        {
             "name": "hechoenlaravel/jarvis-dashboard",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
-                "reference": "a65bcaa4a53555ca8dee6bba9257258f5ca18e53"
+                "reference": "0fe25bff3f699a83edab3477f0e4420176347064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/a65bcaa4a53555ca8dee6bba9257258f5ca18e53",
-                "reference": "a65bcaa4a53555ca8dee6bba9257258f5ca18e53",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/0fe25bff3f699a83edab3477f0e4420176347064",
+                "reference": "0fe25bff3f699a83edab3477f0e4420176347064",
                 "shasum": ""
             },
-            "type": "library",
+            "type": "jarvis-platform-module",
             "autoload": {
                 "psr-4": {
                     "Modules\\Dashboard\\": ""
@@ -981,7 +1180,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-10-29 20:34:19"
+            "time": "2015-12-01 04:24:31"
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
@@ -989,16 +1188,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "51a5dc9990437691ef93f2cb7e8766a7e0e65d60"
+                "reference": "ed16825e11ebece8b9ae949ebdbeb28dfac8458d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/51a5dc9990437691ef93f2cb7e8766a7e0e65d60",
-                "reference": "51a5dc9990437691ef93f2cb7e8766a7e0e65d60",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/ed16825e11ebece8b9ae949ebdbeb28dfac8458d",
+                "reference": "ed16825e11ebece8b9ae949ebdbeb28dfac8458d",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/laravel-debugbar": "^2.1@dev",
+                "baum/baum": "~1.1",
+                "cviebrock/eloquent-sluggable": "3.1.*",
                 "joselfonseca/image-manager": "2.1.*",
                 "joselfonseca/laravel-api-tools": "1.3.*",
                 "joselfonseca/laravel-tactician": "0.2.*",
@@ -1035,7 +1236,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-11-19 14:55:37"
+            "time": "2015-12-01 03:45:21"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
@@ -1043,12 +1244,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "1b03409e3f8b8af0b1d6b4b159dc11911e5cf6cf"
+                "reference": "af75adced021536a4da668c55d2185ae18621c42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/1b03409e3f8b8af0b1d6b4b159dc11911e5cf6cf",
-                "reference": "1b03409e3f8b8af0b1d6b4b159dc11911e5cf6cf",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/af75adced021536a4da668c55d2185ae18621c42",
+                "reference": "af75adced021536a4da668c55d2185ae18621c42",
                 "shasum": ""
             },
             "require": {
@@ -1060,7 +1261,7 @@
                 "yajra/laravel-datatables-oracle": "~5.0",
                 "zizaco/entrust": "1.4.*"
             },
-            "type": "library",
+            "type": "jarvis-platform-module",
             "autoload": {
                 "psr-4": {
                     "Modules\\Users\\": ""
@@ -1083,20 +1284,20 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-11-15 01:17:09"
+            "time": "2015-12-01 03:20:15"
         },
         {
             "name": "intervention/image",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "40cb418c49f32c5140ef798ab8c273ae9aae9e07"
+                "reference": "a67ee32df0c6820cc6e861ad4144ee0ef9c74aa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/40cb418c49f32c5140ef798ab8c273ae9aae9e07",
-                "reference": "40cb418c49f32c5140ef798ab8c273ae9aae9e07",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/a67ee32df0c6820cc6e861ad4144ee0ef9c74aa3",
+                "reference": "a67ee32df0c6820cc6e861ad4144ee0ef9c74aa3",
                 "shasum": ""
             },
             "require": {
@@ -1145,7 +1346,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2015-11-27 18:22:21"
+            "time": "2015-11-30 17:03:21"
         },
         {
             "name": "intervention/imagecache",
@@ -1443,16 +1644,16 @@
         },
         {
             "name": "joselfonseca/laravel-tactician",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joselfonseca/laravel-tactician.git",
-                "reference": "5bb962b9a34e5b54ae2d457b7bdeae6ba9779f2c"
+                "reference": "537e6cd7611698624c8e8699e7cafd5309578408"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joselfonseca/laravel-tactician/zipball/5bb962b9a34e5b54ae2d457b7bdeae6ba9779f2c",
-                "reference": "5bb962b9a34e5b54ae2d457b7bdeae6ba9779f2c",
+                "url": "https://api.github.com/repos/joselfonseca/laravel-tactician/zipball/537e6cd7611698624c8e8699e7cafd5309578408",
+                "reference": "537e6cd7611698624c8e8699e7cafd5309578408",
                 "shasum": ""
             },
             "require": {
@@ -1467,11 +1668,6 @@
                 "squizlabs/php_codesniffer": "~2.3"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Joselfonseca\\LaravelTactician\\": "src/"
@@ -1494,7 +1690,7 @@
                 "laravel-tactician",
                 "tactician"
             ],
-            "time": "2015-09-08 15:44:55"
+            "time": "2015-11-30 16:23:56"
         },
         {
             "name": "laracasts/commander",
@@ -1585,16 +1781,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.24",
+            "version": "v5.1.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "875baf2d1645ce23e2ec0bf94fa7bb3e7fbfd6ed"
+                "reference": "53979acc664debc401bfcb61086c4fc4f196b22d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/875baf2d1645ce23e2ec0bf94fa7bb3e7fbfd6ed",
-                "reference": "875baf2d1645ce23e2ec0bf94fa7bb3e7fbfd6ed",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/53979acc664debc401bfcb61086c4fc4f196b22d",
+                "reference": "53979acc664debc401bfcb61086c4fc4f196b22d",
                 "shasum": ""
             },
             "require": {
@@ -1659,7 +1855,7 @@
             "require-dev": {
                 "aws/aws-sdk-php": "~3.0",
                 "iron-io/iron_mq": "~2.0",
-                "mockery/mockery": "~0.9.1",
+                "mockery/mockery": "~0.9.2",
                 "pda/pheanstalk": "~3.0",
                 "phpunit/phpunit": "~4.0",
                 "predis/predis": "~1.0"
@@ -1710,7 +1906,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-11-11 22:45:42"
+            "time": "2015-11-30 19:24:36"
         },
         {
             "name": "laravelcollective/html",
@@ -2761,7 +2957,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/pingpong-labs/menus/zipball/82ad5fa465a021f5fb39efde949cfc3a984cb57f",
-                "reference": "05064e489b8c661b2c4eaebdafc53039616688c0",
+                "reference": "82ad5fa465a021f5fb39efde949cfc3a984cb57f",
                 "shasum": ""
             },
             "require": {
@@ -3477,16 +3673,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.7.7",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "7e2f9c31645680026c2372edf66f863fc7757af5"
+                "reference": "a5eb815363c0388e83247e7e9853e5dbc14999cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/7e2f9c31645680026c2372edf66f863fc7757af5",
-                "reference": "7e2f9c31645680026c2372edf66f863fc7757af5",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a5eb815363c0388e83247e7e9853e5dbc14999cc",
+                "reference": "a5eb815363c0388e83247e7e9853e5dbc14999cc",
                 "shasum": ""
             },
             "require": {
@@ -3494,10 +3690,10 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/config": "~2.0,>=2.0.5",
-                "symfony/dependency-injection": "~2.6",
-                "symfony/expression-language": "~2.6",
-                "symfony/stopwatch": "~2.3"
+                "symfony/config": "~2.0,>=2.0.5|~3.0.0",
+                "symfony/dependency-injection": "~2.6|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/stopwatch": "~2.3|~3.0.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -3506,7 +3702,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
@@ -3533,7 +3729,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-30 20:10:21"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/finder",
@@ -4289,173 +4485,6 @@
     ],
     "packages-dev": [
         {
-            "name": "baum/baum",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/etrepat/baum.git",
-                "reference": "9290bed862d329aaaef666a71e0a2734afc28286"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/etrepat/baum/zipball/9290bed862d329aaaef666a71e0a2734afc28286",
-                "reference": "9290bed862d329aaaef666a71e0a2734afc28286",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "5.*",
-                "illuminate/database": "5.*",
-                "illuminate/events": "5.*",
-                "illuminate/filesystem": "5.*",
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "d11wtq/boris": "~1.0.10",
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Baum": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Estanislau Trepat",
-                    "email": "estanis@etrepat.com",
-                    "homepage": "http://etrepat.com"
-                }
-            ],
-            "description": "Baum is an implementation of the Nested Set pattern for Eloquent models.",
-            "keywords": [
-                "Laravel 4",
-                "database",
-                "eloquent",
-                "laravel",
-                "laravel 5",
-                "nested set"
-            ],
-            "time": "2015-03-04 12:07:54"
-        },
-        {
-            "name": "cocur/slugify",
-            "version": "v1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cocur/slugify.git",
-                "reference": "2b67d4e2b75dbaed2ebefa9eb5683e8940513847"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cocur/slugify/zipball/2b67d4e2b75dbaed2ebefa9eb5683e8940513847",
-                "reference": "2b67d4e2b75dbaed2ebefa9eb5683e8940513847",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "laravel/framework": "~4.1",
-                "latte/latte": "~2.2",
-                "mockery/mockery": "~0.9",
-                "nette/di": "~2.2",
-                "phpunit/phpunit": "~3.7",
-                "sami/sami": "~1.3",
-                "satooshi/php-coveralls": "0.6.*",
-                "silex/silex": "~1.2",
-                "symfony/dependency-injection": "~2.4",
-                "symfony/http-kernel": "~2.4",
-                "twig/twig": "~1",
-                "zendframework/zend-modulemanager": "~2.2",
-                "zendframework/zend-servicemanager": "~2.2",
-                "zendframework/zend-view": "~2.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Cocur\\Slugify\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ivo Bathke",
-                    "email": "ivo.bathke@gmail.com"
-                },
-                {
-                    "name": "Florian Eckerstorfer",
-                    "email": "florian@eckerstorfer.co",
-                    "homepage": "https://florian.ec"
-                }
-            ],
-            "description": "Converts a string into a slug.",
-            "keywords": [
-                "slug",
-                "slugify"
-            ],
-            "time": "2015-03-18 08:21:30"
-        },
-        {
-            "name": "cviebrock/eloquent-sluggable",
-            "version": "3.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "ae6bc5271ca148e35a5c3ed799a9df2bf092728b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/ae6bc5271ca148e35a5c3ed799a9df2bf092728b",
-                "reference": "ae6bc5271ca148e35a5c3ed799a9df2bf092728b",
-                "shasum": ""
-            },
-            "require": {
-                "cocur/slugify": "1.1.*",
-                "illuminate/config": "5.*",
-                "illuminate/database": "5.*",
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "3.0.*",
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Cviebrock\\EloquentSluggable\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Colin Viebrock",
-                    "email": "colin@viebrock.ca"
-                }
-            ],
-            "description": "Easy creation of slugs for your Eloquent models in Laravel",
-            "homepage": "https://github.com/cviebrock/eloquent-sluggable",
-            "keywords": [
-                "eloquent",
-                "laravel",
-                "slug"
-            ],
-            "time": "2015-11-07 17:14:22"
-        },
-        {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -5085,16 +5114,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.18",
+            "version": "4.8.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fa33d4ad96481b91df343d83e8c8aabed6b1dfd3"
+                "reference": "b2caaf8947aba5e002d42126723e9d69795f32b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fa33d4ad96481b91df343d83e8c8aabed6b1dfd3",
-                "reference": "fa33d4ad96481b91df343d83e8c8aabed6b1dfd3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b2caaf8947aba5e002d42126723e9d69795f32b4",
+                "reference": "b2caaf8947aba5e002d42126723e9d69795f32b4",
                 "shasum": ""
             },
             "require": {
@@ -5153,7 +5182,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-11-11 11:32:49"
+            "time": "2015-11-30 08:18:59"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -5584,25 +5613,25 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.7",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "4cfcd7a9fceba662b3c036b7d9a91f6197af046c"
+                "reference": "177a015cb0e19ff4a49e0e2e2c5fc1c1bee07002"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/4cfcd7a9fceba662b3c036b7d9a91f6197af046c",
-                "reference": "4cfcd7a9fceba662b3c036b7d9a91f6197af046c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/177a015cb0e19ff4a49e0e2e2c5fc1c1bee07002",
+                "reference": "177a015cb0e19ff4a49e0e2e2c5fc1c1bee07002",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -5629,12 +5658,13 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-11-18 13:41:01"
+            "time": "2015-11-30 12:36:17"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "hechoenlaravel/composer-plugin": 20,
         "hechoenlaravel/jarvis-foundation": 20,
         "hechoenlaravel/jarvis-users": 20,
         "hechoenlaravel/jarvis-dashboard": 20
