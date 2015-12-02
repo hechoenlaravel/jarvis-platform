@@ -16,6 +16,9 @@
         <testsuite name="Users Module Suite">
             <directory>./modules/hechoenlaravel/jarvis-users/Tests</directory>
         </testsuite>
+        <testsuite name="Dev Users Module Suite">
+            <directory>./packages/hechoenlaravel/jarvis-users/Tests</directory>
+        </testsuite>
         <testsuite name="Dashboard Module Suite">
             <directory>./modules/hechoenlaravel/jarvis-dashboard/Tests</directory>
         </testsuite>
@@ -31,5 +34,6 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
         <env name="DB_CONNECTION" value="sqlite" />
+        <env name="MAIL_PRETEND" value="true" />
     </php>
 </phpunit>
