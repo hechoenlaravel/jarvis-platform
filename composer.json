@@ -35,7 +35,15 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
-        ]
+        ],
+        "psr-4": {
+            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
+            "Hechoenlaravel\\JarvisPlatformUi\\" : "packages/hechoenlaravel/jarvis-ui/src",
+            "Modules\\Users\\": "packages/hechoenlaravel/jarvis-users",
+            "Modules\\Dashboard\\": "packages/hechoenlaravel/jarvis-dashboard",
+            "Modules\\FutInventory\\": "packages/ditecnologia/fut-inventory",
+            "Modules\\Tasks\\": "packages/hechoenlaravel/jarvis-tasks"
+        }
     },
     "scripts": {
         "post-install-cmd": [
