@@ -13,7 +13,7 @@ return [
     | Example: 'footer' or ['footer', 'bottom']
     |
     */
-    'bind_js_vars_to_this_view' => 'partials.footer_meta',
+    'bind_js_vars_to_this_view' => 'jplatformui::partials.footer_meta',
 
     /*
     |--------------------------------------------------------------------------

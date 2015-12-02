@@ -124,7 +124,8 @@ return [
         'enabled' => true,
         'paths' => [
             base_path('vendor/*/*'),
-            base_path('modules/*/*')
+            base_path('modules/*/*'),
+            base_path('packages/*/*')
         ],
     ],
     /*
