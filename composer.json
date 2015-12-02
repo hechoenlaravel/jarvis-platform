@@ -13,10 +13,10 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "hechoenlaravel/composer-plugin": "dev-master",
-        "hechoenlaravel/jarvis-foundation": "dev-master",
-        "hechoenlaravel/jarvis-users": "dev-master",
-        "hechoenlaravel/jarvis-dashboard" : "dev-master"
+        "hechoenlaravel/composer-plugin": "1.0.*",
+        "hechoenlaravel/jarvis-foundation": "1.0.*",
+        "hechoenlaravel/jarvis-users": "1.0.*",
+        "hechoenlaravel/jarvis-dashboard" : "1.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -37,12 +37,7 @@
             "tests/TestCase.php"
         ],
         "psr-4": {
-            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
-            "Hechoenlaravel\\JarvisPlatformUi\\" : "packages/hechoenlaravel/jarvis-ui/src",
-            "Modules\\Users\\": "packages/hechoenlaravel/jarvis-users",
-            "Modules\\Dashboard\\": "packages/hechoenlaravel/jarvis-dashboard",
-            "Modules\\FutInventory\\": "packages/ditecnologia/fut-inventory",
-            "Modules\\Tasks\\": "packages/hechoenlaravel/jarvis-tasks"
+
         }
     },
     "scripts": {

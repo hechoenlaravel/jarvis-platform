@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "127d573c5ac525937a04121f89c2a598",
-    "content-hash": "1fd15a8b43404df150167722b17abae9",
+    "hash": "8349e9cefccab939d913dbc42ad17e1f",
+    "content-hash": "cefa42042fd23c5fbad65b796d74a5db",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -340,37 +340,36 @@
         },
         {
             "name": "dingo/api",
-            "version": "dev-master",
+            "version": "v1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dingo/api.git",
-                "reference": "05f7c3107cb85f767a8940946276c3bcd7b3cb30"
+                "reference": "6e33fecfd0a08aa9ce1c5bbc1d09999f85c1a185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dingo/api/zipball/05f7c3107cb85f767a8940946276c3bcd7b3cb30",
-                "reference": "05f7c3107cb85f767a8940946276c3bcd7b3cb30",
+                "url": "https://api.github.com/repos/dingo/api/zipball/6e33fecfd0a08aa9ce1c5bbc1d09999f85c1a185",
+                "reference": "6e33fecfd0a08aa9ce1c5bbc1d09999f85c1a185",
                 "shasum": ""
             },
             "require": {
                 "dingo/blueprint": "0.1.*",
                 "doctrine/annotations": "1.2.*",
-                "illuminate/routing": "~5.1",
-                "illuminate/support": "~5.1",
-                "league/fractal": ">=0.12.0",
+                "illuminate/routing": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "league/fractal": "0.12.*",
                 "php": ">=5.5.9",
                 "phpdocumentor/reflection-docblock": "2.0.*"
             },
             "require-dev": {
-                "illuminate/auth": "~5.1",
-                "illuminate/cache": "~5.1",
-                "illuminate/console": "~5.1",
-                "illuminate/database": "~5.1",
-                "illuminate/events": "~5.1",
-                "illuminate/filesystem": "~5.1",
-                "illuminate/log": "~5.1",
-                "illuminate/pagination": "~5.1",
-                "laravel/lumen-framework": "~5.1",
+                "illuminate/auth": "5.1.*",
+                "illuminate/cache": "5.1.*",
+                "illuminate/console": "5.1.*",
+                "illuminate/database": "5.1.*",
+                "illuminate/events": "5.1.*",
+                "illuminate/filesystem": "5.1.*",
+                "illuminate/pagination": "5.1.*",
+                "laravel/lumen-framework": "5.1.*",
                 "lucadegasperi/oauth2-server-laravel": "5.0.*",
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0",
@@ -412,7 +411,7 @@
                 "laravel",
                 "restful"
             ],
-            "time": "2015-11-30 06:04:15"
+            "time": "2015-08-26 03:37:52"
         },
         {
             "name": "dingo/blueprint",
@@ -1055,71 +1054,6 @@
             "time": "2015-11-01 10:19:22"
         },
         {
-            "name": "graham-campbell/htmlmin",
-            "version": "v4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Laravel-HTMLMin.git",
-                "reference": "293a16bd9e7cd5df19283d3a748426261e704a89"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-HTMLMin/zipball/293a16bd9e7cd5df19283d3a748426261e704a89",
-                "reference": "293a16bd9e7cd5df19283d3a748426261e704a89",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "5.1.*|5.2.*",
-                "illuminate/filesystem": "5.1.*|5.2.*",
-                "illuminate/http": "5.1.*|5.2.*",
-                "illuminate/routing": "5.1.*|5.2.*",
-                "illuminate/support": "5.1.*|5.2.*",
-                "illuminate/view": "5.1.*|5.2.*",
-                "mrclay/minify": "^2.2",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "^3.1",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.8|^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\HTMLMin\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                }
-            ],
-            "description": "HTMLMin Is A Simple HTML Minifier For Laravel 5",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Laravel HTMLMin",
-                "Laravel-HTMLMin",
-                "framework",
-                "html",
-                "html minifier",
-                "htmlmin",
-                "laravel",
-                "minifier"
-            ],
-            "time": "2015-11-14 11:55:24"
-        },
-        {
             "name": "guzzlehttp/psr7",
             "version": "1.2.1",
             "source": {
@@ -1179,7 +1113,7 @@
         },
         {
             "name": "hechoenlaravel/composer-plugin",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/composer-plugin.git",
@@ -1211,7 +1145,7 @@
         },
         {
             "name": "hechoenlaravel/jarvis-dashboard",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
@@ -1250,24 +1184,23 @@
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "9ad8ce1826d60c856b3d452aa25ab29b9d645f8b"
+                "reference": "f4d6357974a2f7c8ab2051f22d85d816d948bf0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/9ad8ce1826d60c856b3d452aa25ab29b9d645f8b",
-                "reference": "9ad8ce1826d60c856b3d452aa25ab29b9d645f8b",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/f4d6357974a2f7c8ab2051f22d85d816d948bf0e",
+                "reference": "f4d6357974a2f7c8ab2051f22d85d816d948bf0e",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/laravel-debugbar": "^2.1@dev",
                 "baum/baum": "~1.1",
                 "cviebrock/eloquent-sluggable": "3.1.*",
-                "graham-campbell/htmlmin": "^4.0",
-                "hechoenlaravel/jarvis-ui": "dev-master",
+                "hechoenlaravel/jarvis-ui": "1.0.*",
                 "joselfonseca/image-manager": "2.1.*",
                 "joselfonseca/laravel-api-tools": "1.3.*",
                 "joselfonseca/laravel-tactician": "0.2.*",
@@ -1304,20 +1237,20 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2015-12-01 21:29:47"
+            "time": "2015-12-02 17:52:00"
         },
         {
             "name": "hechoenlaravel/jarvis-ui",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-ui.git",
-                "reference": "8de9e8010ac754eb2e51f229f7bfd310fb6f7e09"
+                "reference": "e21f291fb325677e4d759515a5eec0db5c670c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-ui/zipball/8de9e8010ac754eb2e51f229f7bfd310fb6f7e09",
-                "reference": "8de9e8010ac754eb2e51f229f7bfd310fb6f7e09",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-ui/zipball/e21f291fb325677e4d759515a5eec0db5c670c6d",
+                "reference": "e21f291fb325677e4d759515a5eec0db5c670c6d",
                 "shasum": ""
             },
             "require": {
@@ -1346,20 +1279,20 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-12-01 20:54:38"
+            "time": "2015-12-02 17:37:45"
         },
         {
             "name": "hechoenlaravel/jarvis-users",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "f5d704b4478b8e409ca97e70580d0976007c07ae"
+                "reference": "34e632c63fc27f30680f97c3a165348140f89290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/f5d704b4478b8e409ca97e70580d0976007c07ae",
-                "reference": "f5d704b4478b8e409ca97e70580d0976007c07ae",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/34e632c63fc27f30680f97c3a165348140f89290",
+                "reference": "34e632c63fc27f30680f97c3a165348140f89290",
                 "shasum": ""
             },
             "require": {
@@ -1394,7 +1327,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2015-12-01 20:20:03"
+            "time": "2015-12-02 17:37:27"
         },
         {
             "name": "intervention/image",
@@ -2204,16 +2137,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.13.0",
+            "version": "0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "3caeefbad51bce7a06947321938128512f42346c"
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/3caeefbad51bce7a06947321938128512f42346c",
-                "reference": "3caeefbad51bce7a06947321938128512f42346c",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/0a51dcb6398dc2377d086210d0624996a1df8322",
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322",
                 "shasum": ""
             },
             "require": {
@@ -2263,7 +2196,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2015-10-07 14:48:58"
+            "time": "2015-03-19 15:16:43"
         },
         {
             "name": "league/oauth2-server",
@@ -2579,51 +2512,6 @@
                 "psr-3"
             ],
             "time": "2015-10-14 12:51:02"
-        },
-        {
-            "name": "mrclay/minify",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mrclay/minify.git",
-                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mrclay/minify/zipball/3c11ba8232a2155a1a29552aafc528be5fb0a662",
-                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pcre": "*",
-                "php": ">=5.2.1"
-            },
-            "require-dev": {
-                "tubalmartin/cssmin": "~2.4.8"
-            },
-            "suggest": {
-                "tubalmartin/cssmin": "Support minify with CSSMin (YUI PHP port)"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "min/lib/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Stephen Clay",
-                    "email": "steve@mrclay.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
-            "homepage": "http://code.google.com/p/minify/",
-            "time": "2014-10-30 22:58:02"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -4517,16 +4405,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v5.12.1",
+            "version": "v5.12.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "152b239c3791050bff2cf2aa9abf06270acbbbfa"
+                "reference": "e1bca1f60d51a468e5bea791b750747647fdc4fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/152b239c3791050bff2cf2aa9abf06270acbbbfa",
-                "reference": "152b239c3791050bff2cf2aa9abf06270acbbbfa",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/e1bca1f60d51a468e5bea791b750747647fdc4fe",
+                "reference": "e1bca1f60d51a468e5bea791b750747647fdc4fe",
                 "shasum": ""
             },
             "require": {
@@ -4568,7 +4456,7 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2015-11-12 08:11:05"
+            "time": "2015-12-02 08:39:12"
         },
         {
             "name": "zizaco/entrust",
@@ -5513,16 +5401,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6324c907ce7a52478eeeaede764f48733ef5ae44"
+                "reference": "6e7133793a8e5a5714a551a8324337374be209df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6324c907ce7a52478eeeaede764f48733ef5ae44",
-                "reference": "6324c907ce7a52478eeeaede764f48733ef5ae44",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e7133793a8e5a5714a551a8324337374be209df",
+                "reference": "6e7133793a8e5a5714a551a8324337374be209df",
                 "shasum": ""
             },
             "require": {
@@ -5559,7 +5447,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2015-08-03 06:14:51"
+            "time": "2015-12-02 08:37:27"
         },
         {
             "name": "sebastian/exporter",
@@ -5818,12 +5706,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "hechoenlaravel/composer-plugin": 20,
-        "hechoenlaravel/jarvis-foundation": 20,
-        "hechoenlaravel/jarvis-users": 20,
-        "hechoenlaravel/jarvis-dashboard": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
