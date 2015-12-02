@@ -48,4 +48,21 @@ class Handler extends ExceptionHandler
 
         return parent::render($request, $e);
     }
+
+    /**
+     * Render the given HttpException.
+     *
+     * @param  \Symfony\Component\HttpKernel\Exception\HttpException  $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function renderHttpException(HttpException $e)
+    {
+        $status = $e->getStatusCode();
+
+        if (view()->exists("jplatformui::errors.{$status}")) {
+            return response()->view("jplatformui::errors.{$status}", ['exception' => $e], $status);
+        } else {
+            return $this->convertExceptionToResponse($e);
+        }
+    }
 }
