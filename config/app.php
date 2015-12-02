@@ -183,7 +183,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
     ],
 
-    'version' => env('APP_VERSION', '1.1.0'),
+    'version' => env('APP_VERSION', '1.0.3'),
     'app_name' => env('APP_NAME', 'Jarvis Platform Demo Skeleton App')
 
 ];
