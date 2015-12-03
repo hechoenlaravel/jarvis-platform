@@ -55957,11 +55957,7 @@ $(function () {
         language: 'es'
     });
     $(".wysihtml5").wysihtml5();
-    $(".datepicker").daterangepicker({
-        singleDatePicker: true,
-        format: 'MM/DD/YYYY'
-    });
-    var dateRangeLocale = {
+    window.dateRangeLocale = {
         "format": "MM/DD/YYYY",
         "separator": " - ",
         "applyLabel": "Aplicar",
@@ -55994,6 +55990,11 @@ $(function () {
         ],
         "firstDay": 1
     };
+    $(".datepicker").daterangepicker({
+        singleDatePicker: true,
+        format: 'MM/DD/YYYY',
+        locale : window.dateRangeLocale
+    });
     $('.daterange-left').daterangepicker({
         ranges: {
             'Hoy': [moment(), moment()],
@@ -56003,7 +56004,7 @@ $(function () {
         },
         opens : "left",
         format: 'MM/DD/YYYY',
-        locale : dateRangeLocale
+        locale : window.dateRangeLocale
     });
     $('.daterange-right').daterangepicker({
         ranges: {
@@ -56014,7 +56015,7 @@ $(function () {
         },
         opens : "right",
         format: 'MM/DD/YYYY',
-        locale : dateRangeLocale
+        locale : window.dateRangeLocale
     });
     /** delete dialog **/
     $(document).on('click', '.confirm-delete', function (e) {
