@@ -24,7 +24,8 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "prettus/l5-repository" : "2.1.*",
-        "prettus/laravel-validation": "1.1.*"
+        "prettus/laravel-validation": "1.1.*",
+        "maatwebsite/excel": "~2.0"
     },
     "autoload": {
         "classmap": [
