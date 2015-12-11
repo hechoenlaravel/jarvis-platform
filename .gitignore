@@ -6,3 +6,4 @@ Homestead.json
 .idea
 packages
 storage/database.sqlite
+composer.lock
