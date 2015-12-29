@@ -55122,6 +55122,771 @@ tableSortModule.filter( 'parseFloat', function(){
 
 /*! ng-flow 2.6.1 */
 !function(a,b,c){"use strict";function d(b){if(this.support=!("undefined"==typeof File||"undefined"==typeof Blob||"undefined"==typeof FileList||!Blob.prototype.slice&&!Blob.prototype.webkitSlice&&!Blob.prototype.mozSlice),this.support){this.supportDirectory=/WebKit/.test(a.navigator.userAgent),this.files=[],this.defaults={chunkSize:1048576,forceChunkSize:!1,simultaneousUploads:3,singleFile:!1,fileParameterName:"file",progressCallbacksInterval:500,speedSmoothingFactor:.1,query:{},headers:{},withCredentials:!1,preprocess:null,method:"multipart",testMethod:"GET",uploadMethod:"POST",prioritizeFirstAndLastChunk:!1,target:"/",testChunks:!0,generateUniqueIdentifier:null,maxChunkRetries:0,chunkRetryInterval:null,permanentErrors:[404,415,500,501],successStatuses:[200,201,202],onDropStopPropagation:!1},this.opts={},this.events={};var c=this;this.onDrop=function(a){c.opts.onDropStopPropagation&&a.stopPropagation(),a.preventDefault();var b=a.dataTransfer;b.items&&b.items[0]&&b.items[0].webkitGetAsEntry?c.webkitReadDataTransfer(a):c.addFiles(b.files,a)},this.preventEvent=function(a){a.preventDefault()},this.opts=d.extend({},this.defaults,b||{})}}function e(a,b){this.flowObj=a,this.file=b,this.name=b.fileName||b.name,this.size=b.size,this.relativePath=b.relativePath||b.webkitRelativePath||this.name,this.uniqueIdentifier=a.generateUniqueIdentifier(b),this.chunks=[],this.paused=!1,this.error=!1,this.averageSpeed=0,this.currentSpeed=0,this._lastProgressCallback=Date.now(),this._prevUploadedSize=0,this._prevProgress=0,this.bootstrap()}function f(a,b,c){this.flowObj=a,this.fileObj=b,this.fileObjSize=b.size,this.offset=c,this.tested=!1,this.retries=0,this.pendingRetry=!1,this.preprocessState=0,this.loaded=0,this.total=0;var d=this.flowObj.opts.chunkSize;this.startByte=this.offset*d,this.endByte=Math.min(this.fileObjSize,(this.offset+1)*d),this.xhr=null,this.fileObjSize-this.endByte<d&&!this.flowObj.opts.forceChunkSize&&(this.endByte=this.fileObjSize);var e=this;this.event=function(a,b){b=Array.prototype.slice.call(arguments),b.unshift(e),e.fileObj.chunkEvent.apply(e.fileObj,b)},this.progressHandler=function(a){a.lengthComputable&&(e.loaded=a.loaded,e.total=a.total),e.event("progress",a)},this.testHandler=function(){var a=e.status(!0);"error"===a?(e.event(a,e.message()),e.flowObj.uploadNextChunk()):"success"===a?(e.tested=!0,e.event(a,e.message()),e.flowObj.uploadNextChunk()):e.fileObj.paused||(e.tested=!0,e.send())},this.doneHandler=function(){var a=e.status();if("success"===a||"error"===a)e.event(a,e.message()),e.flowObj.uploadNextChunk();else{e.event("retry",e.message()),e.pendingRetry=!0,e.abort(),e.retries++;var b=e.flowObj.opts.chunkRetryInterval;null!==b?setTimeout(function(){e.send()},b):e.send()}}}function g(a,b){var c=a.indexOf(b);c>-1&&a.splice(c,1)}function h(a,b){return"function"==typeof a&&(b=Array.prototype.slice.call(arguments),a=a.apply(null,b.slice(1))),a}function i(a,b){setTimeout(a.bind(b),0)}function j(a){return k(arguments,function(b){b!==a&&k(b,function(b,c){a[c]=b})}),a}function k(a,b,c){if(a){var d;if("undefined"!=typeof a.length){for(d=0;d<a.length;d++)if(b.call(c,a[d],d)===!1)return}else for(d in a)if(a.hasOwnProperty(d)&&b.call(c,a[d],d)===!1)return}}var l=a.navigator.msPointerEnabled;d.prototype={on:function(a,b){a=a.toLowerCase(),this.events.hasOwnProperty(a)||(this.events[a]=[]),this.events[a].push(b)},off:function(a,b){a!==c?(a=a.toLowerCase(),b!==c?this.events.hasOwnProperty(a)&&g(this.events[a],b):delete this.events[a]):this.events={}},fire:function(a,b){b=Array.prototype.slice.call(arguments),a=a.toLowerCase();var c=!1;return this.events.hasOwnProperty(a)&&k(this.events[a],function(a){c=a.apply(this,b.slice(1))===!1||c},this),"catchall"!=a&&(b.unshift("catchAll"),c=this.fire.apply(this,b)===!1||c),!c},webkitReadDataTransfer:function(a){function b(a){g+=a.length,k(a,function(a){if(a.isFile){var e=a.fullPath;a.file(function(a){c(a,e)},d)}else a.isDirectory&&a.createReader().readEntries(b,d)}),e()}function c(a,b){a.relativePath=b.substring(1),h.push(a),e()}function d(a){throw a}function e(){0==--g&&f.addFiles(h,a)}var f=this,g=a.dataTransfer.items.length,h=[];k(a.dataTransfer.items,function(a){var f=a.webkitGetAsEntry();return f?void(f.isFile?c(a.getAsFile(),f.fullPath):f.createReader().readEntries(b,d)):void e()})},generateUniqueIdentifier:function(a){var b=this.opts.generateUniqueIdentifier;if("function"==typeof b)return b(a);var c=a.relativePath||a.webkitRelativePath||a.fileName||a.name;return a.size+"-"+c.replace(/[^0-9a-zA-Z_-]/gim,"")},uploadNextChunk:function(a){var b=!1;if(this.opts.prioritizeFirstAndLastChunk&&(k(this.files,function(a){return!a.paused&&a.chunks.length&&"pending"===a.chunks[0].status()&&0===a.chunks[0].preprocessState?(a.chunks[0].send(),b=!0,!1):!a.paused&&a.chunks.length>1&&"pending"===a.chunks[a.chunks.length-1].status()&&0===a.chunks[0].preprocessState?(a.chunks[a.chunks.length-1].send(),b=!0,!1):void 0}),b))return b;if(k(this.files,function(a){return a.paused||k(a.chunks,function(a){return"pending"===a.status()&&0===a.preprocessState?(a.send(),b=!0,!1):void 0}),b?!1:void 0}),b)return!0;var c=!1;return k(this.files,function(a){return a.isComplete()?void 0:(c=!0,!1)}),c||a||i(function(){this.fire("complete")},this),!1},assignBrowse:function(a,c,d,e){"undefined"==typeof a.length&&(a=[a]),k(a,function(a){var f;"INPUT"===a.tagName&&"file"===a.type?f=a:(f=b.createElement("input"),f.setAttribute("type","file"),j(f.style,{visibility:"hidden",position:"absolute"}),a.appendChild(f),a.addEventListener("click",function(){f.click()},!1)),this.opts.singleFile||d||f.setAttribute("multiple","multiple"),c&&f.setAttribute("webkitdirectory","webkitdirectory"),k(e,function(a,b){f.setAttribute(b,a)});var g=this;f.addEventListener("change",function(a){g.addFiles(a.target.files,a),a.target.value=""},!1)},this)},assignDrop:function(a){"undefined"==typeof a.length&&(a=[a]),k(a,function(a){a.addEventListener("dragover",this.preventEvent,!1),a.addEventListener("dragenter",this.preventEvent,!1),a.addEventListener("drop",this.onDrop,!1)},this)},unAssignDrop:function(a){"undefined"==typeof a.length&&(a=[a]),k(a,function(a){a.removeEventListener("dragover",this.preventEvent),a.removeEventListener("dragenter",this.preventEvent),a.removeEventListener("drop",this.onDrop)},this)},isUploading:function(){var a=!1;return k(this.files,function(b){return b.isUploading()?(a=!0,!1):void 0}),a},_shouldUploadNext:function(){var a=0,b=!0,c=this.opts.simultaneousUploads;return k(this.files,function(d){k(d.chunks,function(d){return"uploading"===d.status()&&(a++,a>=c)?(b=!1,!1):void 0})}),b&&a},upload:function(){var a=this._shouldUploadNext();if(a!==!1){this.fire("uploadStart");for(var b=!1,c=1;c<=this.opts.simultaneousUploads-a;c++)b=this.uploadNextChunk(!0)||b;b||i(function(){this.fire("complete")},this)}},resume:function(){k(this.files,function(a){a.resume()})},pause:function(){k(this.files,function(a){a.pause()})},cancel:function(){for(var a=this.files.length-1;a>=0;a--)this.files[a].cancel()},progress:function(){var a=0,b=0;return k(this.files,function(c){a+=c.progress()*c.size,b+=c.size}),b>0?a/b:0},addFile:function(a,b){this.addFiles([a],b)},addFiles:function(a,b){var c=[];k(a,function(a){if((!l||l&&a.size>0)&&(a.size%4096!==0||"."!==a.name&&"."!==a.fileName)&&!this.getFromUniqueIdentifier(this.generateUniqueIdentifier(a))){var d=new e(this,a);this.fire("fileAdded",d,b)&&c.push(d)}},this),this.fire("filesAdded",c,b)&&k(c,function(a){this.opts.singleFile&&this.files.length>0&&this.removeFile(this.files[0]),this.files.push(a)},this),this.fire("filesSubmitted",c,b)},removeFile:function(a){for(var b=this.files.length-1;b>=0;b--)this.files[b]===a&&(this.files.splice(b,1),a.abort())},getFromUniqueIdentifier:function(a){var b=!1;return k(this.files,function(c){c.uniqueIdentifier===a&&(b=c)}),b},getSize:function(){var a=0;return k(this.files,function(b){a+=b.size}),a},sizeUploaded:function(){var a=0;return k(this.files,function(b){a+=b.sizeUploaded()}),a},timeRemaining:function(){var a=0,b=0;return k(this.files,function(c){c.paused||c.error||(a+=c.size-c.sizeUploaded(),b+=c.averageSpeed)}),a&&!b?Number.POSITIVE_INFINITY:a||b?Math.floor(a/b):0}},e.prototype={measureSpeed:function(){var a=Date.now()-this._lastProgressCallback;if(a){var b=this.flowObj.opts.speedSmoothingFactor,c=this.sizeUploaded();this.currentSpeed=Math.max((c-this._prevUploadedSize)/a*1e3,0),this.averageSpeed=b*this.currentSpeed+(1-b)*this.averageSpeed,this._prevUploadedSize=c}},chunkEvent:function(a,b,c){switch(b){case"progress":if(Date.now()-this._lastProgressCallback<this.flowObj.opts.progressCallbacksInterval)break;this.measureSpeed(),this.flowObj.fire("fileProgress",this,a),this.flowObj.fire("progress"),this._lastProgressCallback=Date.now();break;case"error":this.error=!0,this.abort(!0),this.flowObj.fire("fileError",this,c,a),this.flowObj.fire("error",c,this,a);break;case"success":if(this.error)return;this.measureSpeed(),this.flowObj.fire("fileProgress",this,a),this.flowObj.fire("progress"),this._lastProgressCallback=Date.now(),this.isComplete()&&(this.currentSpeed=0,this.averageSpeed=0,this.flowObj.fire("fileSuccess",this,c,a));break;case"retry":this.flowObj.fire("fileRetry",this,a)}},pause:function(){this.paused=!0,this.abort()},resume:function(){this.paused=!1,this.flowObj.upload()},abort:function(a){this.currentSpeed=0,this.averageSpeed=0;var b=this.chunks;a&&(this.chunks=[]),k(b,function(a){"uploading"===a.status()&&(a.abort(),this.flowObj.uploadNextChunk())},this)},cancel:function(){this.flowObj.removeFile(this)},retry:function(){this.bootstrap(),this.flowObj.upload()},bootstrap:function(){this.abort(!0),this.error=!1,this._prevProgress=0;for(var a=this.flowObj.opts.forceChunkSize?Math.ceil:Math.floor,b=Math.max(a(this.file.size/this.flowObj.opts.chunkSize),1),c=0;b>c;c++)this.chunks.push(new f(this.flowObj,this,c))},progress:function(){if(this.error)return 1;if(1===this.chunks.length)return this._prevProgress=Math.max(this._prevProgress,this.chunks[0].progress()),this._prevProgress;var a=0;k(this.chunks,function(b){a+=b.progress()*(b.endByte-b.startByte)});var b=a/this.size;return this._prevProgress=Math.max(this._prevProgress,b>.9999?1:b),this._prevProgress},isUploading:function(){var a=!1;return k(this.chunks,function(b){return"uploading"===b.status()?(a=!0,!1):void 0}),a},isComplete:function(){var a=!1;return k(this.chunks,function(b){var c=b.status();return"pending"===c||"uploading"===c||1===b.preprocessState?(a=!0,!1):void 0}),!a},sizeUploaded:function(){var a=0;return k(this.chunks,function(b){a+=b.sizeUploaded()}),a},timeRemaining:function(){if(this.paused||this.error)return 0;var a=this.size-this.sizeUploaded();return a&&!this.averageSpeed?Number.POSITIVE_INFINITY:a||this.averageSpeed?Math.floor(a/this.averageSpeed):0},getType:function(){return this.file.type&&this.file.type.split("/")[1]},getExtension:function(){return this.name.substr((~-this.name.lastIndexOf(".")>>>0)+2).toLowerCase()}},f.prototype={getParams:function(){return{flowChunkNumber:this.offset+1,flowChunkSize:this.flowObj.opts.chunkSize,flowCurrentChunkSize:this.endByte-this.startByte,flowTotalSize:this.fileObjSize,flowIdentifier:this.fileObj.uniqueIdentifier,flowFilename:this.fileObj.name,flowRelativePath:this.fileObj.relativePath,flowTotalChunks:this.fileObj.chunks.length}},getTarget:function(a,b){return a+=a.indexOf("?")<0?"?":"&",a+b.join("&")},test:function(){this.xhr=new XMLHttpRequest,this.xhr.addEventListener("load",this.testHandler,!1),this.xhr.addEventListener("error",this.testHandler,!1);var a=h(this.flowObj.opts.testMethod,this.fileObj,this),b=this.prepareXhrRequest(a,!0);this.xhr.send(b)},preprocessFinished:function(){this.preprocessState=2,this.send()},send:function(){var a=this.flowObj.opts.preprocess;if("function"==typeof a)switch(this.preprocessState){case 0:return this.preprocessState=1,void a(this);case 1:return}if(this.flowObj.opts.testChunks&&!this.tested)return void this.test();this.loaded=0,this.total=0,this.pendingRetry=!1;var b=this.fileObj.file.slice?"slice":this.fileObj.file.mozSlice?"mozSlice":this.fileObj.file.webkitSlice?"webkitSlice":"slice",c=this.fileObj.file[b](this.startByte,this.endByte,this.fileObj.file.type);this.xhr=new XMLHttpRequest,this.xhr.upload.addEventListener("progress",this.progressHandler,!1),this.xhr.addEventListener("load",this.doneHandler,!1),this.xhr.addEventListener("error",this.doneHandler,!1);var d=h(this.flowObj.opts.uploadMethod,this.fileObj,this),e=this.prepareXhrRequest(d,!1,this.flowObj.opts.method,c);this.xhr.send(e)},abort:function(){var a=this.xhr;this.xhr=null,a&&a.abort()},status:function(a){return this.pendingRetry||1===this.preprocessState?"uploading":this.xhr?this.xhr.readyState<4?"uploading":this.flowObj.opts.successStatuses.indexOf(this.xhr.status)>-1?"success":this.flowObj.opts.permanentErrors.indexOf(this.xhr.status)>-1||!a&&this.retries>=this.flowObj.opts.maxChunkRetries?"error":(this.abort(),"pending"):"pending"},message:function(){return this.xhr?this.xhr.responseText:""},progress:function(){if(this.pendingRetry)return 0;var a=this.status();return"success"===a||"error"===a?1:"pending"===a?0:this.total>0?this.loaded/this.total:0},sizeUploaded:function(){var a=this.endByte-this.startByte;return"success"!==this.status()&&(a=this.progress()*a),a},prepareXhrRequest:function(a,b,c,d){var e=h(this.flowObj.opts.query,this.fileObj,this,b);e=j(this.getParams(),e);var f=h(this.flowObj.opts.target,this.fileObj,this,b),g=null;if("GET"===a||"octet"===c){var i=[];k(e,function(a,b){i.push([encodeURIComponent(b),encodeURIComponent(a)].join("="))}),f=this.getTarget(f,i),g=d||null}else g=new FormData,k(e,function(a,b){g.append(b,a)}),g.append(this.flowObj.opts.fileParameterName,d,this.fileObj.file.name);return this.xhr.open(a,f,!0),this.xhr.withCredentials=this.flowObj.opts.withCredentials,k(h(this.flowObj.opts.headers,this.fileObj,this,b),function(a,b){this.xhr.setRequestHeader(b,a)},this),g}},d.evalOpts=h,d.extend=j,d.each=k,d.FlowFile=e,d.FlowChunk=f,d.version="2.9.0","object"==typeof module&&module&&"object"==typeof module.exports?module.exports=d:(a.Flow=d,"function"==typeof define&&define.amd&&define("flow",[],function(){return d}))}(window,document),angular.module("flow.provider",[]).provider("flowFactory",function(){"use strict";this.defaults={},this.factory=function(a){return new Flow(a)},this.events=[],this.on=function(a,b){this.events.push([a,b])},this.$get=function(){var a=this.factory,b=this.defaults,c=this.events;return{create:function(d){var e=a(angular.extend({},b,d));return angular.forEach(c,function(a){e.on(a[0],a[1])}),e}}}}),angular.module("flow.init",["flow.provider"]).controller("flowCtrl",["$scope","$attrs","$parse","flowFactory",function(a,b,c,d){var e=angular.extend({},a.$eval(b.flowInit)),f=a.$eval(b.flowObject)||d.create(e),g=function(b){var c=Array.prototype.slice.call(arguments);c.shift();var d=a.$broadcast.apply(a,["flow::"+b,f].concat(c));return{progress:1,filesSubmitted:1,fileSuccess:1,fileError:1,complete:1}[b]&&a.$apply(),d.defaultPrevented?!1:void 0};f.on("catchAll",g),a.$on("$destroy",function(){f.off("catchAll",g)}),a.$flow=f,b.hasOwnProperty("flowName")&&(c(b.flowName).assign(a,f),a.$on("$destroy",function(){c(b.flowName).assign(a)}))}]).directive("flowInit",[function(){return{scope:!0,controller:"flowCtrl"}}]),angular.module("flow.btn",["flow.init"]).directive("flowBtn",[function(){return{restrict:"EA",scope:!1,require:"^flowInit",link:function(a,b,c){var d=c.hasOwnProperty("flowDirectory"),e=c.hasOwnProperty("flowSingleFile"),f=c.hasOwnProperty("flowAttrs")&&a.$eval(c.flowAttrs);a.$flow.assignBrowse(b,d,e,f)}}}]),angular.module("flow.dragEvents",["flow.init"]).directive("flowPreventDrop",function(){return{scope:!1,link:function(a,b){b.bind("drop dragover",function(a){a.preventDefault()})}}}).directive("flowDragEnter",["$timeout",function(a){return{scope:!1,link:function(b,c,d){function e(a){var b=!1,c=a.dataTransfer||a.originalEvent.dataTransfer;return angular.forEach(c&&c.types,function(a){"Files"===a&&(b=!0)}),b}var f,g=!1;c.bind("dragover",function(c){e(c)&&(g||(b.$apply(d.flowDragEnter),g=!0),a.cancel(f),c.preventDefault())}),c.bind("dragleave drop",function(){a.cancel(f),f=a(function(){b.$eval(d.flowDragLeave),f=null,g=!1},100)})}}}]),angular.module("flow.drop",["flow.init"]).directive("flowDrop",function(){return{scope:!1,require:"^flowInit",link:function(a,b,c){function d(){a.$flow.assignDrop(b)}function e(){a.$flow.unAssignDrop(b)}c.flowDropEnabled?a.$watch(c.flowDropEnabled,function(a){a?d():e()}):d()}}}),!function(a){"use strict";function b(a){return a.charAt(0).toUpperCase()+a.slice(1)}var c=a.module("flow.events",["flow.init"]),d={fileSuccess:["$file","$message"],fileProgress:["$file"],fileAdded:["$file","$event"],filesAdded:["$files","$event"],filesSubmitted:["$files","$event"],fileRetry:["$file"],fileError:["$file","$message"],uploadStart:[],complete:[],progress:[],error:["$message","$file"]};a.forEach(d,function(d,e){var f="flow"+b(e);"flowUploadStart"==f&&(f="flowUploadStarted"),c.directive(f,[function(){return{require:"^flowInit",controller:["$scope","$attrs",function(b,c){b.$on("flow::"+e,function(){var e=Array.prototype.slice.call(arguments),g=e.shift();if(b.$flow===e.shift()){var h={};a.forEach(d,function(a,b){h[a]=e[b]}),b.$eval(c[f],h)===!1&&g.preventDefault()}})}]}}])})}(angular),angular.module("flow.img",["flow.init"]).directive("flowImg",[function(){return{scope:!1,require:"^flowInit",link:function(a,b,c){var d=c.flowImg;a.$watch(d,function(b){if(b){var d=new FileReader;d.readAsDataURL(b.file),d.onload=function(b){a.$apply(function(){c.$set("src",b.target.result)})}}})}}}]),angular.module("flow.transfers",["flow.init"]).directive("flowTransfers",[function(){return{scope:!0,require:"^flowInit",link:function(a){a.transfers=a.$flow.files}}}]),angular.module("flow",["flow.provider","flow.init","flow.events","flow.btn","flow.drop","flow.transfers","flow.img","flow.dragEvents"]);
+/**
+ * jQuery number plug-in 2.1.5
+ * Copyright 2012, Digital Fusion
+ * Licensed under the MIT license.
+ * http://opensource.teamdf.com/license/
+ *
+ * A jQuery plugin which implements a permutation of phpjs.org's number_format to provide
+ * simple number formatting, insertion, and as-you-type masking of a number.
+ *
+ * @author	Sam Sehnert
+ * @docs	http://www.teamdf.com/web/jquery-number-format-redux/196/
+ */
+(function($){
+
+	"use strict";
+
+	/**
+	 * Method for selecting a range of characters in an input/textarea.
+	 *
+	 * @param int rangeStart			: Where we want the selection to start.
+	 * @param int rangeEnd				: Where we want the selection to end.
+	 *
+	 * @return void;
+	 */
+	function setSelectionRange( rangeStart, rangeEnd )
+	{
+		// Check which way we need to define the text range.
+		if( this.createTextRange )
+		{
+			var range = this.createTextRange();
+				range.collapse( true );
+				range.moveStart( 'character',	rangeStart );
+				range.moveEnd( 'character',		rangeEnd-rangeStart );
+				range.select();
+		}
+
+		// Alternate setSelectionRange method for supporting browsers.
+		else if( this.setSelectionRange )
+		{
+			this.focus();
+			this.setSelectionRange( rangeStart, rangeEnd );
+		}
+	}
+
+	/**
+	 * Get the selection position for the given part.
+	 *
+	 * @param string part			: Options, 'Start' or 'End'. The selection position to get.
+	 *
+	 * @return int : The index position of the selection part.
+	 */
+	function getSelection( part )
+	{
+		var pos	= this.value.length;
+
+		// Work out the selection part.
+		part = ( part.toLowerCase() == 'start' ? 'Start' : 'End' );
+
+		if( document.selection ){
+			// The current selection
+			var range = document.selection.createRange(), stored_range, selectionStart, selectionEnd;
+			// We'll use this as a 'dummy'
+			stored_range = range.duplicate();
+			// Select all text
+			//stored_range.moveToElementText( this );
+			stored_range.expand('textedit');
+			// Now move 'dummy' end point to end point of original range
+			stored_range.setEndPoint( 'EndToEnd', range );
+			// Now we can calculate start and end points
+			selectionStart = stored_range.text.length - range.text.length;
+			selectionEnd = selectionStart + range.text.length;
+			return part == 'Start' ? selectionStart : selectionEnd;
+		}
+
+		else if(typeof(this['selection'+part])!="undefined")
+		{
+			pos = this['selection'+part];
+		}
+		return pos;
+	}
+
+	/**
+	 * Substitutions for keydown keycodes.
+	 * Allows conversion from e.which to ascii characters.
+	 */
+	var _keydown = {
+		codes : {
+			46 : 127,
+			188 : 44,
+			109 : 45,
+			190 : 46,
+			191 : 47,
+			192 : 96,
+			220 : 92,
+			222 : 39,
+			221 : 93,
+			219 : 91,
+			173 : 45,
+			187 : 61, //IE Key codes
+			186 : 59, //IE Key codes
+			189 : 45, //IE Key codes
+			110 : 46  //IE Key codes
+		},
+		shifts : {
+			96 : "~",
+			49 : "!",
+			50 : "@",
+			51 : "#",
+			52 : "$",
+			53 : "%",
+			54 : "^",
+			55 : "&",
+			56 : "*",
+			57 : "(",
+			48 : ")",
+			45 : "_",
+			61 : "+",
+			91 : "{",
+			93 : "}",
+			92 : "|",
+			59 : ":",
+			39 : "\"",
+			44 : "<",
+			46 : ">",
+			47 : "?"
+		}
+	};
+
+	/**
+	 * jQuery number formatter plugin. This will allow you to format numbers on an element.
+	 *
+	 * @params proxied for format_number method.
+	 *
+	 * @return : The jQuery collection the method was called with.
+	 */
+	$.fn.number = function( number, decimals, dec_point, thousands_sep ){
+
+		// Enter the default thousands separator, and the decimal placeholder.
+		thousands_sep	= (typeof thousands_sep === 'undefined') ? ',' : thousands_sep;
+		dec_point		= (typeof dec_point === 'undefined') ? '.' : dec_point;
+		decimals		= (typeof decimals === 'undefined' ) ? 0 : decimals;
+
+		// Work out the unicode character for the decimal placeholder.
+		var u_dec			= ('\\u'+('0000'+(dec_point.charCodeAt(0).toString(16))).slice(-4)),
+			regex_dec_num	= new RegExp('[^'+u_dec+'0-9]','g'),
+			regex_dec		= new RegExp(u_dec,'g');
+
+		// If we've specified to take the number from the target element,
+		// we loop over the collection, and get the number.
+		if( number === true )
+		{
+			// If this element is a number, then we add a keyup
+			if( this.is('input:text') )
+			{
+				// Return the jquery collection.
+				return this.on({
+
+					/**
+					 * Handles keyup events, re-formatting numbers.
+					 *
+					 * Uses 'data' object to keep track of important information.
+					 *
+					 * data.c
+					 * This variable keeps track of where the caret *should* be. It works out the position as
+					 * the number of characters from the end of the string. E.g., '1^,234.56' where ^ denotes the caret,
+					 * would be index -7 (e.g., 7 characters from the end of the string). At the end of both the key down
+					 * and key up events, we'll re-position the caret to wherever data.c tells us the cursor should be.
+					 * This gives us a mechanism for incrementing the cursor position when we come across decimals, commas
+					 * etc. This figure typically doesn't increment for each keypress when to the left of the decimal,
+					 * but does when to the right of the decimal.
+					 *
+					 * @param object e			: the keyup event object.s
+					 *
+					 * @return void;
+					 */
+					'keydown.format' : function(e){
+
+						// Define variables used in the code below.
+						var $this	= $(this),
+							data	= $this.data('numFormat'),
+							code	= (e.keyCode ? e.keyCode : e.which),
+							chara	= '', //unescape(e.originalEvent.keyIdentifier.replace('U+','%u')),
+							start	= getSelection.apply(this,['start']),
+							end		= getSelection.apply(this,['end']),
+							val		= '',
+							setPos	= false;
+
+						// Webkit (Chrome & Safari) on windows screws up the keyIdentifier detection
+						// for numpad characters. I've disabled this for now, because while keyCode munging
+						// below is hackish and ugly, it actually works cross browser & platform.
+
+//						if( typeof e.originalEvent.keyIdentifier !== 'undefined' )
+//						{
+//							chara = unescape(e.originalEvent.keyIdentifier.replace('U+','%u'));
+//						}
+//						else
+//						{
+							if (_keydown.codes.hasOwnProperty(code)) {
+								code = _keydown.codes[code];
+							}
+							if (!e.shiftKey && (code >= 65 && code <= 90)){
+								code += 32;
+							} else if (!e.shiftKey && (code >= 69 && code <= 105)){
+								code -= 48;
+							} else if (e.shiftKey && _keydown.shifts.hasOwnProperty(code)){
+								//get shifted keyCode value
+								chara = _keydown.shifts[code];
+							}
+
+							if( chara == '' ) chara = String.fromCharCode(code);
+//						}
+
+
+
+
+						// Stop executing if the user didn't type a number key, a decimal character, backspace, or delete.
+						if( code != 8 && code != 45 && code != 127 && chara != dec_point && !chara.match(/[0-9]/) )
+						{
+							// We need the original keycode now...
+							var key = (e.keyCode ? e.keyCode : e.which);
+							if( // Allow control keys to go through... (delete, backspace, tab, enter, escape etc)
+								key == 46 || key == 8 || key == 127 || key == 9 || key == 27 || key == 13 ||
+								// Allow: Ctrl+A, Ctrl+R, Ctrl+P, Ctrl+S, Ctrl+F, Ctrl+H, Ctrl+B, Ctrl+J, Ctrl+T, Ctrl+Z, Ctrl++, Ctrl+-, Ctrl+0
+								( (key == 65 || key == 82 || key == 80 || key == 83 || key == 70 || key == 72 || key == 66 || key == 74 || key == 84 || key == 90|| key == 61 || key == 173 || key == 48) && ( e.ctrlKey || e.metaKey ) === true ) ||
+								// Allow: Ctrl+V, Ctrl+C, Ctrl+X
+								( (key == 86 || key == 67 || key == 88) && ( e.ctrlKey || e.metaKey ) === true ) ||
+								// Allow: home, end, left, right
+								( (key >= 35 && key <= 39) ) ||
+								// Allow: F1-F12
+								( (key >= 112 && key <= 123) )
+							){
+								return;
+							}
+							// But prevent all other keys.
+							e.preventDefault();
+							return false;
+						}
+
+						// The whole lot has been selected, or if the field is empty...
+						if( start == 0 && end == this.value.length ) //|| $this.val() == 0 )
+						{
+							if( code == 8 )		// Backspace
+							{
+								// Blank out the field, but only if the data object has already been instantiated.
+								start = end = 1;
+								this.value = '';
+
+								// Reset the cursor position.
+								data.init = (decimals>0?-1:0);
+								data.c = (decimals>0?-(decimals+1):0);
+								setSelectionRange.apply(this, [0,0]);
+							}
+							else if( chara == dec_point )
+							{
+								start = end = 1;
+								this.value = '0'+ dec_point + (new Array(decimals+1).join('0'));
+
+								// Reset the cursor position.
+								data.init = (decimals>0?1:0);
+								data.c = (decimals>0?-(decimals+1):0);
+							}
+							else if( code == 45 )	// Negative sign
+							{
+								start = end = 2;
+								this.value = '-0'+dec_point + (new Array(decimals+1).join('0'));
+
+								// Reset the cursor position.
+								data.init = (decimals>0?1:0);
+								data.c = (decimals>0?-(decimals+1):0);
+
+								setSelectionRange.apply(this, [2,2]);
+							}
+							else
+							{
+								// Reset the cursor position.
+								data.init = (decimals>0?-1:0);
+								data.c = (decimals>0?-(decimals):0);
+							}
+						}
+
+						// Otherwise, we need to reset the caret position
+						// based on the users selection.
+						else
+						{
+							data.c = end-this.value.length;
+						}
+
+						// Track if partial selection was used
+						data.isPartialSelection = start == end ? false : true;
+
+						// If the start position is before the decimal point,
+						// and the user has typed a decimal point, we need to move the caret
+						// past the decimal place.
+						if( decimals > 0 && chara == dec_point && start == this.value.length-decimals-1 )
+						{
+							data.c++;
+							data.init = Math.max(0,data.init);
+							e.preventDefault();
+
+							// Set the selection position.
+							setPos = this.value.length+data.c;
+						}
+
+						// Ignore negative sign unless at beginning of number (and it's not already present)
+						else if( code == 45 && (start != 0 || this.value.indexOf('-') == 0) )
+						{
+							e.preventDefault();
+						}
+
+						// If the user is just typing the decimal place,
+						// we simply ignore it.
+						else if( chara == dec_point )
+						{
+							data.init = Math.max(0,data.init);
+							e.preventDefault();
+						}
+
+						// If hitting the delete key, and the cursor is before a decimal place,
+						// we simply move the cursor to the other side of the decimal place.
+						else if( decimals > 0 && code == 127 && start == this.value.length-decimals-1 )
+						{
+							// Just prevent default but don't actually move the caret here because it's done in the keyup event
+							e.preventDefault();
+						}
+
+						// If hitting the backspace key, and the cursor is behind a decimal place,
+						// we simply move the cursor to the other side of the decimal place.
+						else if( decimals > 0 && code == 8 && start == this.value.length-decimals )
+						{
+							e.preventDefault();
+							data.c--;
+
+							// Set the selection position.
+							setPos = this.value.length+data.c;
+						}
+
+						// If hitting the delete key, and the cursor is to the right of the decimal
+						// we replace the character after the caret with a 0.
+						else if( decimals > 0 && code == 127 && start > this.value.length-decimals-1 )
+						{
+							if( this.value === '' ) return;
+
+							// If the character following is not already a 0,
+							// replace it with one.
+							if( this.value.slice(start, start+1) != '0' )
+							{
+								val = this.value.slice(0, start) + '0' + this.value.slice(start+1);
+								// The regex replacement below removes negative sign from numbers...
+								// not sure why they're necessary here when none of the other cases use them
+								//$this.val(val.replace(regex_dec_num,'').replace(regex_dec,dec_point));
+								$this.val(val);
+							}
+
+							e.preventDefault();
+
+							// Set the selection position.
+							setPos = this.value.length+data.c;
+						}
+
+						// If hitting the backspace key, and the cursor is to the right of the decimal
+						// (but not directly to the right) we replace the character preceding the
+						// caret with a 0.
+						else if( decimals > 0 && code == 8 && start > this.value.length-decimals )
+						{
+							if( this.value === '' ) return;
+
+							// If the character preceding is not already a 0,
+							// replace it with one.
+							if( this.value.slice(start-1, start) != '0' )
+							{
+								val = this.value.slice(0, start-1) + '0' + this.value.slice(start);
+								// The regex replacement below removes negative sign from numbers...
+								// not sure why they're necessary here when none of the other cases use them
+								//$this.val(val.replace(regex_dec_num,'').replace(regex_dec,dec_point));
+								$this.val(val);
+							}
+
+							e.preventDefault();
+							data.c--;
+
+							// Set the selection position.
+							setPos = this.value.length+data.c;
+						}
+
+						// If the delete key was pressed, and the character immediately
+						// after the caret is a thousands_separator character, simply
+						// step over it.
+						else if( code == 127 && this.value.slice(start, start+1) == thousands_sep )
+						{
+							// Just prevent default but don't actually move the caret here because it's done in the keyup event
+							e.preventDefault();
+						}
+
+						// If the backspace key was pressed, and the character immediately
+						// before the caret is a thousands_separator character, simply
+						// step over it.
+						else if( code == 8 && this.value.slice(start-1, start) == thousands_sep )
+						{
+							e.preventDefault();
+							data.c--;
+
+							// Set the selection position.
+							setPos = this.value.length+data.c;
+						}
+
+						// If the caret is to the right of the decimal place, and the user is entering a
+						// number, remove the following character before putting in the new one.
+						else if(
+							decimals > 0 &&
+							start == end &&
+							this.value.length > decimals+1 &&
+							start > this.value.length-decimals-1 && isFinite(+chara) &&
+							!e.metaKey && !e.ctrlKey && !e.altKey && chara.length === 1
+						)
+						{
+							// If the character preceding is not already a 0,
+							// replace it with one.
+							if( end === this.value.length )
+							{
+								val = this.value.slice(0, start-1);
+							}
+							else
+							{
+								val = this.value.slice(0, start)+this.value.slice(start+1);
+							}
+
+							// Reset the position.
+							this.value = val;
+							setPos = start;
+						}
+
+						// If we need to re-position the characters.
+						if( setPos !== false )
+						{
+							//console.log('Setpos keydown: ', setPos );
+							setSelectionRange.apply(this, [setPos, setPos]);
+						}
+
+						// Store the data on the element.
+						$this.data('numFormat', data);
+
+					},
+
+					/**
+					 * Handles keyup events, re-formatting numbers.
+					 *
+					 * @param object e			: the keyup event object.s
+					 *
+					 * @return void;
+					 */
+					'keyup.format' : function(e){
+
+						// Store these variables for use below.
+						var $this	= $(this),
+							data	= $this.data('numFormat'),
+							code	= (e.keyCode ? e.keyCode : e.which),
+							start	= getSelection.apply(this,['start']),
+							end		= getSelection.apply(this,['end']),
+							setPos;
+
+
+						// Check for negative characters being entered at the start of the string.
+						// If there's any kind of selection, just ignore the input.
+						if( start === 0 && end === 0 && ( code === 189 || code === 109 ) )
+						{
+							$this.val('-'+$this.val());
+
+							start		= 1;
+							data.c		= 1-this.value.length;
+							data.init	= 1;
+
+							$this.data('numFormat', data);
+
+							setPos = this.value.length+data.c;
+							setSelectionRange.apply(this, [setPos, setPos]);
+						}
+
+						// Stop executing if the user didn't type a number key, a decimal, or a comma.
+						if( this.value === '' || (code < 48 || code > 57) && (code < 96 || code > 105 ) && code !== 8 && code !== 46 && code !== 110 ) return;
+
+						// Re-format the textarea.
+						$this.val($this.val());
+
+						if( decimals > 0 )
+						{
+							// If we haven't marked this item as 'initialized'
+							// then do so now. It means we should place the caret just
+							// before the decimal. This will never be un-initialized before
+							// the decimal character itself is entered.
+							if( data.init < 1 )
+							{
+								start		= this.value.length-decimals-( data.init < 0 ? 1 : 0 );
+								data.c		= start-this.value.length;
+								data.init	= 1;
+
+								$this.data('numFormat', data);
+							}
+
+							// Increase the cursor position if the caret is to the right
+							// of the decimal place, and the character pressed isn't the backspace key.
+							else if( start > this.value.length-decimals && code != 8 )
+							{
+								data.c++;
+
+								// Store the data, now that it's changed.
+								$this.data('numFormat', data);
+							}
+						}
+
+						// Move caret to the right after delete key pressed
+						if (code == 46 && !data.isPartialSelection)
+						{
+							data.c++;
+
+							// Store the data, now that it's changed.
+							$this.data('numFormat', data);
+						}
+
+						//console.log( 'Setting pos: ', start, decimals, this.value.length + data.c, this.value.length, data.c );
+
+						// Set the selection position.
+						setPos = this.value.length+data.c;
+						setSelectionRange.apply(this, [setPos, setPos]);
+					},
+
+					/**
+					 * Reformat when pasting into the field.
+					 *
+					 * @param object e 		: jQuery event object.
+					 *
+					 * @return false : prevent default action.
+					 */
+					'paste.format' : function(e){
+
+						// Defint $this. It's used twice!.
+						var $this		= $(this),
+							original	= e.originalEvent,
+							val		= null;
+
+						// Get the text content stream.
+						if (window.clipboardData && window.clipboardData.getData) { // IE
+							val = window.clipboardData.getData('Text');
+						} else if (original.clipboardData && original.clipboardData.getData) {
+							val = original.clipboardData.getData('text/plain');
+						}
+
+						// Do the reformat operation.
+						$this.val(val);
+
+						// Stop the actual content from being pasted.
+						e.preventDefault();
+						return false;
+					}
+
+				})
+
+				// Loop each element (which isn't blank) and do the format.
+				.each(function(){
+
+					var $this = $(this).data('numFormat',{
+						c				: -(decimals+1),
+						decimals		: decimals,
+						thousands_sep	: thousands_sep,
+						dec_point		: dec_point,
+						regex_dec_num	: regex_dec_num,
+						regex_dec		: regex_dec,
+						init			: this.value.indexOf('.') ? true : false
+					});
+
+					// Return if the element is empty.
+					if( this.value === '' ) return;
+
+					// Otherwise... format!!
+					$this.val($this.val());
+				});
+			}
+			else
+			{
+				// return the collection.
+				return this.each(function(){
+					var $this = $(this), num = +$this.text().replace(regex_dec_num,'').replace(regex_dec,'.');
+					$this.number( !isFinite(num) ? 0 : +num, decimals, dec_point, thousands_sep );
+				});
+			}
+		}
+
+		// Add this number to the element as text.
+		return this.text( $.number.apply(window,arguments) );
+	};
+
+	//
+	// Create .val() hooks to get and set formatted numbers in inputs.
+	//
+
+	// We check if any hooks already exist, and cache
+	// them in case we need to re-use them later on.
+	var origHookGet = null, origHookSet = null;
+
+	// Check if a text valHook already exists.
+	if( $.isPlainObject( $.valHooks.text ) )
+	{
+		// Preserve the original valhook function
+		// we'll call this for values we're not
+		// explicitly handling.
+		if( $.isFunction( $.valHooks.text.get ) ) origHookGet = $.valHooks.text.get;
+		if( $.isFunction( $.valHooks.text.set ) ) origHookSet = $.valHooks.text.set;
+	}
+	else
+	{
+		// Define an object for the new valhook.
+		$.valHooks.text = {};
+	}
+
+	/**
+	* Define the valHook to return normalised field data against an input
+	* which has been tagged by the number formatter.
+	*
+	* @param object el			: The raw DOM element that we're getting the value from.
+	*
+	* @return mixed : Returns the value that was written to the element as a
+	*				  javascript number, or undefined to let jQuery handle it normally.
+	*/
+	$.valHooks.text.get = function( el ){
+
+		// Get the element, and its data.
+		var $this	= $(el), num, negative,
+			data	= $this.data('numFormat');
+
+		// Does this element have our data field?
+		if( !data )
+		{
+			// Check if the valhook function already existed
+			if( $.isFunction( origHookGet ) )
+			{
+				// There was, so go ahead and call it
+				return origHookGet(el);
+			}
+			else
+			{
+				// No previous function, return undefined to have jQuery
+				// take care of retrieving the value
+				return undefined;
+			}
+		}
+		else
+		{
+			// Remove formatting, and return as number.
+			if( el.value === '' ) return '';
+
+
+			// Convert to a number.
+			num = +(el.value
+				.replace( data.regex_dec_num, '' )
+				.replace( data.regex_dec, '.' ));
+
+			// If we've got a finite number, return it.
+			// Otherwise, simply return 0.
+			// Return as a string... thats what we're
+			// used to with .val()
+			return (el.value.indexOf('-') === 0 ? '-' : '')+( isFinite( num ) ? num : 0 );
+		}
+	};
+
+	/**
+	* A valhook which formats a number when run against an input
+	* which has been tagged by the number formatter.
+	*
+	* @param object el		: The raw DOM element (input element).
+	* @param float			: The number to set into the value field.
+	*
+	* @return mixed : Returns the value that was written to the element,
+	*				  or undefined to let jQuery handle it normally.
+	*/
+	$.valHooks.text.set = function( el, val )
+	{
+		// Get the element, and its data.
+		var $this	= $(el),
+			data	= $this.data('numFormat');
+
+		// Does this element have our data field?
+		if( !data )
+		{
+
+			// Check if the valhook function already exists
+			if( $.isFunction( origHookSet ) )
+			{
+				// There was, so go ahead and call it
+				return origHookSet(el,val);
+			}
+			else
+			{
+				// No previous function, return undefined to have jQuery
+				// take care of retrieving the value
+				return undefined;
+			}
+		}
+		else
+		{
+			var num = $.number( val, data.decimals, data.dec_point, data.thousands_sep );
+
+			// Make sure empties are set with correct signs.
+//			if(val.indexOf('-') === 0 && +num === 0)
+//			{
+//				num = '-'+num;
+//			}
+
+			return $.isFunction(origHookSet) ? origHookSet(el, num) : el.value = num;
+		}
+	};
+
+	/**
+	 * The (modified) excellent number formatting method from PHPJS.org.
+	 * http://phpjs.org/functions/number_format/
+	 *
+	 * @modified by Sam Sehnert (teamdf.com)
+	 *	- don't redefine dec_point, thousands_sep... just overwrite with defaults.
+	 *	- don't redefine decimals, just overwrite as numeric.
+	 *	- Generate regex for normalizing pre-formatted numbers.
+	 *
+	 * @param float number			: The number you wish to format, or TRUE to use the text contents
+	 *								  of the element as the number. Please note that this won't work for
+	 *								  elements which have child nodes with text content.
+	 * @param int decimals			: The number of decimal places that should be displayed. Defaults to 0.
+	 * @param string dec_point		: The character to use as a decimal point. Defaults to '.'.
+	 * @param string thousands_sep	: The character to use as a thousands separator. Defaults to ','.
+	 *
+	 * @return string : The formatted number as a string.
+	 */
+	$.number = function( number, decimals, dec_point, thousands_sep ){
+		// Set the default values here, instead so we can use them in the replace below.
+		thousands_sep	= (typeof thousands_sep === 'undefined') ? ( new Number(1000).toLocaleString() !== '1000' ? new Number(1000).toLocaleString().charAt(1) : '' ) : thousands_sep;
+		dec_point		= (typeof dec_point === 'undefined') ? new Number(0.1).toLocaleString().charAt(1) : dec_point;
+		decimals		= !isFinite(+decimals) ? 0 : Math.abs(decimals);
+
+		// Work out the unicode representation for the decimal place and thousand sep.
+		var u_dec = ('\\u'+('0000'+(dec_point.charCodeAt(0).toString(16))).slice(-4));
+		var u_sep = ('\\u'+('0000'+(thousands_sep.charCodeAt(0).toString(16))).slice(-4));
+
+		// Fix the number, so that it's an actual number.
+		number = (number + '')
+			.replace('\.', dec_point) // because the number if passed in as a float (having . as decimal point per definition) we need to replace this with the passed in decimal point character
+			.replace(new RegExp(u_sep,'g'),'')
+			.replace(new RegExp(u_dec,'g'),'.')
+			.replace(new RegExp('[^0-9+\-Ee.]','g'),'');
+
+		var n = !isFinite(+number) ? 0 : +number,
+			s = '',
+			toFixedFix = function (n, decimals) {
+				return '' + (+(Math.round(('' + n).indexOf('e') > 0 ? n : n + 'e+' + decimals) + 'e-' + decimals));
+			};
+
+		// Fix for IE parseFloat(0.55).toFixed(0) = 0;
+		s = (decimals ? toFixedFix(n, decimals) : '' + Math.round(n)).split('.');
+		if (s[0].length > 3) {
+			s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, thousands_sep);
+		}
+		if ((s[1] || '').length < decimals) {
+			s[1] = s[1] || '';
+			s[1] += new Array(decimals - s[1].length + 1).join('0');
+		}
+		return s.join(dec_point);
+	}
+
+})(jQuery);
+
 /*! AdminLTE app.js
  * ================
  * Main JS application file for AdminLTE v2. This file
@@ -55873,7 +56638,7 @@ var JarvisPlatform = angular.module('JarvisPlatform', ['angular-loading-bar', 'n
         cfpLoadingBarProvider.includeSpinner = false;
     }]);
 /** Compile directive to bring html from backend and have Angular evaluate it **/
-JarvisPlatform.directive('compile', function ($compile) {
+JarvisPlatform.directive('compile', ['$compile', function ($compile) {
     return function (scope, element, attrs) {
         scope.$watch(
             function (scope) {
@@ -55885,7 +56650,7 @@ JarvisPlatform.directive('compile', function ($compile) {
             }
         );
     };
-});
+}]);
 
 function HandleErrorResponse(data, code) {
     $('button').button('reset');
@@ -55954,7 +56719,9 @@ $(function () {
     }
     /** select2 **/
     $('.select2').select2({
-        language: 'es'
+        language: 'es',
+        allowClear: true,
+        placeholder: "Seleccione una opción"
     });
     $(".wysihtml5").wysihtml5();
     window.dateRangeLocale = {
@@ -56037,5 +56804,7 @@ $(function () {
                 }
             });
     });
+    /** jquery number **/
+    $('.number').number( true, 0 );
 });
 //# sourceMappingURL=all.js.map
