@@ -26,6 +26,27 @@ JarvisPlatform.controller('createFieldController', ['$scope', 'fieldsService', f
         $scope.form = window.fieldForm.data;
     }
 
+    /** Select Field Type **/
+    if (window.isEdit != "1") {
+        $scope.form.options = [];
+    }
+
+    $scope.optionToAdd = "";
+
+    $scope.addOption = function()
+    {
+        if($scope.optionToAdd != ""){
+            $scope.form.options.push($scope.optionToAdd);
+        }
+        $scope.optionToAdd = "";
+    }
+
+    $scope.removeItem = function(index)
+    {
+        $scope.form.options.splice(index, 1);
+    }
+
+
 }]);
 /** Services **/
 JarvisPlatform.factory('fieldsService', ['$http', function ($http) {
@@ -88,10 +109,9 @@ JarvisPlatform.factory('fieldsService', ['$http', function ($http) {
                     animation: 150,
                     onSort: function (evt){
                         $models = [];
-                        for(x in evt.models)
-                        {
+                        $(evt.models).each(function(x){
                             $models.push(evt.models[x].id);
-                        }
+                        });
                         service.reOrderFields($models);
                     }
                 };

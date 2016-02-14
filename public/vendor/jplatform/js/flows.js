@@ -132,20 +132,20 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
     $scope.deleteTransition = function(id)
     {
         swal({
-                title: "Esta segúro de eliminar la transición?",
-                text: "",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Si, Estoy segúro",
-                cancelButtonText: "Cancelar",
-                closeOnConfirm: false
-            }, function(){
-                flowService.deleteTransition(id).success(function(data){
-                    swal("Eliminado!", "Se ha eliminado la transición!", "success");
-                    $scope.getSteps();
-                }).error(HandleErrorResponse);
-            });
+            title: "Esta segúro de eliminar la transición?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, Estoy segúro",
+            cancelButtonText: "Cancelar",
+            closeOnConfirm: false
+        }, function(){
+            flowService.deleteTransition(id).success(function(data){
+                swal("Eliminado!", "Se ha eliminado la transición!", "success");
+                $scope.getSteps();
+            }).error(HandleErrorResponse);
+        });
     }
 
     $scope.initGraph = function(data) {
