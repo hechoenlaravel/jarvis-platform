@@ -12,11 +12,11 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*",
+        "laravel/framework": "5.4.*",
         "hechoenlaravel/composer-plugin": "1.0.*",
-        "hechoenlaravel/jarvis-foundation": "1.0.*",
-        "hechoenlaravel/jarvis-users": "1.0.*",
-        "hechoenlaravel/jarvis-dashboard" : "1.0.*"
+        "hechoenlaravel/jarvis-foundation": "2.0.*",
+        "hechoenlaravel/jarvis-users": "2.0.*",
+        "hechoenlaravel/jarvis-dashboard" : "2.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -29,13 +29,20 @@
             "database"
         ],
         "psr-4": {
-            "JarvisPlatform\\": "app/"
+            "JarvisPlatform\\": "app/",
+            "Modules\\": "modules/"
         }
     },
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
-        ]
+        ],
+        "psr-4": {
+            "Hechoenlaravel\\JarvisFoundation\\" : "packages/hechoenlaravel/jarvis-foundation/src",
+            "Hechoenlaravel\\JarvisPlatformUi\\" : "packages/hechoenlaravel/jarvis-ui/src",
+            "Modules\\Users\\": "packages/hechoenlaravel/jarvis-users",
+            "Modules\\Dashboard\\": "packages/hechoenlaravel/jarvis-dashboard"
+        }
     },
     "scripts": {
         "post-install-cmd": [
