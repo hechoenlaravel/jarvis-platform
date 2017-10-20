@@ -7,8 +7,8 @@ php:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --no-dev
+  - travis_retry composer install --prefer-source --no-interaction
   - php -r "copy('.env.example', '.env');"
   - touch storage/database.sqlite
 
-script: phpunit
+script: vendor/bin/phpunit
