@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "14aa3ac659486e3c963387efa6aaa844",
-    "content-hash": "e543233d32e925685a6cfe2bb8a9838c",
+    "hash": "d88ca3ffad080717a61cd4548017c769",
+    "content-hash": "4a705201f50a42d98fe1386c889bcf33",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -906,16 +906,16 @@
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "2.0.1",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "51fbc2744c922c6d13c73d5c60aed7be6881ad7c"
+                "reference": "de63387b1e7c6f0820aca94acd4f2e530d258482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/51fbc2744c922c6d13c73d5c60aed7be6881ad7c",
-                "reference": "51fbc2744c922c6d13c73d5c60aed7be6881ad7c",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/de63387b1e7c6f0820aca94acd4f2e530d258482",
+                "reference": "de63387b1e7c6f0820aca94acd4f2e530d258482",
                 "shasum": ""
             },
             "require": {
@@ -932,7 +932,7 @@
                 "maatwebsite/excel": "~2.1",
                 "maknz/slack": "^1.7",
                 "nwidart/laravel-modules": "1.16.*",
-                "php": ">=5.6",
+                "php": ">=7.1",
                 "predis/predis": "^1.1",
                 "sentry/sentry-laravel": "^0.6.0",
                 "spatie/laravel-backup": "^3.0",
@@ -966,7 +966,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2017-10-20 02:54:54"
+            "time": "2017-10-20 03:27:03"
         },
         {
             "name": "hechoenlaravel/jarvis-menus",
@@ -5857,7 +5857,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.4"
+        "php": ">=7.1"
     },
     "platform-dev": []
 }
