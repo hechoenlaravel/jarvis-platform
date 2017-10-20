@@ -12,7 +12,6 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.4.*",
         "hechoenlaravel/composer-plugin": "1.0.*",
         "hechoenlaravel/jarvis-foundation": "2.0.*",
         "hechoenlaravel/jarvis-users": "2.0.*",
