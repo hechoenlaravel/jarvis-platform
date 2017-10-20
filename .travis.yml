@@ -2,12 +2,13 @@ sudo: false
 language: php
 
 php:
-  - 7.0
+  - 7
   - 7.1
 
 before_script:
   - travis_retry composer self-update
   - travis_retry composer install --prefer-source --no-interaction --no-dev
   - php -r "copy('.env.example', '.env');"
+  - touch storage/database.sqlite
 
 script: vendor/bin/phpunit
