@@ -1,6 +1,10 @@
 <?php
 
-class TestCase extends Illuminate\Foundation\Testing\TestCase
+namespace Tests;
+
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+class TestCase extends BaseTestCase
 {
     /**
      * The base URL to use while testing the application.
@@ -18,24 +22,9 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         $app = require __DIR__.'/../bootstrap/app.php';
 
-        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+        $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
-    }
-
-    /**
-     * Set Up the Application, it will install it.
-     */
-    public function setUp()
-    {
-        parent::setUp();
-        if(!file_exists(storage_path('database.sqlite'))){
-            $database = fopen(storage_path('database.sqlite'), "w");
-            fclose($database);
-        }
-        $this->beforeApplicationDestroyed(function(){
-            unlink(storage_path('database.sqlite'));
-        });
     }
 
     public function installApp()
