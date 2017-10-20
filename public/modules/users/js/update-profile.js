@@ -38,7 +38,7 @@ $(function(){
             },
             FileUploaded: function (up, file, info) {
                 var response = $.parseJSON(info.response);
-                $('#profileAvatar').attr('src', GLOBALS.site_url+'/image-manager/view/'+response.id+'/150');
+                $('#profileAvatar').attr('src', response.url);
                 $('#pickfiles').button('reset');
                 swal({
                     title: "Listo!",

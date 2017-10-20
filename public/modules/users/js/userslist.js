@@ -45,7 +45,7 @@ JarvisPlatform.controller('UsersController', ['$scope', 'usersService', '$anchor
             usersService.deleteUser(id).success(function(data){
                 swal("Eliminado!", "Se ha eliminado el usuario!", "success");
                 $scope.searchUsers();
-            }).error(HandleErrorResponse);
+            });
         });
     }
 

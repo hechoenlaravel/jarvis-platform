@@ -23,7 +23,7 @@ JarvisPlatform.controller('LoginController', ['$scope', 'loginService', function
                 'email': inputValue
             }).success(function(data){
                 swal("Listo! Verifique su correo electrónico para instrucciones sobre como recuperar su contraseña.");
-            }).error(HandleErrorResponse);
+            });
         });
     }
 }]);
