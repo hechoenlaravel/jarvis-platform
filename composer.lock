@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55fafe36eb733526968f8e5900e5ff52",
-    "content-hash": "522d6dce003adeed353499fe4a8c424b",
+    "hash": "45b33226766db07ac1b40cc130c249cd",
+    "content-hash": "5e02e9c76be531c408095ef7bf184d9d",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -875,16 +875,16 @@
         },
         {
             "name": "hechoenlaravel/jarvis-dashboard",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-dashboard.git",
-                "reference": "5c68d3f693126831a4bec285198a4abcf2b3aa1a"
+                "reference": "15996a4c41949b36a61284cd2e5d71bd59106c56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/5c68d3f693126831a4bec285198a4abcf2b3aa1a",
-                "reference": "5c68d3f693126831a4bec285198a4abcf2b3aa1a",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-dashboard/zipball/15996a4c41949b36a61284cd2e5d71bd59106c56",
+                "reference": "15996a4c41949b36a61284cd2e5d71bd59106c56",
                 "shasum": ""
             },
             "type": "jarvis-platform-module",
@@ -910,20 +910,20 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2017-02-06 19:28:56"
+            "time": "2017-10-22 02:38:27"
         },
         {
             "name": "hechoenlaravel/jarvis-foundation",
-            "version": "dev-master",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-foundation.git",
-                "reference": "623a31a7d25b5db71574095d221be2cfa1919a50"
+                "reference": "9e41f9d24ad4e75672fa8b7ddd0bb98ae651f88a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/623a31a7d25b5db71574095d221be2cfa1919a50",
-                "reference": "623a31a7d25b5db71574095d221be2cfa1919a50",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-foundation/zipball/9e41f9d24ad4e75672fa8b7ddd0bb98ae651f88a",
+                "reference": "9e41f9d24ad4e75672fa8b7ddd0bb98ae651f88a",
                 "shasum": ""
             },
             "require": {
@@ -974,7 +974,7 @@
                 }
             ],
             "description": "Some foundation code for the Jarvis Platform",
-            "time": "2017-10-22 01:00:08"
+            "time": "2017-10-22 02:44:30"
         },
         {
             "name": "hechoenlaravel/jarvis-menus",
@@ -1071,16 +1071,16 @@
         },
         {
             "name": "hechoenlaravel/jarvis-users",
-            "version": "2.0.3",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "4db4e771d7e9a6adf4bb0b8902a560887c097ed0"
+                "reference": "673f84d8e00b0d68c9bd787b146520647855c3c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/4db4e771d7e9a6adf4bb0b8902a560887c097ed0",
-                "reference": "4db4e771d7e9a6adf4bb0b8902a560887c097ed0",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/673f84d8e00b0d68c9bd787b146520647855c3c2",
+                "reference": "673f84d8e00b0d68c9bd787b146520647855c3c2",
                 "shasum": ""
             },
             "type": "jarvis-platform-module",
@@ -1106,7 +1106,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2017-10-20 03:01:04"
+            "time": "2017-10-22 02:37:51"
         },
         {
             "name": "intervention/image",
@@ -6215,9 +6215,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "hechoenlaravel/jarvis-foundation": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
