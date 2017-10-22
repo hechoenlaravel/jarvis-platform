@@ -32,4 +32,6 @@ El Starter kit trae los siguientes componentes.
  - Laravel Fractal -> [https://github.com/spatie/laravel-fractal](https://github.com/spatie/laravel-fractal)
  - Laravel Permission -> [https://github.com/spatie/laravel-permission](https://github.com/spatie/laravel-permission)
  
+## Frontend
 
+Por el momento el sistema funciona con Angular 1.5 para mantener la compatibilidad con versiones anteriores, aun no hay un plan para actualizar el framework de front end pero es una tarea pendiente.
