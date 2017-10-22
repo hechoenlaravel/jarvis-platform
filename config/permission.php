@@ -35,7 +35,7 @@ return [
          * be using the "HasRoles" and "HasPermissions" traits.
          */
 
-        'users' => 'app_users',
+        'users' => 'users',
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -43,7 +43,7 @@ return [
          * default value but you may easily change it to any table you like.
          */
 
-        'roles' => 'app_roles',
+        'roles' => 'roles',
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -51,7 +51,7 @@ return [
          * default value but you may easily change it to any table you like.
          */
 
-        'permissions' => 'app_permissions',
+        'permissions' => 'permissions',
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -59,7 +59,7 @@ return [
          * basic default value but you may easily change it to any table you like.
          */
 
-        'user_has_permissions' => 'app_user_has_permissions',
+        'model_has_permissions' => 'model_has_permissions',
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -67,7 +67,7 @@ return [
          * basic default value but you may easily change it to any table you like.
          */
 
-        'user_has_roles' => 'app_user_has_roles',
+        'model_has_roles' => 'model_has_roles',
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -75,7 +75,7 @@ return [
          * basic default value but you may easily change it to any table you like.
          */
 
-        'role_has_permissions' => 'app_role_has_permissions',
+        'role_has_permissions' => 'role_has_permissions',
     ],
 
     'foreign_keys' => [

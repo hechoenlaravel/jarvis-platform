@@ -38,7 +38,7 @@ class Install extends Command
      *
      * @return mixed
      */
-    public function fire()
+    public function handle()
     {
         $this->info('Welcome to the Jarvis platform Installer. Please wait while we set up the application.');
         $this->info('Generating Application Key');

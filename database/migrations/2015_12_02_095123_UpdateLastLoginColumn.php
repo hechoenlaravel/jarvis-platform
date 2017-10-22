@@ -12,7 +12,7 @@ class UpdateLastLoginColumn extends Migration
      */
     public function up()
     {
-        Schema::table('app_users', function(Blueprint $table){
+        Schema::table('users', function(Blueprint $table){
             $table->dateTime('last_login')->nullable();
         });
     }
@@ -24,7 +24,7 @@ class UpdateLastLoginColumn extends Migration
      */
     public function down()
     {
-        Schema::table('app_users', function(Blueprint $table){
+        Schema::table('users', function(Blueprint $table){
             $table->dropColumn('last_login');
         });
     }

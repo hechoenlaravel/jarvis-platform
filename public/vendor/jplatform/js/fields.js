@@ -12,14 +12,14 @@ JarvisPlatform.controller('createFieldController', ['$scope', 'fieldsService', f
         $scope.form.returnUrl = window.returnUrl;
         fieldsService.createField(window.entity_id, $scope.form).success(function (data) {
             window.location.href = data.meta.return_url;
-        }).error(HandleErrorResponse);
+        });
     }
 
     $scope.editField = function () {
         $scope.form.returnUrl = window.returnUrl;
         fieldsService.editField(window.entity_id, $scope.form).success(function (data) {
             window.location.href = data.meta.return_url;
-        }).error(HandleErrorResponse);
+        });
     }
 
     if (window.isEdit == "1") {
@@ -133,7 +133,7 @@ JarvisPlatform.factory('fieldsService', ['$http', function ($http) {
                     service.deleteField(id).success(function (data) {
                         swal("Eliminado!", "Se ha eliminado el campo!", "success");
                         callback();
-                    }).error(HandleErrorResponse);
+                    });
                 });
         },
         reOrderFields: function(items)
@@ -147,7 +147,7 @@ JarvisPlatform.factory('fieldsService', ['$http', function ($http) {
                 data: {
                     items : items
                 }
-            }).error(HandleErrorResponse);
+            });
         }
     };
     return service;

@@ -6,7 +6,7 @@
 [![License](https://poser.pugx.org/hechoenlaravel/jarvis-platform/license.svg)](https://packagist.org/packages/hechoenlaravel/jarvis-platform)
 
 ## Que es esto?
-Starter kit para sistema de información usando [Admin LTE](https://almsaeedstudio.com/preview). No es para hacer un panel de administración para un sitio web, para eso puede ver [https://github.com/joselfonseca/laravel-admin](https://github.com/joselfonseca/laravel-admin)
+Starter kit para sistema de información modular usando [Admin LTE](https://almsaeedstudio.com/preview).
 
 ## Documentación
  
@@ -16,19 +16,20 @@ Puede visitar el [WIKI](https://github.com/hechoenlaravel/jarvis-platform/wiki) 
 
 El Starter kit trae los siguientes componentes.
 
- - Pingpong Modules -> [http://sky.pingpong-labs.com/docs/2.1/modules](http://sky.pingpong-labs.com/docs/2.1/modules)
- - Pingpong Menus -> [http://sky.pingpong-labs.com/docs/2.1/menus](http://sky.pingpong-labs.com/docs/2.1/menus)
- - Pingpong Widget -> [http://sky.pingpong-labs.com/docs/2.1/widget](http://sky.pingpong-labs.com/docs/2.1/widget)
- - Pingpong Generators -> [http://sky.pingpong-labs.com/docs/2.1/generators](http://sky.pingpong-labs.com/docs/2.1/generators)
+ - Laravel Modules -> [https://github.com/nWidart/laravel-modules](https://github.com/nWidart/laravel-modules)
  - Styde HTML -> [https://github.com/StydeNet/html](https://github.com/StydeNet/html)
+ - Intervention Image -> [http://image.intervention.io/](http://image.intervention.io/)
  - Jarvis Foundation -> [https://github.com/hechoenlaravel/jarvis-foundation](https://github.com/hechoenlaravel/jarvis-foundation)
+ - Laracast Utilities -> [https://github.com/laracasts/PHP-Vars-To-Js-Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer)
  - Laravel Tactician -> [https://github.com/joselfonseca/laravel-tactician](https://github.com/joselfonseca/laravel-tactician)
- - Laravel API Tools -> [https://github.com/joselfonseca/laravel-api-tools](https://github.com/joselfonseca/laravel-api-tools)
- - Image Manager -> [https://github.com/joselfonseca/image-manager](https://github.com/joselfonseca/image-manager)
- - Entrust -> [https://github.com/Zizaco/entrust](https://github.com/Zizaco/entrust)
- - oAuth2 Server -> [https://github.com/lucadegasperi/oauth2-server-laravel](https://github.com/lucadegasperi/oauth2-server-laravel)
+ - Laravel Excel -> [https://github.com/Maatwebsite/Laravel-Excel](https://github.com/Maatwebsite/Laravel-Excel)
+ - Revisionable -> [https://github.com/VentureCraft/revisionable](https://github.com/VentureCraft/revisionable)
  - Laravel UUID -> [https://github.com/webpatser/laravel-uuid](https://github.com/webpatser/laravel-uuid)
  - Sweet Alert -> [https://github.com/uxweb/sweet-alert](https://github.com/uxweb/sweet-alert)
  - Laravel DataTables -> [https://github.com/yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)
+ - Laravel Sentry -> [https://github.com/getsentry/sentry-laravel](https://github.com/getsentry/sentry-laravel) - Not configured.
+ - Laravel Backup -> [https://github.com/spatie/laravel-backup](https://github.com/spatie/laravel-backup)
+ - Laravel Fractal -> [https://github.com/spatie/laravel-fractal](https://github.com/spatie/laravel-fractal)
+ - Laravel Permission -> [https://github.com/spatie/laravel-permission](https://github.com/spatie/laravel-permission)
  
 

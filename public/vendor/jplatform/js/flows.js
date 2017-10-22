@@ -19,7 +19,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
             $m = flowService.storeFlow($scope.flowForm);
             $m.success(function(data){
                 window.location.href = GLOBALS.site_url+'/'+window.redirectBaseUrl+'/'+data.data.id+'/edit'
-            }).error(HandleErrorResponse);
+            });
         }else{
             $m = flowService.updateFlow($scope.flowForm, $scope.flow.id);
             $m.success($scope.handleFlowSuccess).error(HandleErrorResponse);
@@ -57,7 +57,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
         }else{
             $m = flowService.storeStep($scope.stepForm);
         }
-        $m.success($scope.handleStepSuccess).error(HandleErrorResponse);
+        $m.success($scope.handleStepSuccess);
     }
 
     $scope.handleStepSuccess = function(data)
@@ -74,7 +74,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
             $m = flowService.getSteps($scope.flow.id).success(function(data) {
                 $scope.steps = data.data;
                 $scope.initGraph(data.data);
-            }).error(HandleErrorResponse);
+            });
         }
     }
 
@@ -94,7 +94,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
                 flowService.deleteStep(id).success(function(data){
                     swal("Eliminado!", "Se ha eliminado el paso!", "success");
                     $scope.getSteps();
-                }).error(HandleErrorResponse);
+                });
             });
     }
 
@@ -120,7 +120,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
         }else{
             $m = flowService.storeTransition($scope.transitionForm);
         }
-        $m.success($scope.handleTransitionSuccess).error(HandleErrorResponse);
+        $m.success($scope.handleTransitionSuccess);
     }
 
     $scope.handleTransitionSuccess = function(data) {
@@ -144,7 +144,7 @@ JarvisPlatform.controller('flowController', ['$scope', 'flowService', function (
             flowService.deleteTransition(id).success(function(data){
                 swal("Eliminado!", "Se ha eliminado la transición!", "success");
                 $scope.getSteps();
-            }).error(HandleErrorResponse);
+            });
         });
     }
 

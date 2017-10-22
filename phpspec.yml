@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: JarvisPlatform
-        psr4_prefix: JarvisPlatform
-        src_path: app

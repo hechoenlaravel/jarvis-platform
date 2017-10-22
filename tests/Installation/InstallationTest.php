@@ -13,8 +13,8 @@ class InstallationTest extends \Tests\TestCase
     {
         $this->installApp();
         $this->assertDatabaseHas('app_entities', ['slug' => 'users']);
-        $this->assertDatabaseHas('app_roles', ['name' => 'Administrador del sistema']);
-        $this->assertDatabaseHas('app_users', ['email' => 'admin@admin.com']);
+        $this->assertDatabaseHas('roles', ['name' => 'Administrador del sistema']);
+        $this->assertDatabaseHas('users', ['email' => 'admin@admin.com']);
     }
 
 }
