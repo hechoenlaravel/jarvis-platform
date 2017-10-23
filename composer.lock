@@ -1071,16 +1071,16 @@
         },
         {
             "name": "hechoenlaravel/jarvis-users",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoenlaravel/jarvis-users.git",
-                "reference": "673f84d8e00b0d68c9bd787b146520647855c3c2"
+                "reference": "6913b7ba6a7dfa911a1a55ddc7e63c5b9e2fcc0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/673f84d8e00b0d68c9bd787b146520647855c3c2",
-                "reference": "673f84d8e00b0d68c9bd787b146520647855c3c2",
+                "url": "https://api.github.com/repos/hechoenlaravel/jarvis-users/zipball/6913b7ba6a7dfa911a1a55ddc7e63c5b9e2fcc0e",
+                "reference": "6913b7ba6a7dfa911a1a55ddc7e63c5b9e2fcc0e",
                 "shasum": ""
             },
             "type": "jarvis-platform-module",
@@ -1106,7 +1106,7 @@
                 "JarvisApp",
                 "Laravel Framework"
             ],
-            "time": "2017-10-22 02:37:51"
+            "time": "2017-10-23 20:34:32"
         },
         {
             "name": "intervention/image",
@@ -3032,16 +3032,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "0dc7a3d8f47596a64e2d93a9f9f132422b12b97e"
+                "reference": "dff9df3237e82200d9e50abf7d2370bf1e6f1673"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/0dc7a3d8f47596a64e2d93a9f9f132422b12b97e",
-                "reference": "0dc7a3d8f47596a64e2d93a9f9f132422b12b97e",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/dff9df3237e82200d9e50abf7d2370bf1e6f1673",
+                "reference": "dff9df3237e82200d9e50abf7d2370bf1e6f1673",
                 "shasum": ""
             },
             "require": {
@@ -3093,7 +3093,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2017-10-18 14:39:11"
+            "time": "2017-10-22 04:22:18"
         },
         {
             "name": "styde/html",
